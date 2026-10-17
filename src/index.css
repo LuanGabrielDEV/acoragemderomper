@@ -1,0 +1,65 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-cream text-coffee font-body antialiased;
+    font-size: 16px;
+    line-height: 1.65;
+  }
+  @media (min-width: 640px) {
+    body {
+      font-size: 17px;
+    }
+  }
+  h1, h2, h3, h4 {
+    @apply font-serif;
+    line-height: 1.2;
+  }
+  /* Prevent iOS zoom on focus for input fields */
+  @media (max-width: 640px) {
+    input, select, textarea {
+      font-size: 16px !important;
+    }
+  }
+}
+
+/* Keyframes defined directly so they are always available,
+   regardless of which Tailwind animation utilities are used. */
+@keyframes fade-up {
+  0% { opacity: 0; transform: translateY(28px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+@keyframes fade-in {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+@keyframes float-slow {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+@layer utilities {
+  .reveal {
+    opacity: 0;
+  }
+  .reveal.is-visible {
+    opacity: 1;
+    animation: fade-up 0.7s ease-out forwards;
+  }
+  /* Fallback: if JS/observer fails, content is still visible */
+  .no-js .reveal {
+    opacity: 1;
+  }
+  .text-balance {
+    text-wrap: balance;
+  }
+  .bg-grain {
+    background-image: radial-gradient(rgba(61, 44, 36, 0.025) 1px, transparent 1px);
+    background-size: 22px 22px;
+  }
+}
