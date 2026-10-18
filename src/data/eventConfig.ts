@@ -12,7 +12,7 @@ export const eventConfig = {
   price: 'R$ 59,00',
 
   // Link de checkout externo (Hotmart, Kiwify, etc.)
-  checkoutUrl: '[LINK_DO_CHECKOUT]',
+  checkoutUrl: '#',
 
   // WhatsApp
   whatsappNumber: '+55(81) 98765-4321',
