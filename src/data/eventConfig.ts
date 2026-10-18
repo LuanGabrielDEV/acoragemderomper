@@ -7,8 +7,8 @@ export const eventConfig = {
   // ⬇️ Substitua pelos dados reais do evento
   date: '[DATA DO EVENTO]',
   time: '[HORÁRIO]',
-  duration: '[DURAÇÃO — ex: 3 horas]',
-  spots: '[NÚMERO DE VAGAS — ex: 12]',
+  duration: '[DURAÇÃO]',
+  spots: '[NÚMERO DE VAGAS]',
   price: 'R$ 59,00',
 
   // Link de checkout externo (Hotmart, Kiwify, etc.)
@@ -20,7 +20,7 @@ export const eventConfig = {
   whatsappThankYou:
     'https://wa.me/55[NUMERO]?text=Oi!%20Garanti%20minha%20vaga%20no%20evento%20Coragem%20para%20Romper%20e%20Recomecar',
 
-  organizerName: '[NOME DA ORGANIZADORA]',
+  organizerName: '[Wirlla Dantas e Soraria Ferreir]',
   organizerContact: '[contato@email.com]',
   cancelPolicy:
     '[POLÍTICA DE CANCELAMENTO — ex: Reembolso de 50% até 48h antes do evento. Após esse prazo, não há reembolso, mas a vaga pode ser transferida para outra pessoa.]',
