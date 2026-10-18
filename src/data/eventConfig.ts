@@ -5,25 +5,24 @@ export const eventConfig = {
     'Uma experiência exclusiva para mulheres que decidiram não deixar o medo escolher o próximo capítulo.',
 
   // ⬇️ Substitua pelos dados reais do evento
-  date: '[DATA DO EVENTO]',
-  time: '[HORÁRIO]',
-  duration: '[DURAÇÃO]',
-  spots: '[NÚMERO DE VAGAS]',
+  date: '25/10/2026',
+  time: '14:00 (Horário de Brasília)',
+  duration: '1h30min',
+  spots: '50',
   price: 'R$ 59,00',
 
   // Link de checkout externo (Hotmart, Kiwify, etc.)
   checkoutUrl: '[LINK_DO_CHECKOUT]',
 
   // WhatsApp
-  whatsappNumber: '55[NUMERO]',
+  whatsappNumber: '+55(81) 98765-4321',
   whatsappLink: 'https://wa.me/55[NUMERO]',
   whatsappThankYou:
     'https://wa.me/55[NUMERO]?text=Oi!%20Garanti%20minha%20vaga%20no%20evento%20Coragem%20para%20Romper%20e%20Recomecar',
 
-  organizerName: '[Wirlla Dantas e Soraria Ferreir]',
-  organizerContact: '[contato@email.com]',
-  cancelPolicy:
-    '[POLÍTICA DE CANCELAMENTO — ex: Reembolso de 50% até 48h antes do evento. Após esse prazo, não há reembolso, mas a vaga pode ser transferida para outra pessoa.]',
+  organizerName: 'Organizadoras: Wirlla Dantas e Soraria Ferreira',
+  organizerContact: 'contato@email.com',
+  cancelPolicy: 'Reembolso de 50% até 48h antes do evento. Após esse prazo, não há reembolso, mas a vaga pode ser transferida para outra pessoa.',
 
   location: 'Espaço do Condomínio — endereço completo enviado por WhatsApp após a confirmação do pagamento',
 
@@ -69,7 +68,7 @@ export const eventConfig = {
     },
     {
       q: 'Qual é a política de cancelamento?',
-      a: '[POLÍTICA DE CANCELAMENTO — ex: Reembolso de 50% até 48h antes do evento. Após esse prazo, não há reembolso, mas a vaga pode ser transferida para outra pessoa.]',
+      a: 'Reembolso de 50% até 48h antes do evento. Após esse prazo, não há reembolso, mas a vaga pode ser transferida para outra pessoa.',
     },
     {
       q: 'Preciso levar algo?',

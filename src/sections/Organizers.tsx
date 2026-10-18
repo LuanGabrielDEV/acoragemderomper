@@ -45,7 +45,7 @@ export function Organizers() {
               <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-nude/60 text-terracota">
                 <Sparkles size={21} strokeWidth={1.6} />
               </div>
-              <h3 className="mt-4 font-serif text-xl text-coffee sm:mt-5 sm:text-2xl">Soraia</h3>
+              <h3 className="mt-4 font-serif text-xl text-coffee sm:mt-5 sm:text-2xl">Soraia Ferreira</h3>
               <p className="mt-2 text-sm text-coffee-soft leading-relaxed sm:text-base">Organizadora e palestrante</p>
             </div>
           </div>

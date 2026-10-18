@@ -6,7 +6,7 @@ import { Reveal } from '@/components/Reveal';
 export function Hero() {
   return (
     <header className="relative overflow-hidden bg-sand">
-      <div className="mx-auto grid max-w-7xl items-center gap-10 px-5 py-14 sm:gap-12 sm:px-8 sm:py-16 lg:grid-cols-[1.02fr_0.98fr] lg:gap-16 lg:py-20">
+      <div className="mx-auto grid max-w-7xl items-center gap-10 px-5 py-14 sm:gap-12 sm:px-8 sm:py-16 lg:grid-cols-[1.02fr_0.98fr] lg:gap-16 lg:py-20 pb-28 sm:pb-32 lg:pb-32">
         <div className="relative z-10 order-2 max-w-2xl lg:order-1">
           <Reveal>
             <p className="font-body text-xs font-semibold uppercase tracking-[0.2em] text-terracota mb-4 sm:mb-5 sm:text-sm">
@@ -74,7 +74,7 @@ export function Hero() {
                 loading="eager"
               />
             </div>
-            <div className="absolute -bottom-4 left-3 rounded-xl bg-cream px-4 py-2.5 shadow-soft sm:-left-8 sm:rounded-2xl sm:px-5 sm:py-3">
+            <div className="absolute -bottom-4 left-3 rounded-xl bg-cream px-4 py-2.5 shadow-soft sm:left-4 sm:rounded-2xl sm:px-5 sm:py-3">
               <p className="font-serif text-base italic text-terracota sm:text-lg">
                 Existe algo novo do outro lado.
               </p>

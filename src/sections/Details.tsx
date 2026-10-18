@@ -27,9 +27,9 @@ export function Details() {
         <Reveal delay={150}>
           <div className="mt-10 overflow-hidden rounded-3xl bg-cream shadow-soft-lg sm:mt-14">
             {/* Top image banner */}
-            <div className="relative h-44 sm:h-64">
+            <div className="relative h-56 sm:h-80 lg:h-96">
               <img
-                src="https://images.pexels.com/photos/6979275/pexels-photo-6979275.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
+                src="./images/03.jpg"
                 alt="Três mulheres compartilhando uma conversa leve em um ambiente residencial aconchegante"
                 className="h-full w-full object-cover"
                 loading="lazy"
