@@ -1,6 +1,6 @@
 import { MessageCircle } from 'lucide-react';
 import { eventConfig } from '@/data/eventConfig';
-import { CTAButton } from '@/components/CTAButton';
+import { CheckoutButton } from '@/components/CheckoutButton';
 import { Reveal } from '@/components/Reveal';
 
 export function FinalCTA() {
@@ -39,9 +39,9 @@ export function FinalCTA() {
 
         <Reveal delay={360}>
           <div className="mt-8 flex flex-col items-center gap-5 sm:mt-10">
-            <CTAButton href={eventConfig.checkoutUrl} external className="w-full justify-center text-base sm:w-auto sm:text-lg sm:px-10 sm:py-5">
+            <CheckoutButton className="w-full justify-center text-base sm:w-auto sm:text-lg sm:px-10 sm:py-5">
               Garantir minha vaga — {eventConfig.price}
-            </CTAButton>
+            </CheckoutButton>
 
             <a
               href={eventConfig.whatsappLink}

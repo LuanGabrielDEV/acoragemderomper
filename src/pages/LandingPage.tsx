@@ -8,10 +8,11 @@ import { FAQ } from '@/sections/FAQ';
 import { FinalCTA } from '@/sections/FinalCTA';
 import { Footer } from '@/sections/Footer';
 import { WhatsAppFloat } from '@/components/WhatsAppFloat';
+import { CheckoutProvider } from '@/components/CheckoutDialog';
 
 export function LandingPage() {
   return (
-    <>
+    <CheckoutProvider>
       <Hero />
       <Identification />
       <Experience />
@@ -22,6 +23,6 @@ export function LandingPage() {
       <FinalCTA />
       <Footer />
       <WhatsAppFloat />
-    </>
+    </CheckoutProvider>
   );
 }

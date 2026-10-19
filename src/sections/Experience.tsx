@@ -1,9 +1,9 @@
-import { Sparkles, PenLine, UtensilsCrossed, HeartHandshake } from 'lucide-react';
+import { Sparkles, PenLine, UtensilsCrossed, HeartHandshake, Flower2 } from 'lucide-react';
 import { eventConfig } from '@/data/eventConfig';
 import { SectionHeading } from '@/components/SectionHeading';
 import { Reveal } from '@/components/Reveal';
 
-const iconMap = { Sparkles, PenLine, UtensilsCrossed, HeartHandshake };
+const iconMap = { Sparkles, PenLine, UtensilsCrossed, HeartHandshake, Flower2 };
 
 export function Experience() {
   return (
@@ -29,7 +29,15 @@ export function Experience() {
           {eventConfig.experiences.map((exp, i) => {
             const Icon = iconMap[exp.icon as keyof typeof iconMap];
             return (
-              <Reveal key={exp.title} delay={i * 120}>
+              <Reveal
+                key={exp.title}
+                delay={i * 120}
+                className={
+                  eventConfig.experiences.length % 2 === 1 && i === eventConfig.experiences.length - 1
+                    ? 'sm:col-span-2 sm:mx-auto sm:w-[calc(50%-0.75rem)]'
+                    : ''
+                }
+              >
                 <div className="flex h-full gap-4 rounded-2xl bg-cream p-5 shadow-soft transition-all duration-500 hover:shadow-soft-lg sm:gap-5 sm:p-7">
                   <div className="flex-shrink-0">
                     <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-olive/15 text-olive-dark sm:h-14 sm:w-14">
