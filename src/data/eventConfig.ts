@@ -1,4 +1,3 @@
-// ⚠️ TROQUE pelo WhatsApp real: 55 + DDD + número, só dígitos (ex.: 5581999999999)
 const whatsappNumber = '5581985526701';
 
 const cancelPolicy =
