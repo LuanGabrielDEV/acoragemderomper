@@ -1,5 +1,5 @@
 // ⚠️ TROQUE pelo WhatsApp real: 55 + DDD + número, só dígitos (ex.: 5581999999999)
-const whatsappNumber = '5581900000000';
+const whatsappNumber = '5581985526701';
 
 const cancelPolicy =
   'Reembolso de 50% até 48h antes do evento. Após esse prazo, não há reembolso, mas a vaga pode ser transferida para outra pessoa.';
