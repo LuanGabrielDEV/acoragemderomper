@@ -109,7 +109,9 @@ export default async function handler(req, res) {
       console.error('criar-checkout: Mercado Pago respondeu', resposta.status, corpo && corpo.message);
       return res.status(502).json({ erro: 'indisponivel' });
     }
-    return res.status(200).json({ url: corpo.init_point });
+    // Credenciais antigas de teste (começam com TEST-) usam o link de sandbox
+    const url = config.mpToken.startsWith('TEST-') && corpo.sandbox_init_point ? corpo.sandbox_init_point : corpo.init_point;
+    return res.status(200).json({ url });
   } catch (erro) {
     console.error('criar-checkout: falha ao falar com o Mercado Pago -', erro.message);
     return res.status(502).json({ erro: 'indisponivel' });
