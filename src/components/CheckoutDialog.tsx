@@ -5,6 +5,7 @@ import { Loader2, Lock, MessageCircle, X } from 'lucide-react';
 import { eventConfig } from '@/data/eventConfig';
 import { CTAArrow } from '@/components/CTAButton';
 import { ctaClasses } from '@/lib/cta';
+import { guardarInscricao } from '@/lib/inscricaoLocal';
 import {
   CheckoutError,
   formatarWhatsapp,
@@ -101,6 +102,7 @@ function FormularioInscricao({ onFechar }: { onFechar: () => void }) {
         whatsapp: normalizarWhatsapp(digitos),
       });
       // Mesma aba: depois do pagamento o Mercado Pago traz a pessoa de volta para /obrigado
+      guardarInscricao({ nome: nomeLimpo, email: emailLimpo });
       window.location.assign(url);
     } catch (erro) {
       setErroServidor(erro instanceof CheckoutError ? erro.codigo : 'indisponivel');

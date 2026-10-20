@@ -27,6 +27,8 @@ export const eventConfig = {
   // WhatsApp
   whatsappNumber,
   whatsappLink: wa('Olá! Tenho uma dúvida sobre o evento Coragem para Romper e Recomeçar.'),
+  // Monta um link do WhatsApp com qualquer mensagem (usado na página /obrigado)
+  whatsappMensagem: (texto: string) => wa(texto),
   whatsappThankYou: wa(
     'Olá! Acabei de me inscrever no evento Coragem para Romper e Recomeçar. Meu nome é ',
   ),

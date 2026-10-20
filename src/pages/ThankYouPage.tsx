@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import { ArrowLeft, CheckCircle2, Clock, Mail, MessageCircle, RotateCcw } from 'lucide-react';
 import { eventConfig } from '@/data/eventConfig';
 import { CTAButton } from '@/components/CTAButton';
+import { lerInscricao } from '@/lib/inscricaoLocal';
 
 /**
  * Página para onde o Mercado Pago devolve a pessoa depois do checkout.
@@ -45,6 +46,13 @@ const TEXTOS: Record<Situacao, { titulo: string; texto: string }> = {
 export function ThankYouPage() {
   const situacao = lerSituacao();
   const { titulo, texto } = TEXTOS[situacao];
+  const inscricao = lerInscricao();
+  // Com os dados da inscrição (guardados nesta aba), a mensagem já vai com nome e e-mail
+  const linkWhatsapp = inscricao
+    ? eventConfig.whatsappMensagem(
+        `Olá! Acabei de me inscrever no evento ${eventConfig.eventName}. Meu nome é ${inscricao.nome} e o e-mail da inscrição é ${inscricao.email}.`,
+      )
+    : eventConfig.whatsappThankYou;
   const Icone = situacao === 'concluido' ? CheckCircle2 : situacao === 'pendente' ? Clock : RotateCcw;
 
   useEffect(() => {
@@ -88,7 +96,7 @@ export function ThankYouPage() {
             </CTAButton>
           ) : (
             <a
-              href={eventConfig.whatsappThankYou}
+              href={linkWhatsapp}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 font-semibold text-olive-dark hover:text-terracota transition-colors"
