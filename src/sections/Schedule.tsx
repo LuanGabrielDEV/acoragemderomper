@@ -5,7 +5,9 @@ import { Reveal } from '@/components/Reveal';
 
 const includedItems = [
   'Material de escrita e reflexão',
-  'Mesa posta com café e cuidados',
+  'Mesa posta com chá e cuidados',
+  'Coffee break',
+  'Experiência relaxante com massagem e escalda-pés',
   'Espaço intimista e acolhedor',
   'Encontro guiado e presencial',
 ];

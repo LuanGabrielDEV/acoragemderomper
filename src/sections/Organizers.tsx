@@ -12,7 +12,7 @@ export function Organizers() {
             <div className="relative overflow-hidden rounded-[1.25rem] bg-sand shadow-soft-lg sm:rounded-[1.75rem]">
               <img
                 src="/images/02.jpeg"
-                alt="Wirlla Dantas e Soraia, organizadoras e palestrantes do encontro"
+                alt="Wirlla Dantas e Soraia Ferreira, que conduzem o encontro"
                 className="aspect-[4/5] w-full object-cover object-center"
                 loading="lazy"
               />
@@ -39,14 +39,14 @@ export function Organizers() {
                 <Sparkles size={21} strokeWidth={1.6} />
               </div>
               <h3 className="mt-4 font-serif text-xl text-coffee sm:mt-5 sm:text-2xl">Wirlla Dantas</h3>
-              <p className="mt-2 text-sm text-coffee-soft leading-relaxed sm:text-base">Organizadora e palestrante</p>
+              <p className="mt-2 text-sm text-coffee-soft leading-relaxed sm:text-base">Mentora de Recomeços e Desenvolvimento Pessoal</p>
             </div>
             <div className="rounded-2xl bg-sand p-5 sm:p-6">
               <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-nude/60 text-terracota">
                 <Sparkles size={21} strokeWidth={1.6} />
               </div>
               <h3 className="mt-4 font-serif text-xl text-coffee sm:mt-5 sm:text-2xl">Soraia Ferreira</h3>
-              <p className="mt-2 text-sm text-coffee-soft leading-relaxed sm:text-base">Organizadora e palestrante</p>
+              <p className="mt-2 text-sm text-coffee-soft leading-relaxed sm:text-base">Terapeuta Cristã do Emocional Feminino</p>
             </div>
           </div>
         </Reveal>

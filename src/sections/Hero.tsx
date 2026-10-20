@@ -1,6 +1,6 @@
 import { Calendar, Clock, MapPin } from 'lucide-react';
 import { eventConfig } from '@/data/eventConfig';
-import { CTAButton } from '@/components/CTAButton';
+import { CheckoutButton } from '@/components/CheckoutButton';
 import { Reveal } from '@/components/Reveal';
 
 export function Hero() {
@@ -46,19 +46,16 @@ export function Hero() {
 
           <Reveal delay={500}>
             <div className="mt-8 sm:mt-10">
-              <CTAButton
-                href={eventConfig.checkoutUrl}
-                external
-                className="w-full justify-center px-6 py-4 text-base sm:w-auto sm:px-9 sm:py-5 sm:text-lg"
-              >
+              <CheckoutButton className="w-full justify-center px-6 py-4 text-base sm:w-auto sm:px-9 sm:py-5 sm:text-lg">
                 Garantir minha vaga — {eventConfig.price}
-              </CTAButton>
+              </CheckoutButton>
             </div>
           </Reveal>
 
           <Reveal delay={620}>
             <p className="mt-4 text-sm text-coffee-soft sm:mt-5">
-              Vagas limitadas a {eventConfig.spots}. Investimento único de {eventConfig.price}.
+              Vagas limitadas a {eventConfig.spots}. Pagamento seguro pelo Mercado Pago (Pix ou cartão).
+              A confirmação chega no seu e-mail.
             </p>
           </Reveal>
         </div>

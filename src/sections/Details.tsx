@@ -1,6 +1,6 @@
 import { MapPin, Calendar, Clock, Users, Wallet } from 'lucide-react';
 import { eventConfig } from '@/data/eventConfig';
-import { CTAButton } from '@/components/CTAButton';
+import { CheckoutButton } from '@/components/CheckoutButton';
 import { Reveal } from '@/components/Reveal';
 
 export function Details() {
@@ -29,7 +29,7 @@ export function Details() {
             {/* Top image banner */}
             <div className="relative h-56 sm:h-80 lg:h-96">
               <img
-                src="./images/03.jpg"
+                src="/images/03.jpg"
                 alt="Três mulheres compartilhando uma conversa leve em um ambiente residencial aconchegante"
                 className="h-full w-full object-cover"
                 loading="lazy"
@@ -66,9 +66,9 @@ export function Details() {
 
         <Reveal delay={300}>
           <div className="mt-10 text-center sm:mt-12">
-            <CTAButton href={eventConfig.checkoutUrl} external className="w-full justify-center text-base sm:w-auto sm:text-lg">
+            <CheckoutButton className="w-full justify-center text-base sm:w-auto sm:text-lg">
               Garantir minha vaga — {eventConfig.price}
-            </CTAButton>
+            </CheckoutButton>
           </div>
         </Reveal>
       </div>
