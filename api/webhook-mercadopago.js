@@ -45,6 +45,10 @@ export default async function handler(req, res) {
 
     const referencia = String(pagamento.external_reference || '');
     if (pagamento.status !== 'approved' || !referencia.startsWith('romper-')) {
+      // Registra o motivo de recusas e pendências (ex.: cc_rejected_high_risk) para diagnóstico
+      if (referencia.startsWith('romper-') && pagamento.status !== 'approved') {
+        console.log('webhook: pagamento', id, pagamento.status, pagamento.status_detail || '', pagamento.payment_type_id || '');
+      }
       return res.status(200).json({ ok: true, status: pagamento.status });
     }
 
