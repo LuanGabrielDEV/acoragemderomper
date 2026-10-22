@@ -1,3 +1,4 @@
+<img><img width="500" height="500" alt="01" src="https://github.com/user-attachments/assets/64259065-2533-49ae-8674-a8b5701ee573" />
 # Coragem para Romper e Recomeçar · site de inscrições
 
 Site oficial do encontro presencial **Coragem para Romper e Recomeçar**, uma experiência para 30 mulheres em 22/11/2026, às 14h.
