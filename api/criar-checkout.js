@@ -52,7 +52,7 @@ export default async function handler(req, res) {
       return res.status(409).json({ erro: reserva.erro });
     }
     if (reserva.erro === 'dados_invalidos') return res.status(400).json({ erro: 'dados_invalidos' });
-    console.error('criar-checkout: planilha recusou -', reserva.erro);
+    console.error('criar-checkout: planilha recusou -', reserva.erro, reserva.detalhe || '');
     return res.status(502).json({ erro: 'indisponivel' });
   }
 

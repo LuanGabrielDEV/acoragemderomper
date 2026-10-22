@@ -61,7 +61,9 @@ export default async function handler(req, res) {
       nomePagador: [pagador.first_name, pagador.last_name].filter(Boolean).join(' '),
     });
 
-    if (!resultado.ok) throw new Error(`planilha respondeu ${resultado.erro}`);
+    if (!resultado.ok) {
+      throw new Error(`planilha respondeu ${resultado.erro}${resultado.detalhe ? ` (${resultado.detalhe})` : ''}`);
+    }
     return res.status(200).json({ ok: true });
   } catch (erro) {
     console.error('webhook: falha ao processar pagamento', id, '-', erro.message);

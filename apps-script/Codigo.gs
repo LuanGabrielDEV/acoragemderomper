@@ -92,8 +92,14 @@ function doPost(e) {
     if (pedido.acao === 'confirmar') return responder(confirmar(pedido));
     return responder({ ok: false, erro: 'acao_desconhecida' });
   } catch (erro) {
-    console.error('Erro em ' + pedido.acao + ': ' + erro);
-    return responder({ ok: false, erro: 'erro_interno' });
+    // O registro de execuções do Google não mostra logs de chamadas anônimas,
+    // então o motivo volta na resposta (só para quem tem o SEGREDO) e fica salvo em ULTIMO_ERRO.
+    const detalhe = String((erro && erro.message) || erro).slice(0, 300);
+    console.error('Erro em ' + pedido.acao + ': ' + detalhe);
+    try {
+      props.setProperty('ULTIMO_ERRO', new Date().toISOString() + ' | ' + pedido.acao + ' | ' + detalhe);
+    } catch (e2) { /* ignora */ }
+    return responder({ ok: false, erro: 'erro_interno', detalhe: detalhe });
   } finally {
     SpreadsheetApp.flush();
     trava.releaseLock();
@@ -394,6 +400,25 @@ function configurarEvento() {
   enviarEmailCliente({ nome: 'Organizadora (TESTE)', email: p.ORGANIZADORA_EMAIL, codigo: 'ROMPER-TESTE' });
   console.log('Tudo certo! Aba "' + aba.getName() + '" pronta e e-mail de teste enviado para ' + p.ORGANIZADORA_EMAIL +
     '. Cota de e-mails restante hoje: ' + MailApp.getRemainingDailyQuota());
+}
+
+/**
+ * DIAGNÓSTICO: tenta enviar agora o e-mail das inscrições pagas que ficaram sem e-mail.
+ * Rode no editor (▶ Executar): se houver erro, ele aparece aqui mesmo, com o motivo.
+ */
+function enviarEmailsPendentes() {
+  const aba = obterAba();
+  const linhas = lerLinhas(aba);
+  const total = Number(propriedade('VAGAS_TOTAL', '30'));
+  const pendentes = linhas.filter(function (l) { return l.valores[COL.status] === 'pago' && !l.valores[COL.emailEnviadoEm]; });
+  console.log('Último erro registrado: ' + propriedade('ULTIMO_ERRO', '(nenhum)'));
+  console.log('Linhas: ' + linhas.map(function (l) { return l.numero + '=' + l.valores[COL.status]; }).join(', '));
+  if (!pendentes.length) { console.log('Nenhuma inscrição paga sem e-mail.'); return; }
+  pendentes.forEach(function (l) {
+    console.log('Enviando para a linha ' + l.numero + ' (' + l.valores[COL.email] + ', ' + l.valores[COL.codigo] + ')...');
+    enviarEmailsDaLinha(aba, l.numero, l.valores, contar(linhas, 'pago'), total, '');
+    console.log('Enviado.');
+  });
 }
 
 /** Mostra quantas inscrições pagas e reservas ativas existem agora. */
