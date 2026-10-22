@@ -48,7 +48,17 @@ export function FAQ() {
                     }`}
                   >
                     <div className="overflow-hidden">
-                      <p className="px-5 pb-4 text-sm text-coffee-soft leading-relaxed sm:px-6 sm:pb-5 sm:text-base">{faq.a}</p>
+                      <p className="px-5 pb-4 text-sm text-coffee-soft leading-relaxed sm:px-6 sm:pb-5 sm:text-base">
+                        {faq.a}
+                        {'link' in faq && faq.link && (
+                          <>
+                            {' '}
+                            <a href={faq.link.href} className="font-semibold text-terracota underline-offset-2 hover:underline">
+                              {faq.link.texto}
+                            </a>
+                          </>
+                        )}
+                      </p>
                     </div>
                   </div>
                 </div>

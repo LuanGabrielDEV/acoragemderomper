@@ -29,7 +29,11 @@ export function Footer() {
           </div>
 
           <p className="mt-4 text-xs text-coffee-soft/60 max-w-md leading-relaxed">
-            © {new Date().getFullYear()} {eventConfig.eventName}. Todos os direitos reservados.
+            © {new Date().getFullYear()} {eventConfig.eventName}. Todos os direitos reservados.{' '}
+            <a href={eventConfig.politicaUrl} className="underline underline-offset-2 hover:text-terracota">
+              Política de compra, cancelamento e reembolso
+            </a>
+            .
             Suas informações são tratadas com privacidade e utilizadas apenas para a comunicação sobre o evento.
           </p>
         </div>

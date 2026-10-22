@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { LandingPage } from '@/pages/LandingPage';
 import { ThankYouPage } from '@/pages/ThankYouPage';
+import { PoliticaPage } from '@/pages/PoliticaPage';
 
 function useRoute() {
   const [route, setRoute] = useState(() => window.location.pathname);
@@ -16,9 +17,11 @@ function useRoute() {
 
 function App() {
   const route = useRoute();
-  const isThankYou = route.trim().toLowerCase().replace(/\/$/, '') === '/obrigado';
+  const caminho = route.trim().toLowerCase().replace(/\/$/, '');
 
-  return isThankYou ? <ThankYouPage /> : <LandingPage />;
+  if (caminho === '/obrigado') return <ThankYouPage />;
+  if (caminho === '/politica') return <PoliticaPage />;
+  return <LandingPage />;
 }
 
 export default App;

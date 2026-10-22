@@ -1,7 +1,8 @@
 const whatsappNumber = '5581985526701';
 
+// Resumo da política (a versão completa fica em /politica, arquivo src/data/politica.ts)
 const cancelPolicy =
-  'Reembolso de 50% até 48h antes do evento. Após esse prazo, não há reembolso, mas a vaga pode ser transferida para outra pessoa.';
+  'Você pode desistir em até 7 dias após a compra, com reembolso integral (direito de arrependimento, art. 49 do CDC). Depois desse prazo, os pedidos são analisados conforme a lei, sem multas automáticas. Se o evento for cancelado ou adiado, o reembolso é integral. Se não puder ir, a transferência do ingresso para outra pessoa é gratuita.';
 
 const wa = (texto?: string) =>
   `https://wa.me/${whatsappNumber}${texto ? `?text=${encodeURIComponent(texto)}` : ''}`;
@@ -35,6 +36,7 @@ export const eventConfig = {
   organizerName: 'Organizadoras: Wirlla Dantas e Soraia Ferreira',
   organizerContact: 'acoragemderomper@gmail.com',
   cancelPolicy,
+  politicaUrl: '/politica',
 
   location:
     'Salão de eventos — o endereço completo chega no seu e-mail logo após a confirmação do pagamento',
@@ -89,8 +91,9 @@ export const eventConfig = {
       a: 'O e-mail costuma chegar em poucos minutos. Confira a caixa de spam e a aba Promoções. Se não encontrar, fale com a gente no WhatsApp e envie o comprovante: conferimos e reenviamos a confirmação.',
     },
     {
-      q: 'Qual é a política de cancelamento?',
+      q: 'Qual é a política de cancelamento e reembolso?',
       a: cancelPolicy,
+      link: { href: '/politica', texto: 'Ler a política completa' },
     },
     {
       q: 'Preciso levar algo?',

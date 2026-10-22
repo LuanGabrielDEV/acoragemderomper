@@ -73,8 +73,7 @@ O que mudou:
 - [x] **E-mail de contato** no rodapé: `acoragemderomper@gmail.com` (corrigido).
 - [ ] **Como será o encontro**: os 5 momentos atuais (Acolhida, Reflexão Guiada, Escrita & Restauração,
       Mesa Posta, A Decisão) são os definitivos? Ficam em `schedule`, em `eventConfig.ts`.
-- [ ] **Política de cancelamento**: "50% até 48h antes". Confirme com quem orienta vocês, porque compras
-      online têm direito de arrependimento de 7 dias pelo CDC.
+- [x] **Política de compra, cancelamento e reembolso**: publicada em `/politica` (texto em `src/data/politica.ts`).
 - [x] **Parcelamento**: cartão à vista ou em até 5x (juros das parcelas pagos pela compradora).
 - [ ] **WhatsApp**: `5581985526701` está certo (botão flutuante, rodapé e página de agradecimento).
 
@@ -124,7 +123,7 @@ Engrenagem > **Propriedades do script**:
 | `LINK_GRUPO_WHATSAPP` | link oficial do grupo do evento |
 | `WHATSAPP_CONTATO` | `5581985526701` |
 | `NOME_REMETENTE` | `Coragem para Romper e Recomeçar` |
-| `POLITICA_CANCELAMENTO` | texto final da política |
+| `POLITICA_CANCELAMENTO` | resumo da política + `Política completa: https://projeto-romper-green.vercel.app/politica` |
 
 `EVENTO_DURACAO_MIN` agora é opcional e pode ser apagado. Ele só define o fim do lembrete na agenda do
 Google e não aparece no e-mail. Sem ele, o lembrete marca 90 minutos.

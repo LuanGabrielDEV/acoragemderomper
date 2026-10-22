@@ -232,8 +232,19 @@ function FormularioInscricao({ onFechar }: { onFechar: () => void }) {
 
       <p className="mt-4 flex items-start justify-center gap-2 text-center text-xs leading-relaxed text-coffee-soft">
         <Lock size={14} className="mt-0.5 flex-shrink-0" aria-hidden="true" />
-        Pagamento seguro pelo Mercado Pago (Pix ou cartão). Seus dados são usados só para a sua inscrição e a
-        comunicação sobre o evento.
+        <span>
+          Pagamento seguro pelo Mercado Pago (Pix ou cartão). Seus dados são usados só para a sua inscrição e a
+          comunicação sobre o evento. Ao continuar, você declara estar ciente da{' '}
+          <a
+            href={eventConfig.politicaUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-semibold text-terracota underline underline-offset-2"
+          >
+            Política de compra, cancelamento e reembolso
+          </a>
+          .
+        </span>
       </p>
     </form>
   );

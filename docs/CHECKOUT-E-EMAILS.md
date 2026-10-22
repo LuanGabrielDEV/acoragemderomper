@@ -92,7 +92,7 @@ Clique na **engrenagem (Configurações do projeto)**. Em **Propriedades do scri
 | `LINK_GRUPO_WHATSAPP` | `https://chat.whatsapp.com/...` | |
 | `WHATSAPP_CONTATO` | `5581999999999` | só dígitos |
 | `NOME_REMETENTE` | `Coragem para Romper e Recomeçar` | nome que aparece como remetente |
-| `POLITICA_CANCELAMENTO` | `Reembolso de 50% até 48h antes...` | |
+| `POLITICA_CANCELAMENTO` | resumo da política + `Política completa: https://projeto-romper-green.vercel.app/politica` | aparece no e-mail |
 
 Clique em **Salvar propriedades do script**.
 
