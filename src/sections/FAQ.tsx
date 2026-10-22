@@ -48,12 +48,16 @@ export function FAQ() {
                     }`}
                   >
                     <div className="overflow-hidden">
-                      <p className="px-5 pb-4 text-sm text-coffee-soft leading-relaxed sm:px-6 sm:pb-5 sm:text-base">
+                      <p className="whitespace-pre-line px-5 pb-4 text-sm text-coffee-soft leading-relaxed sm:px-6 sm:pb-5 sm:text-base">
                         {faq.a}
                         {'link' in faq && faq.link && (
                           <>
                             {' '}
-                            <a href={faq.link.href} className="font-semibold text-terracota underline-offset-2 hover:underline">
+                            <a
+                              href={faq.link.href}
+                              {...(faq.link.href.startsWith('http') ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+                              className="font-semibold text-terracota underline-offset-2 hover:underline"
+                            >
                               {faq.link.texto}
                             </a>
                           </>
