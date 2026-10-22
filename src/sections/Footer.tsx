@@ -3,7 +3,7 @@ import { eventConfig } from '@/data/eventConfig';
 
 export function Footer() {
   return (
-    <footer className="bg-sand border-t border-coffee/10 py-12">
+    <footer className="bg-sand border-t border-coffee/10 pt-12 pb-28 sm:pb-12">
       <div className="mx-auto max-w-3xl px-5 sm:px-8">
         <div className="flex flex-col items-center text-center gap-4">
           <div className="flex items-center gap-2 text-terracota">
@@ -36,6 +36,25 @@ export function Footer() {
             .
             Suas informações são tratadas com privacidade e utilizadas apenas para a comunicação sobre o evento.
           </p>
+
+          {/* Crédito do desenvolvedor */}
+          <a
+            href="https://portfolio-lg-sooty.vercel.app/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group mt-2 inline-flex items-center gap-2 border-t border-coffee/10 pt-5 text-xs text-coffee-soft/70 transition-colors hover:text-coffee"
+          >
+            <span>Desenvolvido por</span>
+            <img
+              src="/images/lg-simbolo.svg"
+              alt=""
+              aria-hidden="true"
+              width="16"
+              height="17"
+              className="h-4 w-auto opacity-60 transition-opacity group-hover:opacity-100"
+            />
+            <span className="font-semibold">Luan Gabriel</span>
+          </a>
         </div>
       </div>
     </footer>
