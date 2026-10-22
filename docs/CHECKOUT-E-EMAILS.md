@@ -86,9 +86,8 @@ Clique na **engrenagem (Configurações do projeto)**. Em **Propriedades do scri
 | `ORGANIZADORA_EMAIL` | `acoreagemderomper@gmail.com` | recebe o aviso de cada venda (pode ser o próprio e-mail do evento) |
 | `EVENTO_NOME` | `Coragem para Romper e Recomeçar` | |
 | `EVENTO_DATA_TEXTO` | `Domingo, 22 de novembro de 2026` | como aparece no e-mail |
-| `EVENTO_HORARIO_TEXTO` | `14h às 15h30 (horário de Brasília)` | |
+| `EVENTO_HORARIO_TEXTO` | `Início às 14h (horário de Brasília)` | |
 | `EVENTO_INICIO_ISO` | `2026-11-22T14:00:00-03:00` | para o botão "Adicionar à agenda" |
-| `EVENTO_DURACAO_MIN` | `90` | em minutos |
 | `EVENTO_ENDERECO` | `Rua ..., nº ..., bairro, cidade` | **só vai no e-mail** |
 | `LINK_GRUPO_WHATSAPP` | `https://chat.whatsapp.com/...` | |
 | `WHATSAPP_CONTATO` | `5581999999999` | só dígitos |
@@ -292,6 +291,6 @@ navegador do celular.
 ## Pendências antes de divulgar
 
 - [ ] `src/data/eventConfig.ts`: trocar `whatsappNumber` (hoje `5581900000000`, de exemplo) pelo número real
-- [ ] Conferir a data (22/11/2026), o horário e a duração no `eventConfig.ts` **e** nas Propriedades do script
+- [ ] Conferir a data (22/11/2026), o horário de início no `eventConfig.ts` **e** nas Propriedades do script
 - [ ] Estruturar os momentos de "Como será o encontro" (`schedule` em `eventConfig.ts`)
 - [ ] Teste real da Fase 5 feito, reembolsado, com preço de volta a `59.00` e linha de teste apagada

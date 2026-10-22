@@ -15,8 +15,7 @@ export const eventConfig = {
   // ⬇️ Dados exibidos no site. A data, o horário e o endereço que vão no
   //    E-MAIL de confirmação ficam nas Propriedades do Apps Script.
   date: '22/11/2026',
-  time: '14:00 (Horário de Brasília)',
-  duration: '1h30min',
+  time: 'Início às 14h (horário de Brasília)',
   spots: '30 mulheres',
   price: 'R$ 59,00',
 

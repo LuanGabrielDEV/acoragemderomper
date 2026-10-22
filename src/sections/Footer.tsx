@@ -29,7 +29,7 @@ export function Footer() {
           </div>
 
           <p className="mt-4 text-xs text-coffee-soft/60 max-w-md leading-relaxed">
-            © {new Date().getFullYear()} {eventConfig.organizerName}. Todos os direitos reservados.
+            © {new Date().getFullYear()} {eventConfig.eventName}. Todos os direitos reservados.
             Suas informações são tratadas com privacidade e utilizadas apenas para a comunicação sobre o evento.
           </p>
         </div>

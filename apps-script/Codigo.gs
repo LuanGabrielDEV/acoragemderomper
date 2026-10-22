@@ -55,9 +55,8 @@ const PROPRIEDADES_NECESSARIAS = [
   'ORGANIZADORA_EMAIL',    // quem recebe o aviso de cada inscrição
   'EVENTO_NOME',           // ex.: Coragem para Romper e Recomeçar
   'EVENTO_DATA_TEXTO',     // ex.: Domingo, 22 de novembro de 2026
-  'EVENTO_HORARIO_TEXTO',  // ex.: 14h às 15h30 (horário de Brasília)
+  'EVENTO_HORARIO_TEXTO',  // ex.: Início às 14h (horário de Brasília)
   'EVENTO_INICIO_ISO',     // ex.: 2026-11-22T14:00:00-03:00 (para o botão da agenda)
-  'EVENTO_DURACAO_MIN',    // ex.: 90
   'EVENTO_ENDERECO',       // endereço completo (só vai no e-mail)
   'LINK_GRUPO_WHATSAPP',   // ex.: https://chat.whatsapp.com/...
   'WHATSAPP_CONTATO',      // só dígitos, ex.: 5581999999999
@@ -294,7 +293,7 @@ function enviarEmailCliente(dados) {
 
     '<div style="background:#F4EFEA;border-radius:16px;padding:18px 20px;margin:22px 0;font-size:15px;line-height:1.7;">' +
     '<div><strong>📅 Data:</strong> ' + esc(p.EVENTO_DATA_TEXTO) + '</div>' +
-    '<div><strong>🕑 Horário:</strong> ' + esc(p.EVENTO_HORARIO_TEXTO) + '</div>' +
+    '<div><strong>🕑 Início:</strong> ' + esc(p.EVENTO_HORARIO_TEXTO) + '</div>' +
     '<div><strong>📍 Endereço:</strong> ' + esc(p.EVENTO_ENDERECO) + '</div>' +
     '</div>' +
 
@@ -323,7 +322,7 @@ function enviarEmailCliente(dados) {
     '',
     p.EVENTO_NOME,
     'Data: ' + p.EVENTO_DATA_TEXTO,
-    'Horário: ' + p.EVENTO_HORARIO_TEXTO,
+    'Início: ' + p.EVENTO_HORARIO_TEXTO,
     'Endereço: ' + p.EVENTO_ENDERECO,
     '',
     'Seu código de inscrição: ' + dados.codigo,
@@ -354,6 +353,8 @@ function avisarOrganizadora(assunto, corpo) {
 function montarLinkAgenda(p) {
   const inicio = new Date(p.EVENTO_INICIO_ISO);
   if (isNaN(inicio.getTime())) return '';
+  // A agenda do Google exige um fim: usa EVENTO_DURACAO_MIN se existir (opcional), senão 90 min.
+  // Esse fim só aparece no lembrete da agenda, não no texto do e-mail.
   const fim = new Date(inicio.getTime() + Number(p.EVENTO_DURACAO_MIN || 90) * 60000);
   const formatar = function (d) { return Utilities.formatDate(d, 'UTC', "yyyyMMdd'T'HHmmss'Z'"); };
   return 'https://calendar.google.com/calendar/render?action=TEMPLATE' +

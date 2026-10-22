@@ -6,7 +6,7 @@ import { Reveal } from '@/components/Reveal';
 export function Details() {
   const details = [
     { icon: Calendar, label: 'Data', value: eventConfig.date },
-    { icon: Clock, label: 'Horário', value: `${eventConfig.time} · ${eventConfig.duration}` },
+    { icon: Clock, label: 'Horário', value: eventConfig.time },
     { icon: MapPin, label: 'Local', value: eventConfig.location },
     { icon: Users, label: 'Vagas', value: `Limitadas a ${eventConfig.spots}` },
     { icon: Wallet, label: 'Investimento', value: eventConfig.price },

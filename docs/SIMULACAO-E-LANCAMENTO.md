@@ -234,7 +234,7 @@ Se algo falhou, **não siga para a Parte C**. Mande o print do erro ou do log.
 6. **No site** (`src/data/eventConfig.ts`), confira:
    - [ ] `whatsappNumber` com o **número real**, não o `5581900000000`
    - [ ] `organizerContact` com o e-mail certo
-   - [ ] data `22/11/2026`, horário e duração
+   - [ ] data `22/11/2026` e horário de início
    - [ ] "Como será o encontro" (`schedule`) com os momentos definitivos
 
    Se mudou algo: `git add . && git commit -m "Dados finais" && git push` e espere o deploy.

@@ -79,7 +79,7 @@ export function Schedule() {
                 <Calendar size={16} className="text-olive-dark" /> {eventConfig.date}
               </span>
               <span className="inline-flex items-center gap-2">
-                <Clock size={16} className="text-olive-dark" /> {eventConfig.time} · {eventConfig.duration}
+                <Clock size={16} className="text-olive-dark" /> {eventConfig.time}
               </span>
             </div>
           </div>
