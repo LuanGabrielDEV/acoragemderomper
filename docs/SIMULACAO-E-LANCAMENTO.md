@@ -224,8 +224,8 @@ Se algo falhou, **não siga para a Parte C**. Mande o print do erro ou do log.
 
 ## Parte C — Limpeza (antes da produção)
 
-1. **Planilha:** apague **todas as linhas de teste** (selecione as linhas 2 em diante > botão direito >
-   **Excluir linhas**). **Não apague a linha 1**, o cabeçalho.
+1. **Planilha:** limpe **todas as linhas de teste**: clique no número da linha 2, segure **Shift**, clique no
+   número da última linha com dados e aperte **Delete** (limpar conteúdo). **Não mexa na linha 1**, o cabeçalho.
 2. **Apps Script > Propriedades do script:** `VAGAS_TOTAL` = **`30`**.
 3. Confira uma última vez as propriedades: data, horário, `EVENTO_INICIO_ISO`, **endereço**,
    **link do grupo**, WhatsApp e política de cancelamento.

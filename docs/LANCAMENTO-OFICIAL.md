@@ -132,7 +132,9 @@ Google e não aparece no e-mail. Sem ele, o lembrete marca 90 minutos.
 ### 2.5 Conferir o e-mail e limpar
 1. Rode **`configurarEvento`**. ✅ O e-mail de exemplo chega com a data, "Início às 14h", o endereço e os
    botões. Clique no botão do grupo e no da agenda para conferir.
-2. **Apague todas as linhas de teste**: da linha 2 em diante, botão direito > **Excluir linhas**. **Nunca a linha 1.**
+2. **Limpe as linhas de teste**: clique no número da **linha 2**, segure **Shift** e clique no número da última
+   linha com dados, depois aperte **Delete** (limpar conteúdo). Prefira isso a "Excluir linhas": limpar
+   mantém a formatação das colunas. **Nunca mexa na linha 1** (o cabeçalho).
 3. Rode **`verResumo`**. ✅ `Pagas: 0 | Reservas ativas: 0 | Vagas: 30`.
 4. **Compartilhar** a planilha com as organizadoras: como Leitora, ou Editora para quem fizer o check-in.
 
