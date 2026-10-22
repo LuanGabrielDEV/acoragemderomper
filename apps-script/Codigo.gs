@@ -193,8 +193,9 @@ function confirmar(pedido) {
     nova[COL.referencia] = referencia;
     nova[COL.status] = 'reservado';
     nova[COL.nome] = limparTexto(pedido.nomePagador, 120) || '(sem nome)';
-    nova[COL.email] = limparTexto(pedido.emailPagador, 200).toLowerCase();
-    nova[COL.obs] = 'Linha criada no pagamento (reserva não encontrada).';
+    const emailMP = limparTexto(pedido.emailPagador, 200).toLowerCase();
+    nova[COL.email] = emailValido(emailMP) ? emailMP : '';
+    nova[COL.obs] = 'Linha criada no pagamento (reserva não encontrada; ref ' + referencia + ').';
     aba.appendRow(nova);
     linha = { numero: aba.getLastRow(), valores: nova };
     linhas.push(linha);
@@ -230,7 +231,8 @@ function confirmar(pedido) {
   v[COL.forma] = traduzirForma(pedido.forma);
   v[COL.pagoEm] = agora;
   v[COL.codigo] = codigo;
-  if (!v[COL.email] && pedido.emailPagador) v[COL.email] = limparTexto(pedido.emailPagador, 200).toLowerCase();
+  const emailDoMP = limparTexto(pedido.emailPagador, 200).toLowerCase();
+  if (!emailValido(String(v[COL.email])) && emailValido(emailDoMP)) v[COL.email] = emailDoMP;
   aba.getRange(linha.numero, 1, 1, CABECALHO.length).setValues([v]);
 
   // v é a mesma linha que está em "linhas", então esta contagem já inclui a inscrição atual
@@ -249,8 +251,30 @@ function confirmar(pedido) {
 // ===================== 3. E-mails =====================
 
 function enviarEmailsDaLinha(aba, numeroLinha, v, numero, total, alerta) {
-  const email = String(v[COL.email] || '');
-  if (!email) throw new Error('Inscrição sem e-mail');
+  const email = String(v[COL.email] || '').trim();
+  if (!emailValido(email)) {
+    // Sem e-mail válido: a inscrição continua paga, a organizadora confirma pelo WhatsApp.
+    // "E-mail enviado em" recebe um aviso para o sistema não ficar tentando de novo.
+    acrescentarObs(aba, numeroLinha, v, 'E-mail inválido ("' + email + '"): confirmar pelo WhatsApp. Depois de corrigir o e-mail, apague "E-mail enviado em" e rode enviarEmailsPendentes.');
+    aba.getRange(numeroLinha, COL.emailEnviadoEm + 1).setValue('NÃO ENVIADO (e-mail inválido)');
+    try {
+      avisarOrganizadora(
+        '⚠️ Inscrição paga sem e-mail válido (' + numero + '/' + total + '): ' + v[COL.nome],
+        [alerta,
+          'O pagamento foi aprovado, mas o e-mail da inscrição é inválido: "' + email + '".',
+          'Confirme a vaga pelo WhatsApp e envie o endereço e o link do grupo.',
+          '',
+          'Nome: ' + v[COL.nome],
+          'WhatsApp: ' + (v[COL.whatsapp] || '-'),
+          'Código: ' + v[COL.codigo],
+          'ID do pagamento (Mercado Pago): ' + v[COL.paymentId],
+          'Planilha: ' + SpreadsheetApp.getActiveSpreadsheet().getUrl()].filter(function (x) { return x !== ''; }).join('\n')
+      );
+    } catch (erro) {
+      console.error('Falha no aviso à organizadora: ' + erro);
+    }
+    return;
+  }
 
   enviarEmailCliente({ nome: String(v[COL.nome]), email: email, codigo: String(v[COL.codigo]) });
   aba.getRange(numeroLinha, COL.emailEnviadoEm + 1).setValue(new Date());
@@ -508,6 +532,10 @@ function obterPropriedades() {
 function propriedade(chave, padrao) {
   const valor = PropertiesService.getScriptProperties().getProperty(chave);
   return valor === null || valor === '' ? padrao : valor;
+}
+
+function emailValido(email) {
+  return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(String(email || ''));
 }
 
 function limparTexto(valor, max) {
