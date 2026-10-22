@@ -21,3 +21,6 @@ dist-ssr
 *.sln
 *.sw?
 .env
+
+# Arquivos temporários de testes manuais (podem conter o SEGREDO)
+corpo.json

@@ -33,7 +33,7 @@ export const eventConfig = {
   ),
 
   organizerName: 'Organizadoras: Wirlla Dantas e Soraia Ferreira',
-  organizerContact: 'acoreagemderomper@gmail.com',
+  organizerContact: 'acoragemderomper@gmail.com',
   cancelPolicy,
 
   location:
@@ -82,7 +82,7 @@ export const eventConfig = {
     },
     {
       q: 'Posso pagar com Pix ou cartão?',
-      a: 'Sim! O pagamento é feito no ambiente seguro do Mercado Pago, onde você escolhe entre Pix (aprovação na hora) ou cartão. Depois de abrir o pagamento, você tem 30 minutos para concluí-lo.',
+      a: 'Sim! O pagamento é feito no ambiente seguro do Mercado Pago, onde você escolhe entre Pix (aprovação na hora) ou cartão de crédito, à vista ou em até 5x. Depois de abrir o pagamento, você tem 30 minutos para concluí-lo.',
     },
     {
       q: 'Paguei, mas não recebi o e-mail. O que faço?',

@@ -89,6 +89,8 @@ export default async function handler(req, res) {
     // Sem boleto: ele demora dias para compensar e a reserva dura 30 minutos
     payment_methods: {
       excluded_payment_types: [{ id: 'ticket' }],
+      // Cartão em no máximo 5 parcelas (à vista continua sem juros)
+      installments: 5,
     },
     metadata: { evento: 'romper-2026' },
   };

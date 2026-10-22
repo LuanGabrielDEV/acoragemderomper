@@ -47,7 +47,7 @@ da planilha, sem domínio e de graça. A planilha vira a lista oficial de inscri
 
 ## Fase 0 — O que ter em mãos
 
-- [ ] O **Gmail do evento** (`acoreagemderomper@gmail.com`), com verificação em duas etapas ativada
+- [ ] O **Gmail do evento** (`acoragemderomper@gmail.com`), com verificação em duas etapas ativada
 - [ ] **Endereço completo** do local
 - [ ] **Link do grupo do WhatsApp** do evento (Grupo > Convidar via link)
 - [ ] **WhatsApp de contato** das organizadoras (só dígitos, com 55 e DDD)
@@ -83,7 +83,7 @@ Clique na **engrenagem (Configurações do projeto)**. Em **Propriedades do scri
 |---|---|---|
 | `SEGREDO` | *(já criado no passo 1.2)* | não altere |
 | `VAGAS_TOTAL` | `30` | limite de inscrições |
-| `ORGANIZADORA_EMAIL` | `acoreagemderomper@gmail.com` | recebe o aviso de cada venda (pode ser o próprio e-mail do evento) |
+| `ORGANIZADORA_EMAIL` | `acoragemderomper@gmail.com` | recebe o aviso de cada venda (pode ser o próprio e-mail do evento) |
 | `EVENTO_NOME` | `Coragem para Romper e Recomeçar` | |
 | `EVENTO_DATA_TEXTO` | `Domingo, 22 de novembro de 2026` | como aparece no e-mail |
 | `EVENTO_HORARIO_TEXTO` | `Início às 14h (horário de Brasília)` | |

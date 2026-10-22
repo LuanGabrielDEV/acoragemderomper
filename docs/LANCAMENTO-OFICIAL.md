@@ -70,14 +70,12 @@ O que mudou:
 
 ## Parte 1 — Pendências de conteúdo (confirme antes de lançar)
 
-- [ ] **E-mail de contato** no rodapé: `acoreagemderomper@gmail.com`. A grafia "acor**e**agem" está
-      certa? Se o certo for `acoragemderomper`, corrija `organizerContact` em `src/data/eventConfig.ts`.
+- [x] **E-mail de contato** no rodapé: `acoragemderomper@gmail.com` (corrigido).
 - [ ] **Como será o encontro**: os 5 momentos atuais (Acolhida, Reflexão Guiada, Escrita & Restauração,
       Mesa Posta, A Decisão) são os definitivos? Ficam em `schedule`, em `eventConfig.ts`.
 - [ ] **Política de cancelamento**: "50% até 48h antes". Confirme com quem orienta vocês, porque compras
       online têm direito de arrependimento de 7 dias pelo CDC.
-- [ ] **Parcelamento**: hoje vai até várias vezes, com juros pagos pela compradora. Se quiserem limitar
-      (ex.: até 3x), é uma linha no código.
+- [x] **Parcelamento**: cartão à vista ou em até 5x (juros das parcelas pagos pela compradora).
 - [ ] **WhatsApp**: `5581985526701` está certo (botão flutuante, rodapé e página de agradecimento).
 
 Se mudar algo do código: `git add . && git commit -m "..." && git push`, e espere o deploy.
