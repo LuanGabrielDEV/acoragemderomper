@@ -64,7 +64,9 @@ export default async function handler(req, res) {
       {
         id: 'romper-2026',
         title: TITULO,
-        description: 'Inscrição individual no encontro presencial',
+        description: 'Inscrição individual · Encontro presencial em 22/11/2026, início às 14h',
+        // Arte do evento no resumo da página de pagamento
+        picture_url: `${config.siteUrl}/images/01.jpeg`,
         category_id: 'tickets',
         quantity: 1,
         currency_id: 'BRL',
