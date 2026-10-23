@@ -3,7 +3,8 @@
  * ------------------------
  * Roda na Vercel (servidor), nunca no navegador.
  *
- * 1. Valida nome, e-mail e WhatsApp enviados pela janela de inscrição.
+ * 1. Valida nome, e-mail, WhatsApp e CPF enviados pela janela de inscrição.
+ *    O CPF segue só para o Mercado Pago (antifraude), nunca para a planilha.
  * 2. Pede à planilha (Apps Script) uma reserva de vaga de 30 minutos.
  *    Se não houver vaga, responde "esgotado" ou "reservas_cheias".
  * 3. Cria o checkout no Mercado Pago com o PREÇO DEFINIDO AQUI (o navegador
@@ -42,7 +43,13 @@ export default async function handler(req, res) {
   // 1. Reserva na planilha
   let reserva;
   try {
-    reserva = await chamarPlanilha(config, { acao: 'reservar', ...dados });
+    // O CPF não vai para a planilha: só o Mercado Pago precisa dele
+    reserva = await chamarPlanilha(config, {
+      acao: 'reservar',
+      nome: dados.nome,
+      email: dados.email,
+      whatsapp: dados.whatsapp,
+    });
   } catch (erro) {
     console.error('criar-checkout: planilha indisponível -', erro.message);
     return res.status(502).json({ erro: 'indisponivel' });
@@ -156,11 +163,25 @@ function validar(corpo) {
   if (nome.length < 3 || nome.length > 120) return null;
   if (email.length > 200 || !/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)) return null;
   if (whatsapp.length < 10 || whatsapp.length > 13) return null;
-  return { nome, email, whatsapp };
+  const cpf = String(corpo.cpf || '').replace(/\D/g, '');
+  if (!cpfValido(cpf)) return null;
+  return { nome, email, whatsapp, cpf };
 }
 
-/** Nome, sobrenome, e-mail e telefone no formato que o Mercado Pago espera. */
-function montarPagador({ nome, email, whatsapp }) {
+/** Confere os dígitos verificadores do CPF (só números). */
+function cpfValido(d) {
+  if (d.length !== 11 || /^(\d)\1{10}$/.test(d)) return false;
+  const digito = (ate) => {
+    let soma = 0;
+    for (let i = 0; i < ate; i++) soma += Number(d[i]) * (ate + 1 - i);
+    const resto = (soma * 10) % 11;
+    return resto === 10 ? 0 : resto;
+  };
+  return digito(9) === Number(d[9]) && digito(10) === Number(d[10]);
+}
+
+/** Nome, sobrenome, e-mail, telefone e CPF no formato que o Mercado Pago espera. */
+function montarPagador({ nome, email, whatsapp, cpf }) {
   const partes = nome.split(' ');
   const primeiro = partes.shift() || nome;
   const sobrenome = partes.join(' ');
@@ -170,6 +191,7 @@ function montarPagador({ nome, email, whatsapp }) {
     name: primeiro,
     email,
     phone: { area_code: local.slice(0, 2), number: local.slice(2) },
+    identification: { type: 'CPF', number: cpf },
   };
   if (sobrenome) pagador.surname = sobrenome;
   return pagador;

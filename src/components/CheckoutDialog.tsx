@@ -8,6 +8,8 @@ import { ctaClasses } from '@/lib/cta';
 import { guardarInscricao, marcarTentativa, MINUTOS_ENTRE_TENTATIVAS, tentativaRecente } from '@/lib/inscricaoLocal';
 import {
   CheckoutError,
+  cpfValido,
+  formatarCpf,
   formatarWhatsapp,
   iniciarCheckout,
   normalizarWhatsapp,
@@ -58,7 +60,7 @@ const MENSAGENS: Record<ErroCheckout, string> = {
   esgotado: 'As vagas se esgotaram. Fale com a gente no WhatsApp para entrar na lista de espera.',
   reservas_cheias:
     'As últimas vagas estão reservadas por quem está pagando agora. Se alguma reserva não for concluída, ela é liberada em até 30 minutos. Tente de novo daqui a pouco.',
-  dados_invalidos: 'Confira o nome, o e-mail e o WhatsApp e tente de novo.',
+  dados_invalidos: 'Confira o nome, o e-mail, o WhatsApp e o CPF e tente de novo.',
   indisponivel: 'Não conseguimos abrir o pagamento agora. Tente de novo em instantes ou fale com a gente no WhatsApp.',
 };
 
@@ -68,6 +70,7 @@ function FormularioInscricao({ onFechar }: { onFechar: () => void }) {
   const [email, setEmail] = useState('');
   const [emailConfirmacao, setEmailConfirmacao] = useState('');
   const [whatsapp, setWhatsapp] = useState('');
+  const [cpf, setCpf] = useState('');
   const [enviando, setEnviando] = useState(false);
   const [erroCampo, setErroCampo] = useState('');
   const [erroServidor, setErroServidor] = useState<ErroCheckout | null>(null);
@@ -94,6 +97,7 @@ function FormularioInscricao({ onFechar }: { onFechar: () => void }) {
       return setErroCampo('Os dois e-mails estão diferentes. É nele que você recebe a confirmação.');
     }
     if (digitos.length < 10) return setErroCampo('Informe o WhatsApp com DDD.');
+    if (!cpfValido(cpf)) return setErroCampo('Confira o CPF. Ele precisa ser o da pessoa que vai pagar.');
     setErroCampo('');
 
     setEnviando(true);
@@ -102,6 +106,7 @@ function FormularioInscricao({ onFechar }: { onFechar: () => void }) {
         nome: nomeLimpo,
         email: emailLimpo,
         whatsapp: normalizarWhatsapp(digitos),
+        cpf: cpf.replace(/\D/g, ''),
       });
       // Mesma aba: depois do pagamento o Mercado Pago traz a pessoa de volta para /obrigado
       guardarInscricao({ nome: nomeLimpo, email: emailLimpo });
@@ -194,6 +199,23 @@ function FormularioInscricao({ onFechar }: { onFechar: () => void }) {
             required
           />
         </div>
+        <div>
+          <label htmlFor={`${id}-cpf`} className={rotulo}>CPF de quem vai pagar</label>
+          <input
+            id={`${id}-cpf`}
+            inputMode="numeric"
+            placeholder="000.000.000-00"
+            className={campo}
+            value={cpf}
+            onChange={(e) => setCpf(formatarCpf(e.target.value))}
+            autoComplete="off"
+            aria-describedby={`${id}-cpf-ajuda`}
+            required
+          />
+          <p id={`${id}-cpf-ajuda`} className="mt-1.5 text-xs leading-relaxed text-coffee-soft">
+            Enviado só ao Mercado Pago para a segurança do pagamento. Ajuda a aprovar o cartão.
+          </p>
+        </div>
       </div>
 
       <div aria-live="polite" className="mt-4 space-y-3">
@@ -253,7 +275,7 @@ function FormularioInscricao({ onFechar }: { onFechar: () => void }) {
       <p className="mt-4 flex items-start justify-center gap-2 text-center text-xs leading-relaxed text-coffee-soft">
         <Lock size={14} className="mt-0.5 flex-shrink-0" aria-hidden="true" />
         <span>
-          Pagamento seguro pelo Mercado Pago (Pix ou cartão). Seus dados são usados só para a sua inscrição e a
+          Pagamento seguro pelo Mercado Pago (Pix ou cartão). Seus dados são usados só para a sua inscrição, a segurança do pagamento e a
           comunicação sobre o evento. Ao continuar, você declara estar ciente da{' '}
           <a
             href={eventConfig.politicaUrl}
