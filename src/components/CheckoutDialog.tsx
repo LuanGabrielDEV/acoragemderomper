@@ -5,7 +5,7 @@ import { Loader2, Lock, MessageCircle, X } from 'lucide-react';
 import { eventConfig } from '@/data/eventConfig';
 import { CTAArrow } from '@/components/CTAButton';
 import { ctaClasses } from '@/lib/cta';
-import { guardarInscricao } from '@/lib/inscricaoLocal';
+import { guardarInscricao, marcarTentativa, MINUTOS_ENTRE_TENTATIVAS, tentativaRecente } from '@/lib/inscricaoLocal';
 import {
   CheckoutError,
   formatarWhatsapp,
@@ -72,6 +72,8 @@ function FormularioInscricao({ onFechar }: { onFechar: () => void }) {
   const [erroCampo, setErroCampo] = useState('');
   const [erroServidor, setErroServidor] = useState<ErroCheckout | null>(null);
   const primeiroCampo = useRef<HTMLInputElement>(null);
+  // Lido uma vez ao abrir a janela
+  const [recente] = useState(tentativaRecente);
 
   useEffect(() => {
     primeiroCampo.current?.focus();
@@ -103,6 +105,7 @@ function FormularioInscricao({ onFechar }: { onFechar: () => void }) {
       });
       // Mesma aba: depois do pagamento o Mercado Pago traz a pessoa de volta para /obrigado
       guardarInscricao({ nome: nomeLimpo, email: emailLimpo });
+      marcarTentativa();
       window.location.assign(url);
     } catch (erro) {
       setErroServidor(erro instanceof CheckoutError ? erro.codigo : 'indisponivel');
@@ -211,6 +214,17 @@ function FormularioInscricao({ onFechar }: { onFechar: () => void }) {
           </div>
         )}
       </div>
+
+      {recente && (
+        <div role="note" className="mt-6 rounded-xl bg-nude/60 px-4 py-3 text-sm leading-relaxed text-coffee">
+          <p className="font-semibold">Acabou de tentar pagar?</p>
+          <p className="mt-1">
+            Se o cartão foi recusado, prefira pagar com <strong className="font-semibold">Pix</strong>, que é aprovado
+            na hora. Para usar cartão de novo, espere cerca de {MINUTOS_ENTRE_TENTATIVAS} minutos ou use outro cartão:
+            tentativas seguidas com os mesmos dados costumam ser bloqueadas pela segurança do Mercado Pago.
+          </p>
+        </div>
+      )}
 
       <div className="mt-6 rounded-xl border border-terracota/30 bg-sand px-4 py-3 text-sm leading-relaxed text-coffee">
         Na confirmação do pagamento, aparecerá o nome cadastrado{' '}

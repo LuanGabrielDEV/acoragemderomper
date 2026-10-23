@@ -59,10 +59,14 @@ export default async function handler(req, res) {
   // 2. Checkout no Mercado Pago
   const agora = new Date();
   const expira = new Date(agora.getTime() + MINUTOS_PARA_PAGAR * 60000);
+  // Cada tentativa ganha um código próprio. Quando a mesma pessoa tenta de novo
+  // (mesma reserva), o antifraude do Mercado Pago não recebe dois pedidos
+  // idênticos seguidos, que ele costuma recusar como high_risk.
+  const tentativa = agora.getTime().toString(36);
   const preferencia = {
     items: [
       {
-        id: 'romper-2026',
+        id: `romper-2026-${tentativa}`,
         title: TITULO,
         description: 'Inscrição individual · Encontro presencial em 22/11/2026, início às 14h',
         // Arte do evento no resumo da página de pagamento
@@ -96,7 +100,7 @@ export default async function handler(req, res) {
       // Cartão em no máximo 5 parcelas (à vista continua sem juros)
       installments: 5,
     },
-    metadata: { evento: 'romper-2026' },
+    metadata: { evento: 'romper-2026', tentativa },
   };
 
   try {

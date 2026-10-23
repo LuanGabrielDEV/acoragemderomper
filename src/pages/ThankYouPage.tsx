@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { ArrowLeft, CheckCircle2, Clock, Mail, MessageCircle, RotateCcw } from 'lucide-react';
 import { eventConfig } from '@/data/eventConfig';
 import { CTAButton } from '@/components/CTAButton';
-import { lerInscricao } from '@/lib/inscricaoLocal';
+import { lerInscricao, marcarTentativa } from '@/lib/inscricaoLocal';
 
 /**
  * Página para onde o Mercado Pago devolve a pessoa depois do checkout.
@@ -39,7 +39,7 @@ const TEXTOS: Record<Situacao, { titulo: string; texto: string }> = {
   falhou: {
     titulo: 'O pagamento não foi concluído.',
     texto:
-      'Nenhum valor foi cobrado por esta tentativa. Você pode tentar de novo pela página do evento, com outro cartão ou com Pix. Se precisar, fale com a gente no WhatsApp.',
+      'Nenhum valor foi cobrado por esta tentativa. Para garantir sua vaga, pague com Pix, que é aprovado na hora. Se preferir cartão, espere cerca de 10 minutos ou use outro cartão: tentativas seguidas com os mesmos dados costumam ser bloqueadas pela segurança do Mercado Pago. Se precisar, fale com a gente no WhatsApp.',
   },
 };
 
@@ -54,6 +54,11 @@ export function ThankYouPage() {
       )
     : eventConfig.whatsappThankYou;
   const Icone = situacao === 'concluido' ? CheckCircle2 : situacao === 'pendente' ? Clock : RotateCcw;
+
+  useEffect(() => {
+    // Recusa: a janela de inscrição avisa antes de uma nova tentativa imediata
+    if (situacao === 'falhou') marcarTentativa();
+  }, [situacao]);
 
   useEffect(() => {
     const tituloAnterior = document.title;

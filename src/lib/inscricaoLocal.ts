@@ -5,6 +5,10 @@
  */
 
 const CHAVE = 'romper:inscricao';
+const CHAVE_TENTATIVA = 'romper:ultimaTentativa';
+
+/** Tempo sugerido de espera entre duas tentativas com cartão. */
+export const MINUTOS_ENTRE_TENTATIVAS = 10;
 
 export type InscricaoLocal = { nome: string; email: string };
 
@@ -28,4 +32,27 @@ export function lerInscricao(): InscricaoLocal | null {
     // ignora dados inválidos
   }
   return null;
+}
+
+/**
+ * Marca no navegador (localStorage, vale entre abas) que um pagamento acabou
+ * de ser aberto ou recusado. Serve só para avisar a pessoa antes de uma nova
+ * tentativa imediata, que o antifraude do Mercado Pago costuma bloquear.
+ */
+export function marcarTentativa() {
+  try {
+    localStorage.setItem(CHAVE_TENTATIVA, String(Date.now()));
+  } catch {
+    // sem armazenamento: apenas não mostra o aviso
+  }
+}
+
+/** true se houve uma tentativa nos últimos MINUTOS_ENTRE_TENTATIVAS minutos. */
+export function tentativaRecente(): boolean {
+  try {
+    const valor = Number(localStorage.getItem(CHAVE_TENTATIVA));
+    return Number.isFinite(valor) && valor > 0 && Date.now() - valor < MINUTOS_ENTRE_TENTATIVAS * 60000;
+  } catch {
+    return false;
+  }
 }

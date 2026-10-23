@@ -84,7 +84,7 @@ export const eventConfig = {
     },
     {
       q: 'Posso pagar com Pix ou cartão?',
-      a: 'Sim! O pagamento é feito no ambiente seguro do Mercado Pago, onde você escolhe entre Pix (aprovação na hora) ou cartão de crédito, à vista ou em até 5x. Depois de abrir o pagamento, você tem 30 minutos para concluí-lo.',
+      a: 'Sim! O pagamento é feito no ambiente seguro do Mercado Pago, onde você escolhe entre Pix (aprovação na hora) ou cartão de crédito, à vista ou em até 5x. Depois de abrir o pagamento, você tem 30 minutos para concluí-lo. Se o cartão for recusado, use o Pix ou espere alguns minutos antes de tentar de novo: tentativas seguidas com os mesmos dados costumam ser bloqueadas pela segurança do Mercado Pago.',
     },
     {
       q: 'Pagamento seguro — A Coragem de Romper',
