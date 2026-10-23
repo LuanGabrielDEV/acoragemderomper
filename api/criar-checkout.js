@@ -73,7 +73,9 @@ export default async function handler(req, res) {
         unit_price: config.preco,
       },
     ],
-    payer: { name: dados.nome, email: dados.email },
+    // Quanto mais dados da compradora, menor a chance de o antifraude do
+    // Mercado Pago recusar o cartão (cc_rejected_high_risk).
+    payer: montarPagador(dados),
     external_reference: reserva.referencia,
     notification_url: `${config.siteUrl}/api/webhook-mercadopago`,
     back_urls: {
@@ -151,6 +153,22 @@ function validar(corpo) {
   if (email.length > 200 || !/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)) return null;
   if (whatsapp.length < 10 || whatsapp.length > 13) return null;
   return { nome, email, whatsapp };
+}
+
+/** Nome, sobrenome, e-mail e telefone no formato que o Mercado Pago espera. */
+function montarPagador({ nome, email, whatsapp }) {
+  const partes = nome.split(' ');
+  const primeiro = partes.shift() || nome;
+  const sobrenome = partes.join(' ');
+  // whatsapp chega só com dígitos, com ou sem o 55 do Brasil
+  const local = whatsapp.length > 11 && whatsapp.startsWith('55') ? whatsapp.slice(2) : whatsapp;
+  const pagador = {
+    name: primeiro,
+    email,
+    phone: { area_code: local.slice(0, 2), number: local.slice(2) },
+  };
+  if (sobrenome) pagador.surname = sobrenome;
+  return pagador;
 }
 
 /** Chama o Apps Script. Ele responde com um redirecionamento, que o fetch segue sozinho. */

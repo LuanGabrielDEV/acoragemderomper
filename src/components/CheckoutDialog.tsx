@@ -212,10 +212,16 @@ function FormularioInscricao({ onFechar }: { onFechar: () => void }) {
         )}
       </div>
 
+      <div className="mt-6 rounded-xl border border-terracota/30 bg-sand px-4 py-3 text-sm leading-relaxed text-coffee">
+        Na confirmação do pagamento, aparecerá o nome cadastrado{' '}
+        <strong className="font-semibold">Luan Gabriel Dantas de Lima Cavalcanti</strong>, responsável pelo
+        recebimento dos pagamentos.
+      </div>
+
       <button
         type="submit"
         disabled={enviando}
-        className={ctaClasses('primary', 'mt-6 w-full disabled:cursor-wait disabled:opacity-80 disabled:hover:scale-100')}
+        className={ctaClasses('primary', 'mt-4 w-full disabled:cursor-wait disabled:opacity-80 disabled:hover:scale-100')}
       >
         {enviando ? (
           <>
