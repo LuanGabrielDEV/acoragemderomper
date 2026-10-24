@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { LandingPage } from '@/pages/LandingPage';
 import { ThankYouPage } from '@/pages/ThankYouPage';
 import { PoliticaPage } from '@/pages/PoliticaPage';
+import { Analytics } from "@vercel/analytics/react";
 
 function useRoute() {
   const [route, setRoute] = useState(() => window.location.pathname);
