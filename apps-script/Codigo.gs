@@ -38,7 +38,7 @@ const CABECALHO = [
   'Pago em',           // K
   'Código',            // L
   'E-mail enviado em', // M
-  'Check-in',          // N  (marque na portaria)
+  'Check-in',          // N  
   'Observações',       // O
 ];
 
