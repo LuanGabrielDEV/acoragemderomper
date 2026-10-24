@@ -5,7 +5,7 @@ Site oficial do encontro presencial **Coragem para Romper e Recomeçar**, uma ex
 
 O site não é só uma página de divulgação. É um **sistema de inscrição completo e automático**. A pessoa se inscreve, paga com Pix ou cartão, recebe a confirmação por e-mail e entra no grupo do WhatsApp. A organização acompanha tudo numa planilha Google, sem precisar fazer nada à mão.
 
-🔗 **Site no ar:** https://projeto-romper-green.vercel.app
+🔗 **Site no ar:** https://acoragempararomper.vercel.app
 
 ---
 

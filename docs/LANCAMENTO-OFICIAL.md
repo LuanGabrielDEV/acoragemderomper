@@ -64,7 +64,7 @@ O que mudou:
    git push
    ```
 5. ✅ Vercel > **Deployments**: o deploy de Production "Current" mostra esse commit e está **Ready**.
-   Abra `https://projeto-romper-green.vercel.app` e confira "Início às 14h" no topo.
+   Abra `https://acoragempararomper.vercel.app` e confira "Início às 14h" no topo.
 
 ---
 
@@ -123,7 +123,7 @@ Engrenagem > **Propriedades do script**:
 | `LINK_GRUPO_WHATSAPP` | link oficial do grupo do evento |
 | `WHATSAPP_CONTATO` | `5581985526701` |
 | `NOME_REMETENTE` | `Coragem para Romper e Recomeçar` |
-| `POLITICA_CANCELAMENTO` | resumo da política + `Política completa: https://projeto-romper-green.vercel.app/politica` |
+| `POLITICA_CANCELAMENTO` | resumo da política + `Política completa: https://acoragempararomper.vercel.app/politica` |
 
 `EVENTO_DURACAO_MIN` agora é opcional e pode ser apagado. Ele só define o fim do lembrete na agenda do
 Google e não aparece no e-mail. Sem ele, o lembrete marca 90 minutos.
@@ -147,7 +147,7 @@ Na **conta real** que vai receber o dinheiro:
    aparece no checkout.
 2. **Credenciais de produção**: [mercadopago.com.br/developers](https://www.mercadopago.com.br/developers) >
    **Suas integrações** > aplicação **Romper site** > **Credenciais de produção** > **Ativar**. Preencha
-   ramo e site (`https://projeto-romper-green.vercel.app`) e aceite os termos.
+   ramo e site (`https://acoragempararomper.vercel.app`) e aceite os termos.
 3. Copie o **Access Token de produção** (começa com `APP_USR-` e é **diferente** do de teste).
    Cole direto na Vercel no passo seguinte e não mande para ninguém.
 
@@ -163,12 +163,12 @@ Vercel > projeto **coragem-para-romper** > **Settings > Environment Variables** 
 | `PLANILHA_SEGREDO` | **SEGREDO novo** (Parte 2.3) |
 | `PLANILHA_URL` | só se criou planilha nova (2.2): a URL `/exec` nova |
 | `PRECO_REAIS` | **`1.00`** (só para o teste) |
-| `SITE_URL` | `https://projeto-romper-green.vercel.app` (já está) |
+| `SITE_URL` | `https://acoragempararomper.vercel.app` (já está) |
 | `VENDAS_ABERTAS` | `true` (já está) |
 
 **Deployments > ⋯ > Redeploy.**
 
-✅ `https://projeto-romper-green.vercel.app/api/webhook-mercadopago` mostra `{"ok":true}`.
+✅ `https://acoragempararomper.vercel.app/api/webhook-mercadopago` mostra `{"ok":true}`.
 
 ---
 
@@ -183,7 +183,7 @@ Cuidados para o pagamento não ser recusado:
 - O site continua mostrando "R$ 59,00", mas o Mercado Pago cobra R$ 1,00. Isso é esperado durante o teste.
 
 ### 5.1 Pix
-1. Janela anônima > `https://projeto-romper-green.vercel.app` > **Garantir minha vaga**. Use o seu e-mail real.
+1. Janela anônima > `https://acoragempararomper.vercel.app` > **Garantir minha vaga**. Use o seu e-mail real.
 2. No checkout, escolha **Pix** e pague **R$ 1,00** pelo app do seu banco.
 3. Volte ao site. Se não voltar sozinho, toque em "Voltar ao site" no Mercado Pago.
 4. ✅ Em até 2 minutos, **sem fazer nada**:
@@ -220,7 +220,7 @@ Mercado Pago > **Atividade** > cada pagamento de R$ 1 > **Devolver dinheiro**.
 ## Parte 7 — Divulgação
 
 ### Antes de divulgar
-- [ ] **Prévia do link**: mande `https://projeto-romper-green.vercel.app` para você mesmo no WhatsApp.
+- [ ] **Prévia do link**: mande `https://acoragempararomper.vercel.app` para você mesmo no WhatsApp.
       ✅ Aparecem a foto, o título e a descrição. Se aparecer uma prévia antiga, envie com `?v=2` no final.
 - [ ] Abra o site **pelo Instagram** (Direct ou link na bio) e faça o caminho até a tela do Mercado Pago.
 - [ ] Documento **Como funciona o site do Romper** compartilhado com as organizadoras.

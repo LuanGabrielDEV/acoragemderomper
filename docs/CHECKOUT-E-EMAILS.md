@@ -92,7 +92,7 @@ Clique na **engrenagem (Configurações do projeto)**. Em **Propriedades do scri
 | `LINK_GRUPO_WHATSAPP` | `https://chat.whatsapp.com/...` | |
 | `WHATSAPP_CONTATO` | `5581999999999` | só dígitos |
 | `NOME_REMETENTE` | `Coragem para Romper e Recomeçar` | nome que aparece como remetente |
-| `POLITICA_CANCELAMENTO` | resumo da política + `Política completa: https://projeto-romper-green.vercel.app/politica` | aparece no e-mail |
+| `POLITICA_CANCELAMENTO` | resumo da política + `Política completa: https://acoragempararomper.vercel.app/politica` | aparece no e-mail |
 
 Clique em **Salvar propriedades do script**.
 
@@ -190,7 +190,7 @@ Preview, se quiser testar pela branch):
 | Nome | Valor |
 |---|---|
 | `MP_ACCESS_TOKEN` | Access Token do Mercado Pago (Fase 2) |
-| `SITE_URL` | endereço do site, com `https://` e **sem barra no final** (ex.: `https://projeto-romper.vercel.app`) |
+| `SITE_URL` | endereço do site, com `https://` e **sem barra no final** (ex.: `https://acoragempararomper.vercel.app`) |
 | `PLANILHA_URL` | URL `/exec` do Apps Script (Fase 1.5) |
 | `PLANILHA_SEGREDO` | o SEGREDO (Fase 1.2) |
 | `PRECO_REAIS` | `59.00` |

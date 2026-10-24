@@ -9,7 +9,7 @@ Roteiro em 4 partes, para fazer **na ordem**:
 | **C. Limpeza** | Apagar os testes e colocar os dados reais do evento | Não |
 | **D. Produção** | Token oficial, uma compra real de R$ 1 reembolsada, e lançamento | Sim, R$ 1 (devolvido) |
 
-**Ideia central:** a simulação usa o **mesmo endereço do site** (`https://projeto-romper.vercel.app`
+**Ideia central:** a simulação usa o **mesmo endereço do site** (`https://acoragempararomper.vercel.app`
 ou o que a Vercel te deu) com as **variáveis de teste**. Para lançar, você só **troca o token** e
 **publica de novo**. Não é preciso mexer no código entre a simulação e a produção.
 
@@ -46,7 +46,7 @@ ou o que a Vercel te deu) com as **variáveis de teste**. Para lançar, você s�
 1. No GitHub, faça o **merge** do Pull Request `checkout-mercadopago` para `main`. Se ainda não fez,
    antes atualize a linha do `init_point` (veja o quadro abaixo).
 2. Na Vercel, abra o projeto e espere o deploy da `main` ficar **Ready**.
-3. Anote o **endereço de produção**: na Vercel, projeto > **Domains** (ex.: `projeto-romper.vercel.app`).
+3. Anote o **endereço de produção**: na Vercel, projeto > **Domains** (ex.: `acoragempararomper.vercel.app`).
    Esse é o seu `SITE_URL`, com `https://` e sem barra no final.
 4. Confira: abra `https://SEU-SITE/api/webhook-mercadopago`. Deve aparecer `{"ok":true}`.
 
