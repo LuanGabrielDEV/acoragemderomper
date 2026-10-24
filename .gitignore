@@ -24,3 +24,5 @@ dist-ssr
 
 # Arquivos temporários de testes manuais (podem conter o SEGREDO)
 corpo.json
+
+docs/
