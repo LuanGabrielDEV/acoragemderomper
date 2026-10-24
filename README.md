@@ -124,14 +124,6 @@ As funções da pasta `api/` só rodam na Vercel. Localmente o site abre normalm
 
 ---
 
-## Documentação
-
-- [docs/CHECKOUT-E-EMAILS.md](docs/CHECKOUT-E-EMAILS.md): como configurar o Mercado Pago, a planilha e os e-mails.
-- [docs/SIMULACAO-E-LANCAMENTO.md](docs/SIMULACAO-E-LANCAMENTO.md): testes com credenciais de teste e passagem para produção.
-- [docs/LANCAMENTO-OFICIAL.md](docs/LANCAMENTO-OFICIAL.md): checklist do dia do lançamento.
-
----
-
 ## Contato
 
 - E-mail do evento: acoragemderomper@gmail.com
