@@ -20,7 +20,7 @@ export function Details() {
             Detalhes do encontro
           </h2>
           <p className="mt-4 text-center text-coffee-soft text-base sm:text-lg max-w-xl mx-auto">
-            Um encontro presencial, intimista e cuidadoso — pensado para poucas mulheres.
+            Um encontro presencial com no máximo 30 mulheres.
           </p>
         </Reveal>
 
@@ -37,7 +37,7 @@ export function Details() {
               <div className="absolute inset-0 bg-gradient-to-t from-coffee/60 to-transparent" />
               <div className="absolute bottom-4 left-5 sm:bottom-5 sm:left-6">
                 <span className="inline-flex items-center gap-2 rounded-full bg-cream/95 px-3 py-1.5 text-xs font-semibold text-terracota sm:px-4 sm:py-2 sm:text-sm">
-                  <MapPin size={15} className="flex-shrink-0" /> Encontro presencial intimista
+                  <MapPin size={15} className="flex-shrink-0" /> Encontro presencial
                 </span>
               </div>
             </div>
@@ -67,7 +67,7 @@ export function Details() {
         <Reveal delay={300}>
           <div className="mt-10 text-center sm:mt-12">
             <CheckoutButton className="w-full justify-center text-base sm:w-auto sm:text-lg">
-              Garantir minha vaga — {eventConfig.price}
+              Garantir minha vaga por {eventConfig.price}
             </CheckoutButton>
           </div>
         </Reveal>

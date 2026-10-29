@@ -9,9 +9,9 @@ const wa = (texto?: string) =>
 
 export const eventConfig = {
   eventName: 'Coragem para Romper e Recomeçar',
-  tagline: 'Uma experiência de despertar e decisão',
+  tagline: 'Um encontro para decidir o próximo passo',
   subtitle:
-    'Uma experiência exclusiva para mulheres que decidiram não deixar o medo escolher o próximo capítulo.',
+    'Um encontro para mulheres que querem parar de adiar uma decisão e dar o primeiro passo, com acolhimento e companhia.',
 
   // ⬇️ Dados exibidos no site. A data, o horário e o endereço que vão no
   //    E-MAIL de confirmação ficam nas Propriedades do Apps Script.
@@ -39,7 +39,7 @@ export const eventConfig = {
   politicaUrl: '/politica',
 
   location:
-    'Salão de eventos — o endereço completo chega no seu e-mail logo após a confirmação do pagamento',
+    'Salão de eventos. O endereço completo chega no seu e-mail logo após a confirmação do pagamento.',
 
   schedule: [
     { time: 'Abertura', title: 'Acolhida', desc: 'Chegada, silêncio e presença. Um espaço para deixar o mundo lá fora.' },

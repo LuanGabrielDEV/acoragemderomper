@@ -1,10 +1,12 @@
 import { Heart, Sparkles } from 'lucide-react';
 import { Reveal } from '@/components/Reveal';
 import { SectionHeading } from '@/components/SectionHeading';
+import { Ornamentos } from '@/components/Ornamentos';
 
 export function Organizers() {
   return (
-    <section className="overflow-hidden bg-cream py-20 sm:py-32 bg-grain">
+    <section className="relative isolate overflow-hidden bg-cream py-20 sm:py-32 bg-grain">
+      <Ornamentos tom="oliva" />
       <div className="mx-auto grid max-w-6xl items-center gap-10 px-5 sm:gap-12 sm:px-8 lg:grid-cols-[0.92fr_1.08fr] lg:gap-20">
         <Reveal>
           <div className="relative mx-auto max-w-sm sm:max-w-md">
@@ -19,17 +21,16 @@ export function Organizers() {
             </div>
             <div className="absolute -bottom-4 right-3 flex items-center gap-2 rounded-xl bg-terracota px-4 py-2.5 text-cream shadow-soft sm:-right-8 sm:rounded-2xl sm:px-5 sm:py-3">
               <Heart size={16} fill="currentColor" className="flex-shrink-0 sm:!h-[17px] sm:!w-[17px]" />
-              <span className="text-xs font-semibold sm:text-sm">Duas mulheres, uma travessia</span>
+              <span className="text-xs font-semibold sm:text-sm">Wirlla e Soraia</span>
             </div>
           </div>
         </Reveal>
 
         <Reveal delay={140}>
-          <SectionHeading eyebrow="Quem conduz esta experiência" title="Duas vozes para acompanhar o seu recomeço" align="left">
+          <SectionHeading eyebrow="Quem conduz esta experiência" title="Quem recebe você no encontro" align="left">
             <p>
-              Este encontro nasceu do desejo de criar uma pausa verdadeira: um espaço de escuta,
-              reflexão e movimento, conduzido com acolhimento por quem também acredita na potência
-              de uma decisão corajosa.
+              Wirlla e Soraia criaram este encontro para dar às mulheres uma pausa: um tempo para
+              escutar, refletir e decidir o que vem depois.
             </p>
           </SectionHeading>
 

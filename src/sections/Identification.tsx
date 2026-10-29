@@ -1,28 +1,30 @@
 import { Sparkles, Heart, Footprints } from 'lucide-react';
 import { SectionHeading } from '@/components/SectionHeading';
 import { Reveal } from '@/components/Reveal';
+import { Ornamentos } from '@/components/Ornamentos';
 
 const topics = [
   {
     icon: Sparkles,
     title: 'Romper',
-    text: 'Com crenças e ciclos que te mantêm paralisada, repetindo o mesmo capítulo.',
+    text: 'Olhar para as crenças e os ciclos que te mantêm no mesmo lugar.',
   },
   {
     icon: Heart,
     title: 'Restaurar',
-    text: 'A sua verdadeira identidade com clareza e consciência — quem você é sob o medo.',
+    text: 'Reencontrar quem você é, sem o peso do medo.',
   },
   {
     icon: Footprints,
     title: 'Decidir',
-    text: 'Com coragem o seu próximo passo concreto, o movimento que muda a direção.',
+    text: 'Escolher o seu próximo passo e sair com ele definido.',
   },
 ];
 
 export function Identification() {
   return (
-    <section className="bg-cream py-20 sm:py-32 bg-grain">
+    <section className="relative isolate overflow-hidden bg-cream py-20 sm:py-32 bg-grain">
+      <Ornamentos />
       <div className="mx-auto max-w-5xl px-5 sm:px-8">
         <Reveal>
           <SectionHeading eyebrow="Para quem é este encontro">
@@ -44,11 +46,6 @@ export function Identification() {
           ))}
         </div>
 
-        <Reveal delay={200}>
-          <p className="mx-auto mt-12 max-w-2xl text-center font-serif text-xl italic text-terracota leading-relaxed sm:mt-16 sm:text-2xl">
-            Existe algo novo do outro lado — e você tem coragem para atravessar.
-          </p>
-        </Reveal>
       </div>
     </section>
   );

@@ -21,26 +21,26 @@ export function FinalCTA() {
       <div className="relative z-10 mx-auto max-w-2xl px-5 sm:px-8 text-center">
         <Reveal>
           <p className="font-body text-xs font-semibold uppercase tracking-[0.2em] text-nude mb-4 sm:mb-5 sm:text-sm">
-            O próximo capítulo começa com um passo
+            22/11, às 14h
           </p>
         </Reveal>
 
         <Reveal delay={120}>
           <h2 className="font-serif text-2xl leading-tight sm:text-5xl text-cream text-balance">
-            Se o medo não fosse o narrador, qual seria a sua próxima decisão?
+            Qual decisão você vem adiando por medo?
           </h2>
         </Reveal>
 
         <Reveal delay={240}>
           <p className="mt-5 text-base sm:mt-6 sm:text-lg text-cream/80 leading-relaxed">
-            Reserve o seu lugar nesta travessia. Vagas limitadas a {eventConfig.spots}.
+            Vagas limitadas a {eventConfig.spots}. Garanta a sua e receba a confirmação por e-mail.
           </p>
         </Reveal>
 
         <Reveal delay={360}>
           <div className="mt-8 flex flex-col items-center gap-5 sm:mt-10">
             <CheckoutButton className="w-full justify-center text-base sm:w-auto sm:text-lg sm:px-10 sm:py-5">
-              Garantir minha vaga — {eventConfig.price}
+              Garantir minha vaga por {eventConfig.price}
             </CheckoutButton>
 
             <a

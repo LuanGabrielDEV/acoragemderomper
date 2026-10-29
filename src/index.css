@@ -43,7 +43,103 @@
   50% { transform: translateY(-8px); }
 }
 
+@keyframes palavra-sobe {
+  0% { transform: translateY(108%); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+@keyframes hero-zoom {
+  0% { transform: scale(1.12); }
+  100% { transform: scale(1); }
+}
+@keyframes entra-esq {
+  0% { opacity: 0; transform: translateX(-36px); }
+  100% { opacity: 1; transform: translateX(0); }
+}
+@keyframes entra-dir {
+  0% { opacity: 0; transform: translateX(36px); }
+  100% { opacity: 1; transform: translateX(0); }
+}
+@keyframes pop {
+  0% { opacity: 0; transform: scale(0.4); }
+  60% { opacity: 1; transform: scale(1.12); }
+  100% { opacity: 1; transform: scale(1); }
+}
+@keyframes orn-a {
+  100% { transform: translate3d(6rem, 4rem, 0) scale(1.15); }
+}
+@keyframes orn-b {
+  100% { transform: translate3d(-5rem, -4rem, 0) scale(1.1); }
+}
+
 @layer utilities {
+  /* Texto do topo aparecendo palavra por palavra */
+  .palavra-wrap {
+    display: inline-block;
+    overflow: hidden;
+    vertical-align: bottom;
+    padding-bottom: 0.14em;
+    margin-bottom: -0.14em;
+  }
+  .palavra {
+    display: inline-block;
+    animation: palavra-sobe 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+  }
+  .hero-zoom {
+    animation: hero-zoom 1.8s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+  }
+
+  /* Manchas de cor ao fundo das seções */
+  .orn {
+    position: absolute;
+    border-radius: 9999px;
+    will-change: transform;
+  }
+  .orn-terracota {
+    background: radial-gradient(closest-side, rgba(200, 125, 85, 0.2), rgba(200, 125, 85, 0));
+  }
+  .orn-oliva {
+    background: radial-gradient(closest-side, rgba(138, 154, 134, 0.24), rgba(138, 154, 134, 0));
+  }
+  .orn-a {
+    width: 28rem;
+    height: 28rem;
+    top: -6rem;
+    left: -8rem;
+    animation: orn-a 22s ease-in-out infinite alternate;
+  }
+  .orn-b {
+    width: 32rem;
+    height: 32rem;
+    bottom: -10rem;
+    right: -10rem;
+    animation: orn-b 28s ease-in-out infinite alternate;
+  }
+
+  /* Cronograma: linha que se desenha, números que "pulam" e cards que entram de lado */
+  .tl-fill {
+    transform-origin: top;
+    transform: scaleY(0);
+    will-change: transform;
+  }
+  .tl-dot-inner,
+  .tl-card {
+    opacity: 0;
+  }
+  .is-visible .tl-dot-inner {
+    animation: pop 0.6s cubic-bezier(0.2, 0.9, 0.3, 1.2) 0.05s both;
+  }
+  .is-visible .tl-card {
+    animation: fade-up 0.7s ease-out 0.12s both;
+  }
+  @media (min-width: 640px) {
+    .tl-esq.is-visible .tl-card {
+      animation-name: entra-esq;
+    }
+    .tl-dir.is-visible .tl-card {
+      animation-name: entra-dir;
+    }
+  }
+
   .reveal {
     opacity: 0;
   }
@@ -61,5 +157,27 @@
   .bg-grain {
     background-image: radial-gradient(rgba(61, 44, 36, 0.025) 1px, transparent 1px);
     background-size: 22px 22px;
+  }
+}
+
+/* Quem pediu "reduzir movimento" no aparelho vê tudo parado e já visível. */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .palavra,
+  .hero-zoom,
+  .orn,
+  .reveal.is-visible,
+  .is-visible .tl-dot-inner,
+  .is-visible .tl-card,
+  .animate-float-slow {
+    animation: none !important;
+  }
+  .palavra,
+  .tl-dot-inner,
+  .tl-card {
+    opacity: 1;
+    transform: none;
   }
 }

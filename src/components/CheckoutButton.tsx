@@ -24,7 +24,7 @@ export function CheckoutButton({
         rel="noopener noreferrer"
         className={ctaClasses('olive', className)}
       >
-        <span>Vagas esgotadas — entrar na lista de espera</span>
+        <span>Vagas esgotadas: entrar na lista de espera</span>
         <CTAArrow />
       </a>
     );
