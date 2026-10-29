@@ -6,16 +6,16 @@ import { Reveal } from '@/components/Reveal';
 export function FinalCTA() {
   return (
     <section className="relative overflow-hidden bg-coffee py-20 sm:py-32">
-      {/* Background image */}
-      <div className="absolute inset-0">
+      {/* Logo clara e translúcida ao fundo */}
+      <div className="absolute inset-0 flex items-center justify-center" aria-hidden="true">
         <img
-          src="/images/01.jpeg"
+          src="/images/logo-romper.webp"
           alt=""
-          aria-hidden="true"
-          className="h-full w-full object-cover opacity-25"
+          width={1952}
+          height={1449}
+          className="silhueta-clara w-[78%] max-w-3xl object-contain opacity-[0.05]"
           loading="lazy"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-coffee via-coffee/80 to-coffee/60" />
       </div>
 
       <div className="relative z-10 mx-auto max-w-2xl px-5 sm:px-8 text-center">

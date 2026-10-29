@@ -8,13 +8,16 @@ const iconMap = { Sparkles, PenLine, HeartHandshake, Flower2 };
 export function Experience() {
   return (
     <section className="relative bg-sand py-20 sm:py-32 overflow-hidden">
-      {/* Decorative image strip */}
-      <div className="absolute right-0 top-0 h-72 w-72 hidden lg:block opacity-[0.18]">
+      {/* Logo discreta ao fundo */}
+      <div className="absolute right-0 top-0 hidden h-80 w-80 p-8 opacity-[0.13] lg:block">
         <img
-          src="/images/01.jpeg"
+          src="/images/logo-romper.webp"
           alt=""
-          className="h-full w-full object-cover rounded-bl-[5rem]"
+          width={1952}
+          height={1449}
+          className="h-full w-full object-contain"
           aria-hidden="true"
+          loading="lazy"
         />
       </div>
 

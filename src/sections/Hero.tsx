@@ -69,11 +69,13 @@ export function Hero() {
         <Reveal delay={180} className="relative order-1 lg:order-2 lg:justify-self-end">
           <div ref={imagemRef} className="relative mx-auto max-w-[420px] will-change-transform sm:max-w-[560px]">
             <div className="absolute -inset-2 rounded-[1.75rem] border border-terracota/20 sm:-inset-5 sm:rounded-[2rem]" />
-            <div className="relative overflow-hidden rounded-[1.5rem] bg-cream shadow-soft-lg sm:rounded-[1.75rem]">
+            <div className="relative overflow-hidden rounded-[1.5rem] bg-gradient-to-b from-[#FFF6EE] to-[#F6E1CE] shadow-soft-lg sm:rounded-[1.75rem]">
               <img
-                src="/images/01.jpeg"
-                alt="Arte de divulgação do evento Romper, com uma porta aberta para um novo caminho"
-                className="hero-zoom aspect-[4/5] w-full object-cover sm:aspect-square"
+                src="/images/logo-romper.webp"
+                alt="Logo do Romper: um R dentro de um círculo, com uma porta aberta e um ramo de folhas"
+                width={1952}
+                height={1449}
+                className="hero-zoom aspect-[4/5] w-full object-contain p-6 sm:aspect-square sm:p-10"
                 loading="eager"
               />
             </div>

@@ -151,6 +151,10 @@
   .no-js .reveal {
     opacity: 1;
   }
+  /* Deixa a logo toda branca (usada como marca d'água em fundo escuro) */
+  .silhueta-clara {
+    filter: brightness(0) invert(1);
+  }
   .text-balance {
     text-wrap: balance;
   }

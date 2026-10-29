@@ -77,7 +77,7 @@ export default async function handler(req, res) {
         title: TITULO,
         description: 'Inscrição individual · Encontro presencial em 22/11/2026, início às 14h',
         // Arte do evento no resumo da página de pagamento
-        picture_url: `${config.siteUrl}/images/01.jpeg`,
+        picture_url: `${config.siteUrl}/images/romper-quadrada.jpg`,
         category_id: 'tickets',
         quantity: 1,
         currency_id: 'BRL',
