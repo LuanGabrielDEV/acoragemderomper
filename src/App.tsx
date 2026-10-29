@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { LandingPage } from '@/pages/LandingPage';
 import { ThankYouPage } from '@/pages/ThankYouPage';
 import { PoliticaPage } from '@/pages/PoliticaPage';
-import { Analytics } from "@vercel/analytics/react";
+import { Analytics } from '@vercel/analytics/react';
 
 function useRoute() {
   const [route, setRoute] = useState(() => window.location.pathname);
@@ -20,9 +20,17 @@ function App() {
   const route = useRoute();
   const caminho = route.trim().toLowerCase().replace(/\/$/, '');
 
-  if (caminho === '/obrigado') return <ThankYouPage />;
-  if (caminho === '/politica') return <PoliticaPage />;
-  return <LandingPage />;
+  let pagina = <LandingPage />;
+  if (caminho === '/obrigado') pagina = <ThankYouPage />;
+  else if (caminho === '/politica') pagina = <PoliticaPage />;
+
+  return (
+    <>
+      {pagina}
+      {/* Estatísticas de visitas da Vercel (Web Analytics) */}
+      <Analytics />
+    </>
+  );
 }
 
 export default App;
