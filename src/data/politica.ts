@@ -3,9 +3,9 @@
  * Exibida na página /politica. Para alterar, edite os textos abaixo.
  */
 export const politica = {
-  titulo: 'Política de Compra, Cancelamento e Reembolso - Evento A Coragem de Romper',
+  titulo: 'Política de Compra, Cancelamento e Reembolso - Evento A Coragem para Romper e Recomeçar',
   introducao:
-    'Ao adquirir seu ingresso para o evento A Coragem de Romper, a participante declara estar ciente das condições de compra, cancelamento e reembolso descritas abaixo, sem prejuízo dos direitos garantidos pela legislação brasileira.',
+    'Ao adquirir seu ingresso para o evento A Coragem para Romper e Recomeçar, a participante declara estar ciente das condições de compra, cancelamento e reembolso descritas abaixo, sem prejuízo dos direitos garantidos pela legislação brasileira.',
   secoes: [
     {
       titulo: 'Direito de arrependimento',

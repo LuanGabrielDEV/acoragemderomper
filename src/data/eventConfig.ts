@@ -81,8 +81,8 @@ export const eventConfig = {
       a: 'Sim! O pagamento é feito no ambiente seguro do Mercado Pago, onde você escolhe entre Pix (aprovação na hora) ou cartão de crédito, à vista ou em até 5x. Depois de abrir o pagamento, você tem 30 minutos para concluí-lo. Se o cartão for recusado, use o Pix ou espere alguns minutos antes de tentar de novo: tentativas seguidas com os mesmos dados costumam ser bloqueadas pela segurança do Mercado Pago.',
     },
     {
-      q: 'Pagamento seguro — A Coragem de Romper',
-      a: 'Sua inscrição está sendo realizada para o evento A Coragem de Romper.\n\nNa confirmação do pagamento, poderá aparecer o nome cadastrado Luan Gabriel Dantas de Lima Cavalcanti, responsável pelo recebimento.\n\nAntes de confirmar o Pix, confira os dados do recebedor. Em caso de dúvida, entre em contato conosco pelo canal oficial de atendimento informado nesta página.',
+      q: 'Pagamento seguro — A Coragem para Romper e Recomeçar',
+      a: 'Sua inscrição está sendo realizada para o evento A Coragem para Romper e Recomeçar.\n\nNa confirmação do pagamento, poderá aparecer o nome cadastrado Luan Gabriel Dantas de Lima Cavalcanti, responsável pelo recebimento.\n\nAntes de confirmar o Pix, confira os dados do recebedor. Em caso de dúvida, entre em contato conosco pelo canal oficial de atendimento informado nesta página.',
       link: { href: wa('Olá! Quero confirmar os dados do pagamento do evento antes de pagar.'), texto: 'Falar no WhatsApp oficial' },
     },
     {
