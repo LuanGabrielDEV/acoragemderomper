@@ -9,10 +9,12 @@ import { FinalCTA } from '@/sections/FinalCTA';
 import { Footer } from '@/sections/Footer';
 import { WhatsAppFloat } from '@/components/WhatsAppFloat';
 import { CheckoutProvider } from '@/components/CheckoutDialog';
+import { AvisoPagamento } from '@/components/AvisoPagamento';
 
 export function LandingPage() {
   return (
     <CheckoutProvider>
+      <AvisoPagamento />
       <Hero />
       <Identification />
       <Experience />

@@ -94,7 +94,9 @@ export default async function handler(req, res) {
       pending: `${config.siteUrl}/obrigado?situacao=pendente`,
       failure: `${config.siteUrl}/obrigado?situacao=falhou`,
     },
-    auto_return: 'approved',
+    // 'all': o Mercado Pago devolve a pessoa ao site também quando o pagamento
+    // fica pendente (Pix) ou é recusado, e não só quando é aprovado.
+    auto_return: 'all',
     statement_descriptor: 'ROMPER',
     // O link de pagamento vale só enquanto a vaga está reservada
     expires: true,
@@ -128,7 +130,8 @@ export default async function handler(req, res) {
     }
     // Credenciais antigas de teste (começam com TEST-) usam o link de sandbox
     const url = config.mpToken.startsWith('TEST-') && corpo.sandbox_init_point ? corpo.sandbox_init_point : corpo.init_point;
-    return res.status(200).json({ url });
+    // A referência deixa a página /obrigado perguntar ao servidor se o pagamento já foi confirmado
+    return res.status(200).json({ url, referencia: reserva.referencia });
   } catch (erro) {
     console.error('criar-checkout: falha ao falar com o Mercado Pago -', erro.message);
     return res.status(502).json({ erro: 'indisponivel' });

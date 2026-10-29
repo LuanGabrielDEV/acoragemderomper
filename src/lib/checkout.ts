@@ -23,7 +23,9 @@ export class CheckoutError extends Error {
 
 const ERROS_CONHECIDOS: ErroCheckout[] = ['esgotado', 'reservas_cheias', 'dados_invalidos', 'indisponivel'];
 
-export async function iniciarCheckout(dados: DadosInscricao): Promise<string> {
+export type CheckoutCriado = { url: string; referencia: string | null };
+
+export async function iniciarCheckout(dados: DadosInscricao): Promise<CheckoutCriado> {
   let resposta: Response;
   try {
     resposta = await fetch('/api/criar-checkout', {
@@ -35,10 +37,10 @@ export async function iniciarCheckout(dados: DadosInscricao): Promise<string> {
     throw new CheckoutError('indisponivel');
   }
 
-  const corpo: { url?: unknown; erro?: unknown } = await resposta.json().catch(() => ({}));
+  const corpo: { url?: unknown; referencia?: unknown; erro?: unknown } = await resposta.json().catch(() => ({}));
 
   if (resposta.ok && typeof corpo.url === 'string' && corpo.url.startsWith('https://')) {
-    return corpo.url;
+    return { url: corpo.url, referencia: typeof corpo.referencia === 'string' ? corpo.referencia : null };
   }
 
   const codigo = ERROS_CONHECIDOS.find((e) => e === corpo.erro) ?? 'indisponivel';

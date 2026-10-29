@@ -25,7 +25,7 @@ O site não é só uma página de divulgação. É um **sistema de inscrição c
 - No editor do Apps Script há ferramentas para ver o resumo das vagas, reenviar um e-mail e enviar os e-mails pendentes.
 
 **Segurança**
-- A página `/obrigado` **nunca confirma** um pagamento, porque qualquer pessoa pode abri-la. A confirmação só acontece quando o servidor consulta o pagamento direto na API do Mercado Pago.
+- A página `/obrigado` **não confia no que vem na URL**, porque qualquer pessoa pode abri-la. Ela pergunta ao servidor (`/api/status-inscricao`), que só responde "pago" depois que o webhook consultou o pagamento direto na API do Mercado Pago. Enquanto isso ela confere sozinha a cada poucos segundos, então vale para Pix, cartão e pagamento em análise. A resposta não traz nenhum dado pessoal.
 - O webhook é **idempotente**: um aviso repetido não gera e-mail duplicado. Se falhar, ele responde com erro para o Mercado Pago tentar de novo.
 - Token do Mercado Pago, segredo da planilha e preço ficam em **variáveis de ambiente** da Vercel, nunca no código.
 - Toda chamada à planilha exige uma chave secreta (`SEGREDO`).

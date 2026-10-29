@@ -90,6 +90,7 @@ function doPost(e) {
   try {
     if (pedido.acao === 'reservar') return responder(reservar(pedido));
     if (pedido.acao === 'confirmar') return responder(confirmar(pedido));
+    if (pedido.acao === 'status') return responder(consultarStatus(pedido));
     return responder({ ok: false, erro: 'acao_desconhecida' });
   } catch (erro) {
     // O registro de execuções do Google não mostra logs de chamadas anônimas,
@@ -172,6 +173,26 @@ function reservar(pedido) {
   aba.appendRow(linha);
 
   return { ok: true, referencia: referencia, expiraEm: expiraEm.toISOString() };
+}
+
+// ===================== Consultar status (página /obrigado) =====================
+
+/**
+ * Só leitura. Devolve apenas "pago", "aguardando", "expirado" ou "desconhecida".
+ * Nenhum dado pessoal sai daqui: a página /obrigado usa isso para saber se o
+ * servidor já confirmou o pagamento (o webhook do Mercado Pago é quem grava "pago").
+ */
+function consultarStatus(pedido) {
+  const referencia = limparTexto(pedido.referencia, 80);
+  if (!referencia) return { ok: false, erro: 'dados_invalidos' };
+  const linha = lerLinhas(obterAba()).find(function (l) {
+    return String(l.valores[COL.referencia]) === referencia;
+  });
+  if (!linha) return { ok: true, situacao: 'desconhecida' };
+  const status = String(linha.valores[COL.status]);
+  if (status === 'pago') return { ok: true, situacao: 'pago' };
+  if (status === 'expirado') return { ok: true, situacao: 'expirado' };
+  return { ok: true, situacao: 'aguardando' };
 }
 
 // ===================== 2. Confirmar pagamento =====================

@@ -109,6 +109,8 @@ Object.assign(process.env, {
 });
 const { default: criar } = await import(pathToFileURL(`${REPO}/api/criar-checkout.js`).href);
 const { default: webhook } = await import(pathToFileURL(`${REPO}/api/webhook-mercadopago.js`).href);
+const { default: statusInscricao } = await import(pathToFileURL(`${REPO}/api/status-inscricao.js`).href);
+const consultar = (ref) => chamar(statusInscricao, { method: 'GET', url: `/api/status-inscricao?ref=${encodeURIComponent(ref)}` });
 
 function chamar(handler, { method = 'POST', body, url = '/' } = {}) {
   return new Promise((resolve) => {
@@ -128,33 +130,39 @@ const ok = (msg) => console.log('  ✓', msg);
 // ---------------- Cenários ----------------
 console.log('Validação');
 assert.equal((await chamar(criar, { method: 'GET' })).status, 405); ok('GET recusado');
-assert.equal((await chamar(criar, { body: { nome: 'A', email: 'x', whatsapp: '1' } })).status, 400); ok('dados inválidos → 400');
-assert.equal((await chamar(criar, { body: { nome: 'Ana Souza', email: 'ana@ex.com', whatsapp: '5581999998888', preco: 1 } })).status, 200);
+assert.equal((await chamar(criar, { body: { nome: 'A', email: 'x', whatsapp: '1', cpf: '52998224725' } })).status, 400); ok('dados inválidos → 400');
+const resp1 = await chamar(criar, { body: { nome: 'Ana Souza', email: 'ana@ex.com', whatsapp: '5581999998888', cpf: '52998224725', preco: 1 } });
+assert.equal(resp1.status, 200);
 const p1 = preferencias.at(-1);
 assert.equal(p1.items[0].unit_price, 59); ok('preço vem do servidor (ignora "preco" do navegador)');
 assert.equal(p1.notification_url, 'https://romper.vercel.app/api/webhook-mercadopago'); ok('notification_url sem barra dupla');
 assert.match(p1.expiration_date_to, /^\d{4}-\d\d-\d\dT\d\d:\d\d:\d\d\.\d{3}-03:00$/); ok('data no formato do Mercado Pago: ' + p1.expiration_date_to);
 assert.equal(p1.back_urls.success, 'https://romper.vercel.app/obrigado');
 const refAna = p1.external_reference;
+assert.equal(resp1.body.referencia, refAna); ok('resposta devolve a referência da inscrição (para a página /obrigado)');
+assert.equal(p1.auto_return, 'all'); assert.equal(p1.back_urls.pending, 'https://romper.vercel.app/obrigado?situacao=pendente');
+ok('volta ao site em qualquer resultado (auto_return "all") com as 3 URLs de retorno');
 assert.equal(linha(refAna)[2], 'reservado'); ok('reserva criada na planilha');
 
 console.log('Mesma pessoa abrindo de novo');
-await chamar(criar, { body: { nome: 'Ana Souza', email: 'ANA@ex.com', whatsapp: '5581999998888' } });
+await chamar(criar, { body: { nome: 'Ana Souza', email: 'ANA@ex.com', whatsapp: '5581999998888', cpf: '52998224725' } });
 assert.equal(preferencias.at(-1).external_reference, refAna);
 assert.equal(grade.length, 2); ok('reaproveita a reserva (não ocupa outra vaga)');
 
 console.log('Limite de vagas (VAGAS_TOTAL=3)');
-await chamar(criar, { body: { nome: 'Bia Lima', email: 'bia@ex.com', whatsapp: '5581999997777' } });
+await chamar(criar, { body: { nome: 'Bia Lima', email: 'bia@ex.com', whatsapp: '5581999997777', cpf: '52998224725' } });
 const refBia = preferencias.at(-1).external_reference;
-await chamar(criar, { body: { nome: 'Cris Melo', email: 'cris@ex.com', whatsapp: '5581999996666' } });
+await chamar(criar, { body: { nome: 'Cris Melo', email: 'cris@ex.com', whatsapp: '5581999996666', cpf: '52998224725' } });
 const refCris = preferencias.at(-1).external_reference;
-let r = await chamar(criar, { body: { nome: 'Dani Reis', email: 'dani@ex.com', whatsapp: '5581999995555' } });
+let r = await chamar(criar, { body: { nome: 'Dani Reis', email: 'dani@ex.com', whatsapp: '5581999995555', cpf: '52998224725' } });
 assert.deepEqual([r.status, r.body.erro], [409, 'reservas_cheias']); ok('4ª pessoa: "reservas_cheias" enquanto 3 estão pagando');
 
 console.log('Webhook');
 pagamentos['1001'] = { id: 1001, status: 'pending', external_reference: refAna, transaction_amount: 59, payment_type_id: 'bank_transfer', payer: { email: 'ana@ex.com' } };
 r = await chamar(webhook, { body: { type: 'payment', data: { id: '1001' } } });
 assert.equal(linha(refAna)[2], 'reservado'); assert.equal(emails.length, 0); ok('pagamento pendente não confirma');
+r = await consultar(refAna);
+assert.deepEqual([r.status, r.body.situacao], [200, 'aguardando']); ok('status da inscrição: "aguardando" enquanto o Pix não cai');
 pagamentos['1001'].status = 'approved';
 r = await chamar(webhook, { body: { type: 'payment', data: { id: '1001' } } });
 assert.equal(r.status, 200);
@@ -163,6 +171,12 @@ assert.equal(ana[2], 'pago'); assert.match(ana[11], /^ROMPER-[A-Z2-9]{6}$/); ass
 assert.equal(emails.length, 2); assert.equal(emails[0].to, 'ana@ex.com'); assert.equal(emails[1].to, 'org@exemplo.com');
 assert.match(emails[0].htmlBody, /Rua Exemplo, 123/); assert.match(emails[0].htmlBody, /chat\.whatsapp\.com/);
 assert.match(emails[1].subject, /\(1\/3\)/); ok('aprovado → planilha "pago", código ' + ana[11] + ', e-mail cliente + aviso "1/3"');
+r = await consultar(refAna);
+assert.deepEqual([r.status, r.body.situacao], [200, 'pago']); assert.deepEqual(Object.keys(r.body), ['situacao']);
+ok('status da inscrição: "pago" depois do webhook, sem nenhum dado pessoal na resposta');
+assert.equal((await consultar('romper-' + crypto.randomUUID())).body.situacao, 'desconhecida'); ok('referência desconhecida → "desconhecida"');
+assert.equal((await consultar('qualquer coisa')).status, 400); ok('referência em formato inválido → 400');
+assert.equal((await chamar(statusInscricao, { method: 'POST', body: {} })).status, 405); ok('status só aceita GET');
 await chamar(webhook, { body: { type: 'payment', data: { id: '1001' } } });
 await chamar(webhook, { url: '/api/webhook-mercadopago?data.id=1001&type=payment', body: {} });
 assert.equal(emails.length, 2); ok('aviso repetido (corpo e URL) não duplica e-mail');
@@ -186,14 +200,14 @@ assert.equal(r.status, 200); assert.notEqual(linha(refBia)[12], ''); assert.equa
 
 console.log('Reservas expiradas e limite');
 agoraFalso = RealDate.now() + 31 * 60000; // 31 minutos depois
-r = await chamar(criar, { body: { nome: 'Dani Reis', email: 'dani@ex.com', whatsapp: '5581999995555' } });
+r = await chamar(criar, { body: { nome: 'Dani Reis', email: 'dani@ex.com', whatsapp: '5581999995555', cpf: '52998224725' } });
 assert.equal(r.status, 200); assert.equal(linha(refCris)[2], 'expirado'); ok('reserva vencida da Cris liberou a vaga para a Dani');
 const refDani = preferencias.at(-1).external_reference;
-r = await chamar(criar, { body: { nome: 'Eva Dias', email: 'eva@ex.com', whatsapp: '5581999994444' } });
+r = await chamar(criar, { body: { nome: 'Eva Dias', email: 'eva@ex.com', whatsapp: '5581999994444', cpf: '52998224725' } });
 assert.equal(r.body.erro, 'reservas_cheias'); ok('2 pagas + 1 reserva = cheio');
 pagamentos['1003'] = { id: 1003, status: 'approved', external_reference: refDani, transaction_amount: 59, payment_type_id: 'credit_card', payer: { email: 'dani@ex.com' } };
 await chamar(webhook, { body: { type: 'payment', data: { id: '1003' } } });
-r = await chamar(criar, { body: { nome: 'Eva Dias', email: 'eva@ex.com', whatsapp: '5581999994444' } });
+r = await chamar(criar, { body: { nome: 'Eva Dias', email: 'eva@ex.com', whatsapp: '5581999994444', cpf: '52998224725' } });
 assert.equal(r.body.erro, 'esgotado'); ok('3 pagas → "esgotado"');
 
 console.log('Pix pago depois de expirar (acima do limite)');
@@ -210,15 +224,15 @@ assert.match(emails.at(-1).subject, /duplicidade/); assert.match(linha(refAna)[1
 console.log('Segurança e configuração');
 assert.equal(appsScript(JSON.stringify({ acao: 'reservar', segredo: 'errado', nome: 'X Y', email: 'x@y.com' })).erro, 'nao_autorizado'); ok('planilha recusa segredo errado');
 process.env.VENDAS_ABERTAS = 'false';
-assert.equal((await chamar(criar, { body: { nome: 'Fe Luz', email: 'fe@ex.com', whatsapp: '5581999993333' } })).body.erro, 'esgotado'); ok('VENDAS_ABERTAS=false fecha as vendas');
+assert.equal((await chamar(criar, { body: { nome: 'Fe Luz', email: 'fe@ex.com', whatsapp: '5581999993333', cpf: '52998224725' } })).body.erro, 'esgotado'); ok('VENDAS_ABERTAS=false fecha as vendas');
 process.env.VENDAS_ABERTAS = 'true'; props.VAGAS_TOTAL = '30'; mpFora = true;
-r = await chamar(criar, { body: { nome: 'Fe Luz', email: 'fe@ex.com', whatsapp: '5581999993333' } });
+r = await chamar(criar, { body: { nome: 'Fe Luz', email: 'fe@ex.com', whatsapp: '5581999993333', cpf: '52998224725' } });
 assert.deepEqual([r.status, r.body.erro], [502, 'indisponivel']); ok('Mercado Pago fora do ar → mensagem amigável');
 mpFora = false;
 delete process.env.MP_ACCESS_TOKEN;
-assert.equal((await chamar(criar, { body: { nome: 'Fe Luz', email: 'fe@ex.com', whatsapp: '5581999993333' } })).status, 500); ok('sem token → 500 sem vazar detalhes');
+assert.equal((await chamar(criar, { body: { nome: 'Fe Luz', email: 'fe@ex.com', whatsapp: '5581999993333', cpf: '52998224725' } })).status, 500); ok('sem token → 500 sem vazar detalhes');
 
-const corpoNome = appsScript(JSON.stringify({ acao: 'reservar', segredo: props.SEGREDO, nome: '<b>Xss</b> Teste', email: 'xss@ex.com', whatsapp: '81999990000' }));
+const corpoNome = appsScript(JSON.stringify({ acao: 'reservar', segredo: props.SEGREDO, nome: '<b>Xss</b> Teste', email: 'xss@ex.com', whatsapp: '81999990000', cpf: '52998224725' }));
 pagamentos['1006'] = { id: 1006, status: 'approved', external_reference: corpoNome.referencia, transaction_amount: 59, payer: {} };
 process.env.MP_ACCESS_TOKEN = 'TOKEN-TESTE';
 await chamar(webhook, { body: { type: 'payment', data: { id: '1006' } } });
@@ -235,7 +249,7 @@ assert.equal(lm[2], 'pago'); assert.equal(lm[4], ''); assert.match(lm[12], /NÃO
 assert.equal(emails.length, antes + 1); assert.match(emails.at(-1).subject, /sem e-mail válido/);
 await chamar(webhook, { body: { type: 'payment', data: { id: '1007' } } });
 assert.equal(emails.length, antes + 1); ok('e-mail mascarado: inscrição paga, alerta à organizadora, sem travar nem repetir');
-const refE = appsScript(JSON.stringify({ acao: 'reservar', segredo: props.SEGREDO, nome: 'Gi Paz', email: 'gi@ex.com', whatsapp: '81999990001' })).referencia;
+const refE = appsScript(JSON.stringify({ acao: 'reservar', segredo: props.SEGREDO, nome: 'Gi Paz', email: 'gi@ex.com', whatsapp: '81999990001', cpf: '52998224725' })).referencia;
 pagamentos['1008'] = { id: 1008, status: 'approved', external_reference: refE, transaction_amount: 59, payment_type_id: 'bank_transfer', payer: { email: 'XXXXXXXXXXX' } };
 await chamar(webhook, { body: { type: 'payment', data: { id: '1008' } } });
 assert.equal(linha(refE)[4], 'gi@ex.com'); assert.equal(emails.find((e) => e.to === 'gi@ex.com') !== undefined, true); ok('reserva encontrada: usa o e-mail digitado, ignora o mascarado');

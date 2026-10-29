@@ -5,7 +5,7 @@ import { Loader2, Lock, MessageCircle, X } from 'lucide-react';
 import { eventConfig } from '@/data/eventConfig';
 import { CTAArrow } from '@/components/CTAButton';
 import { ctaClasses } from '@/lib/cta';
-import { guardarInscricao, marcarTentativa, MINUTOS_ENTRE_TENTATIVAS, tentativaRecente } from '@/lib/inscricaoLocal';
+import { guardarInscricao, guardarReferencia, marcarTentativa, MINUTOS_ENTRE_TENTATIVAS, tentativaRecente } from '@/lib/inscricaoLocal';
 import {
   CheckoutError,
   cpfValido,
@@ -102,7 +102,7 @@ function FormularioInscricao({ onFechar }: { onFechar: () => void }) {
 
     setEnviando(true);
     try {
-      const url = await iniciarCheckout({
+      const { url, referencia } = await iniciarCheckout({
         nome: nomeLimpo,
         email: emailLimpo,
         whatsapp: normalizarWhatsapp(digitos),
@@ -110,6 +110,7 @@ function FormularioInscricao({ onFechar }: { onFechar: () => void }) {
       });
       // Mesma aba: depois do pagamento o Mercado Pago traz a pessoa de volta para /obrigado
       guardarInscricao({ nome: nomeLimpo, email: emailLimpo });
+      if (referencia) guardarReferencia(referencia);
       marcarTentativa();
       window.location.assign(url);
     } catch (erro) {

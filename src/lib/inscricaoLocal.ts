@@ -7,6 +7,13 @@
 const CHAVE = 'romper:inscricao';
 const CHAVE_TENTATIVA = 'romper:ultimaTentativa';
 
+const CHAVE_REFERENCIA = 'romper:referencia';
+/** Por quanto tempo a referência da inscrição fica guardada no navegador. */
+const HORAS_REFERENCIA = 3;
+
+/** Mesmo formato que o servidor aceita em /api/status-inscricao. */
+export const REFERENCIA_VALIDA = /^romper-[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
+
 /** Tempo sugerido de espera entre duas tentativas com cartão. */
 export const MINUTOS_ENTRE_TENTATIVAS = 10;
 
@@ -55,4 +62,36 @@ export function tentativaRecente(): boolean {
   } catch {
     return false;
   }
+}
+
+/**
+ * Guarda a referência da inscrição (código aleatório) neste navegador. É com ela que
+ * a página /obrigado pergunta ao servidor se o pagamento já foi confirmado, mesmo
+ * quando o Mercado Pago não devolve a pessoa ao site (ex.: Pix pago no app do banco).
+ */
+export function guardarReferencia(referencia: string) {
+  if (!REFERENCIA_VALIDA.test(referencia)) return;
+  try {
+    localStorage.setItem(CHAVE_REFERENCIA, JSON.stringify({ referencia, em: Date.now() }));
+  } catch {
+    // sem armazenamento: a página usa só o que vier na URL
+  }
+}
+
+/** Referência guardada nas últimas HORAS_REFERENCIA horas, ou null. */
+export function lerReferencia(): string | null {
+  try {
+    const dados = JSON.parse(localStorage.getItem(CHAVE_REFERENCIA) || 'null');
+    if (
+      typeof dados?.referencia === 'string' &&
+      REFERENCIA_VALIDA.test(dados.referencia) &&
+      Number.isFinite(dados.em) &&
+      Date.now() - dados.em < HORAS_REFERENCIA * 3600000
+    ) {
+      return dados.referencia;
+    }
+  } catch {
+    // ignora dados inválidos
+  }
+  return null;
 }
