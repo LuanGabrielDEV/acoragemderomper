@@ -21,7 +21,7 @@ export function Organizers() {
             </div>
             <div className="absolute -bottom-4 right-3 flex items-center gap-2 rounded-xl bg-terracota px-4 py-2.5 text-cream shadow-soft sm:-right-8 sm:rounded-2xl sm:px-5 sm:py-3">
               <Heart size={16} fill="currentColor" className="flex-shrink-0 sm:!h-[17px] sm:!w-[17px]" />
-              <span className="text-xs font-semibold sm:text-sm">Wirlla e Soraia</span>
+              <span className="text-xs font-semibold sm:text-sm">Duas mulheres, uma travessia</span>
             </div>
           </div>
         </Reveal>
