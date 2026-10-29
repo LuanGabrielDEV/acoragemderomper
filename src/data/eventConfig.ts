@@ -45,7 +45,6 @@ export const eventConfig = {
     { time: 'Abertura', title: 'Acolhida', desc: 'Chegada, silêncio e presença. Um espaço para deixar o mundo lá fora.' },
     { time: 'Momento 1', title: 'Reflexão Guiada', desc: 'Um convite a olhar para os ciclos que se repetem e nomear o que precisa ser rompido.' },
     { time: 'Momento 2', title: 'Escrita & Restauração', desc: 'Rituais de escrita terapêutica para reconectar-se à sua identidade mais verdadeira.' },
-    { time: 'Momento 3', title: 'Mesa Posta', desc: 'Um tempo de cuidado e presença ao redor da mesa — chá, palavras e acolhimento.' },
     { time: 'Encerramento', title: 'A Decisão', desc: 'Cada mulher define, com coragem, o seu próximo passo concreto. E segue.' },
   ],
 
@@ -59,11 +58,6 @@ export const eventConfig = {
       icon: 'PenLine',
       title: 'Escrita que Liberta',
       desc: 'Rituais de escrita terapêutica que ajudam a nomear sentimentos e reescrever narrativas.',
-    },
-    {
-      icon: 'UtensilsCrossed',
-      title: 'Mesa Posta',
-      desc: 'O cuidado de uma mesa preparada com intenção — onde cada detalhe diz "você é bem-vinda".',
     },
     {
       icon: 'HeartHandshake',
@@ -102,7 +96,7 @@ export const eventConfig = {
     },
     {
       q: 'Preciso levar algo?',
-      a: 'Apenas disposição para ser acolhida. Todo o material de escrita e os cuidados da mesa estão inclusos. Sinta-se livre para trazer sua caneta preferida, se quiser.',
+      a: 'Apenas disposição para ser acolhida. Todo o material de escrita e os cuidados do encontro estão inclusos. Sinta-se livre para trazer sua caneta preferida, se quiser.',
     },
     {
       q: 'Posso levar uma amiga?',

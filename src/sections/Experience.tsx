@@ -1,9 +1,9 @@
-import { Sparkles, PenLine, UtensilsCrossed, HeartHandshake, Flower2 } from 'lucide-react';
+import { Sparkles, PenLine, HeartHandshake, Flower2 } from 'lucide-react';
 import { eventConfig } from '@/data/eventConfig';
 import { SectionHeading } from '@/components/SectionHeading';
 import { Reveal } from '@/components/Reveal';
 
-const iconMap = { Sparkles, PenLine, UtensilsCrossed, HeartHandshake, Flower2 };
+const iconMap = { Sparkles, PenLine, HeartHandshake, Flower2 };
 
 export function Experience() {
   return (

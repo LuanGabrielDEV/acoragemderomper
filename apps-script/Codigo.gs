@@ -339,7 +339,7 @@ function enviarEmailCliente(dados) {
     '</div>' +
 
     '<p style="font-size:15px;line-height:1.6;color:#5A4439;margin-top:22px;">Chegue 10 minutos antes. ' +
-    'Todo o material e os cuidados da mesa estão inclusos.</p>' +
+    'Todo o material e os cuidados do encontro estão inclusos.</p>' +
     (p.POLITICA_CANCELAMENTO ? '<p style="font-size:13px;line-height:1.6;color:#5A4439;"><strong>Política de cancelamento:</strong> ' +
       esc(p.POLITICA_CANCELAMENTO) + '</p>' : '') +
     (linkContato ? '<p style="font-size:14px;color:#5A4439;">Dúvidas? <a href="' + esc(linkContato) +

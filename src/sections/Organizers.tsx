@@ -51,6 +51,50 @@ export function Organizers() {
           </div>
         </Reveal>
       </div>
+
+      {/* Palestrante convidada */}
+      <div className="mx-auto mt-14 max-w-6xl px-5 sm:mt-20 sm:px-8">
+        <Reveal>
+          <article className="grid overflow-hidden rounded-3xl bg-sand shadow-soft-lg md:grid-cols-[0.8fr_1.2fr]">
+            <div className="relative">
+              <img
+                src="/images/lu-santos.jpg"
+                alt="Lu Santos, palestrante convidada do encontro"
+                className="aspect-[4/5] h-full w-full object-cover object-top md:aspect-auto"
+                loading="lazy"
+              />
+            </div>
+            <div className="flex flex-col justify-center p-6 sm:p-10 lg:p-12">
+              <p className="font-body text-xs font-semibold uppercase tracking-[0.16em] text-terracota">
+                Palestrante convidada
+              </p>
+              <h3 className="mt-3 font-serif text-2xl text-coffee sm:text-3xl">Lu Santos</h3>
+              <p className="mt-1 text-sm font-medium text-olive-dark sm:text-base">Palestrante</p>
+
+              <div className="mt-5 space-y-4 text-sm leading-relaxed text-coffee-soft sm:text-base">
+                <p>
+                  Especialista em Harmonização Facial e palestrante, com atuação voltada à estética,
+                  ao posicionamento profissional e à construção de autoridade.
+                </p>
+                <p>
+                  Através de sua experiência na prática clínica e no ambiente digital, compartilha
+                  conhecimentos sobre como transformar competência em valor percebido, construir
+                  credibilidade e desenvolver uma presença profissional autêntica e estratégica.
+                </p>
+                <p>
+                  Suas palestras conectam imagem, comunicação e posicionamento, mostrando como a forma
+                  como nos apresentamos influencia a confiança que despertamos e as oportunidades que
+                  construímos.
+                </p>
+                <p>
+                  Seu propósito é inspirar profissionais a reconhecerem o valor do que fazem e
+                  aprenderem a comunicá-lo com clareza, autenticidade e intenção.
+                </p>
+              </div>
+            </div>
+          </article>
+        </Reveal>
+      </div>
     </section>
   );
 }
