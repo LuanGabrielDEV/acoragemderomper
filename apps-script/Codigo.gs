@@ -1,5 +1,5 @@
 /**
- * Coragem para Romper e Recomeçar — Planilha de inscrições + e-mails automáticos
+ * A Coragem para Romper e Recomeçar — Planilha de inscrições + e-mails automáticos
  * ---------------------------------------------------------------------------
  * Este código roda no Google Apps Script, DENTRO da planilha do evento
  * (Extensões > Apps Script). Ele faz três coisas:
@@ -53,14 +53,14 @@ const PROPRIEDADES_NECESSARIAS = [
   'SEGREDO',               // texto longo e aleatório; o MESMO valor vai na Vercel (PLANILHA_SEGREDO)
   'VAGAS_TOTAL',           // ex.: 30
   'ORGANIZADORA_EMAIL',    // quem recebe o aviso de cada inscrição
-  'EVENTO_NOME',           // ex.: Coragem para Romper e Recomeçar
+  'EVENTO_NOME',           // ex.: A Coragem para Romper e Recomeçar
   'EVENTO_DATA_TEXTO',     // ex.: Domingo, 22 de novembro de 2026
   'EVENTO_HORARIO_TEXTO',  // ex.: Início às 14h (horário de Brasília)
   'EVENTO_INICIO_ISO',     // ex.: 2026-11-22T14:00:00-03:00 (para o botão da agenda)
   'EVENTO_ENDERECO',       // endereço completo (só vai no e-mail)
   'LINK_GRUPO_WHATSAPP',   // ex.: https://chat.whatsapp.com/...
   'WHATSAPP_CONTATO',      // só dígitos, ex.: 5581999999999
-  'NOME_REMETENTE',        // ex.: Coragem para Romper e Recomeçar
+  'NOME_REMETENTE',        // ex.: A Coragem para Romper e Recomeçar
   'POLITICA_CANCELAMENTO', // texto da política
 ];
 

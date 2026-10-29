@@ -1,7 +1,7 @@
 <img><img width="500" height="500" alt="01" src="https://github.com/user-attachments/assets/64259065-2533-49ae-8674-a8b5701ee573" />
-# Coragem para Romper e Recomeçar · site de inscrições
+# A Coragem para Romper e Recomeçar · site de inscrições
 
-Site oficial do encontro presencial **Coragem para Romper e Recomeçar**, uma experiência para 30 mulheres em 22/11/2026, às 14h.
+Site oficial do encontro presencial **A Coragem para Romper e Recomeçar**, uma experiência para 30 mulheres em 22/11/2026, às 14h.
 
 O site não é só uma página de divulgação. É um **sistema de inscrição completo e automático**. A pessoa se inscreve, paga com Pix ou cartão, recebe a confirmação por e-mail e entra no grupo do WhatsApp. A organização acompanha tudo numa planilha Google, sem precisar fazer nada à mão.
 

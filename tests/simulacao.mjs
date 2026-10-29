@@ -27,7 +27,7 @@ const props = {
   SEGREDO: 'segredo-de-teste-com-mais-de-24-caracteres',
   VAGAS_TOTAL: '3',
   ORGANIZADORA_EMAIL: 'org@exemplo.com',
-  EVENTO_NOME: 'Coragem para Romper e Recomeçar',
+  EVENTO_NOME: 'A Coragem para Romper e Recomeçar',
   EVENTO_DATA_TEXTO: 'Sábado, 25 de outubro de 2026',
   EVENTO_HORARIO_TEXTO: '14h às 15h30',
   EVENTO_INICIO_ISO: '2026-10-25T14:00:00-03:00',

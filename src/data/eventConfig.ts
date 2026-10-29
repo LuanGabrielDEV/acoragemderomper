@@ -8,7 +8,7 @@ const wa = (texto?: string) =>
   `https://wa.me/${whatsappNumber}${texto ? `?text=${encodeURIComponent(texto)}` : ''}`;
 
 export const eventConfig = {
-  eventName: 'Coragem para Romper e Recomeçar',
+  eventName: 'A Coragem para Romper e Recomeçar',
   tagline: 'Um encontro para decidir o próximo passo',
   subtitle:
     'Um encontro para mulheres que querem parar de adiar uma decisão e dar o primeiro passo, com acolhimento e companhia.',
@@ -26,11 +26,11 @@ export const eventConfig = {
 
   // WhatsApp
   whatsappNumber,
-  whatsappLink: wa('Olá! Tenho uma dúvida sobre o evento Coragem para Romper e Recomeçar.'),
+  whatsappLink: wa('Olá! Tenho uma dúvida sobre o evento A Coragem para Romper e Recomeçar.'),
   // Monta um link do WhatsApp com qualquer mensagem (usado na página /obrigado)
   whatsappMensagem: (texto: string) => wa(texto),
   whatsappThankYou: wa(
-    'Olá! Acabei de me inscrever no evento Coragem para Romper e Recomeçar. Meu nome é ',
+    'Olá! Acabei de me inscrever no evento A Coragem para Romper e Recomeçar. Meu nome é ',
   ),
 
   organizerName: 'Organizadoras: Wirlla Dantas e Soraia Ferreira',

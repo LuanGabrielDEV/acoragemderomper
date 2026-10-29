@@ -109,7 +109,7 @@ export function ThankYouPage() {
 
   useEffect(() => {
     const tituloAnterior = document.title;
-    document.title = 'Inscrição | Coragem para Romper e Recomeçar';
+    document.title = 'Inscrição | A Coragem para Romper e Recomeçar';
     const meta = document.createElement('meta');
     meta.name = 'robots';
     meta.content = 'noindex, nofollow';

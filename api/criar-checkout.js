@@ -19,7 +19,7 @@
  *   VENDAS_ABERTAS    "true" ou "false"
  */
 
-const TITULO = 'Coragem para Romper e Recomeçar';
+const TITULO = 'A Coragem para Romper e Recomeçar';
 const MINUTOS_PARA_PAGAR = 30;
 
 export default async function handler(req, res) {

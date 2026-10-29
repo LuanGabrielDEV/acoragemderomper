@@ -23,7 +23,7 @@ export function Hero() {
           </Reveal>
 
           <h1 className="font-serif text-3xl leading-[1.15] text-coffee text-balance sm:text-6xl md:text-7xl">
-            <PalavrasAnimadas texto="Coragem para Romper e Recomeçar" atraso={150} />
+            <PalavrasAnimadas texto="A Coragem para Romper e Recomeçar" atraso={150} />
           </h1>
 
           <Reveal delay={240}>
