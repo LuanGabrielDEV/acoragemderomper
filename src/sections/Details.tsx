@@ -11,7 +11,7 @@ export function Details() {
       valor: eventConfig.cidade ? `${eventConfig.cidade}. ${eventConfig.location}` : eventConfig.location,
     },
     { rotulo: 'Vagas', valor: `Limitadas a ${eventConfig.spots}` },
-    { rotulo: 'Valor', valor: `${eventConfig.price}, no Pix ou no cartão em até 5x` },
+    { rotulo: 'Valor', valor: `${eventConfig.price}, Pix ou cartão em até 5x` },
   ];
 
   return (
@@ -32,7 +32,8 @@ export function Details() {
         </div>
         <figcaption className="mt-3 font-serif text-base italic text-coffee-soft">Imagem ilustrativa do clima do encontro</figcaption>
       </figure>
-      <dl className="border-t border-linha lg:order-1">
+      <div className="lg:order-1">
+      <dl className="border-t border-linha">
         {ficha.map((f) => (
           <div key={f.rotulo} className="grid gap-1 border-b border-linha py-4 sm:grid-cols-[7rem_minmax(0,1fr)] sm:gap-6">
             <dt className="font-bold text-coffee">{f.rotulo}</dt>
@@ -40,13 +41,14 @@ export function Details() {
           </div>
         ))}
       </dl>
-      </div>
-
       <div className="mt-10">
         <CheckoutButton variant="secondary" className="w-full sm:w-auto">
           Quero uma das 30 vagas
         </CheckoutButton>
       </div>
+      </div>
+      </div>
+
     </Folha>
   );
 }
