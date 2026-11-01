@@ -17,21 +17,20 @@ export function Details() {
   return (
     <Folha id="detalhes" tom="sand" titulo="Tudo o que você precisa saber antes de ir">
       <div className="mt-12 grid max-w-3xl gap-12 lg:max-w-none lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] lg:items-start lg:gap-14">
-      <figure className="lg:order-2 lg:pt-1">
+      <div className="lg:order-2 lg:pt-1">
         <div className="moldura relative mx-2 sm:mx-0">
           <div className="tom-barro-leve relative overflow-hidden rounded-[1.25rem]">
             <img
-              src="/images/escrita-cafe.jpg"
-              alt="Mãos escrevendo num caderno aberto, ao lado de uma xícara de café e um croissant"
+              src="/images/encontro-mulheres.jpg"
+              alt="Três mulheres conversando em volta de uma mesinha, num ambiente acolhedor"
               width={1600}
               height={1067}
-              className="foto-suave aspect-[16/10] w-full object-cover object-[50%_60%] lg:aspect-[4/5] lg:object-[45%_55%]"
+              className="foto-suave aspect-[16/10] w-full object-cover object-[50%_55%] lg:aspect-[5/4] lg:object-[48%_55%]"
               loading="lazy"
             />
           </div>
         </div>
-        <figcaption className="mt-3 font-serif text-base italic text-coffee-soft">Imagem ilustrativa: a escrita e o café fazem parte da tarde</figcaption>
-      </figure>
+      </div>
       <div className="lg:order-1">
       <dl className="border-t border-linha">
         {ficha.map((f) => (
