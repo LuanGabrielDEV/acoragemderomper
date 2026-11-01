@@ -49,16 +49,26 @@ function diaBrasilia(ms: number) {
 }
 
 /**
- * Dias de calendário até o encontro, contados no horário de Brasília
- * (1 = amanhã, 0 = hoje). Atualiza a cada minuto. null depois do início.
+ * Dias até o encontro. `calendario`: 0 = hoje e 1 = amanhã no calendário de Brasília.
+ * `inteiros`: blocos de 24h, a mesma conta da faixa de contagem. Atualiza a cada minuto.
+ * null depois do início.
  */
-export function useDiasAteEvento(iso: string): number | null {
+export type DiasAteEvento = { calendario: number; inteiros: number } | null;
+
+export function useDiasAteEvento(iso: string): DiasAteEvento {
   const alvo = new Date(iso).getTime();
-  const calcularDias = () => (Date.now() >= alvo ? null : Math.round((diaBrasilia(alvo) - diaBrasilia(Date.now())) / 86400000));
-  const [dias, setDias] = useState(calcularDias);
+  const calcular = (): DiasAteEvento => {
+    const agora = Date.now();
+    if (agora >= alvo) return null;
+    return {
+      calendario: Math.round((diaBrasilia(alvo) - diaBrasilia(agora)) / 86400000),
+      inteiros: Math.floor((alvo - agora) / 86400000),
+    };
+  };
+  const [dias, setDias] = useState(calcular);
 
   useEffect(() => {
-    const id = window.setInterval(() => setDias(calcularDias()), 60000);
+    const id = window.setInterval(() => setDias(calcular()), 60000);
     return () => window.clearInterval(id);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [alvo]);
@@ -66,9 +76,10 @@ export function useDiasAteEvento(iso: string): number | null {
   return dias;
 }
 
-export function textoDias(dias: number | null): string {
-  if (dias === null) return '';
-  if (dias === 0) return 'É hoje';
-  if (dias === 1) return 'É amanhã';
-  return `Faltam ${dias} dias`;
+/** "É hoje" / "É amanhã" pelo calendário; senão "Faltam N dias" na mesma conta da faixa. */
+export function textoDias(dias: DiasAteEvento): string {
+  if (!dias) return '';
+  if (dias.calendario === 0) return 'É hoje';
+  if (dias.calendario === 1) return 'É amanhã';
+  return `Faltam ${dias.inteiros} ${dias.inteiros === 1 ? 'dia' : 'dias'}`;
 }
