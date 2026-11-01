@@ -40,7 +40,9 @@ export function Hero() {
 
         {/* Nome, dados e ação */}
         <Reveal className="lg:order-1">
-          <h1 className="mt-2 text-[2.3rem] leading-[1.05] text-coffee sm:text-6xl lg:mt-0">{eventConfig.eventName}</h1>
+          <h1 className="mt-2 text-[2.3rem] leading-[1.05] text-coffee sm:text-6xl lg:mt-0">
+            A Coragem para <em className="font-serif italic text-terracota">Romper</em> e Recomeçar
+          </h1>
           <p className="mt-3 max-w-xl text-base leading-relaxed text-coffee-soft sm:mt-5 sm:text-xl">
             {eventConfig.subtitle}
           </p>
