@@ -113,17 +113,17 @@
     text-wrap: balance;
   }
 
-  /* Foto ilustrativa com o tom quente da paleta */
-  .foto-quente {
-    filter: sepia(0.38) saturate(0.82) contrast(1.04) brightness(0.98);
+  /* Foto ilustrativa puxada para o tom quente da paleta */
+  .foto-suave {
+    filter: saturate(0.9) contrast(1.02);
   }
-  .tom-barro::after {
+  .tom-barro-leve::after {
     content: '';
     position: absolute;
     inset: 0;
     background: #9c4a2c;
     mix-blend-mode: multiply;
-    opacity: 0.22;
+    opacity: 0.1;
     pointer-events: none;
   }
 

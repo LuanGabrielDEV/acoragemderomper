@@ -19,18 +19,18 @@ export function Details() {
       <div className="mt-12 grid max-w-3xl gap-12 lg:max-w-none lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] lg:items-start lg:gap-14">
       <figure className="lg:order-2 lg:pt-1">
         <div className="moldura relative mx-2 sm:mx-0">
-          <div className="tom-barro relative overflow-hidden rounded-[1.25rem]">
+          <div className="tom-barro-leve relative overflow-hidden rounded-[1.25rem]">
             <img
-              src="/images/03.jpg"
-              alt="Mulheres conversando com xícaras nas mãos, em clima de acolhimento"
-              width={1800}
-              height={1202}
-              className="foto-quente aspect-[16/10] w-full object-cover object-[55%_72%] sm:aspect-[21/9] sm:object-[55%_78%] lg:aspect-[4/5] lg:object-[45%_60%]"
+              src="/images/escrita-cafe.jpg"
+              alt="Mãos escrevendo num caderno aberto, ao lado de uma xícara de café e um croissant"
+              width={1600}
+              height={1067}
+              className="foto-suave aspect-[16/10] w-full object-cover object-[50%_60%] lg:aspect-[4/5] lg:object-[45%_55%]"
               loading="lazy"
             />
           </div>
         </div>
-        <figcaption className="mt-3 font-serif text-base italic text-coffee-soft">Imagem ilustrativa do clima do encontro</figcaption>
+        <figcaption className="mt-3 font-serif text-base italic text-coffee-soft">Imagem ilustrativa: a escrita e o café fazem parte da tarde</figcaption>
       </figure>
       <div className="lg:order-1">
       <dl className="border-t border-linha">
