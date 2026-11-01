@@ -10,6 +10,9 @@ const variantClasses: Record<CTAVariant, string> = {
 };
 
 /** Classes do botão, reaproveitadas também pelo CheckoutButton (que é um <button>). */
-export function ctaClasses(variant: CTAVariant = 'primary', className = '') {
-  return `group inline-flex min-h-[3.5rem] items-center justify-center gap-2.5 rounded-full px-7 py-3.5 text-base font-bold transition-colors duration-200 ease-out focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracota sm:px-8 sm:text-lg ${variantClasses[variant]} ${className}`;
+export function ctaClasses(variant: CTAVariant = 'primary', className = '', compacto = false) {
+  const tamanho = compacto
+    ? 'min-h-[2.75rem] px-5 py-2 text-base'
+    : 'min-h-[3.5rem] px-7 py-3.5 text-base sm:px-8 sm:text-lg';
+  return `group inline-flex items-center justify-center gap-2.5 rounded-full font-bold transition-[background-color,color,transform] duration-200 ease-out active:scale-[0.98] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracota ${tamanho} ${variantClasses[variant]} ${className}`;
 }

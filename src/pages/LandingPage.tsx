@@ -9,6 +9,9 @@ import { Footer } from '@/sections/Footer';
 import { WhatsAppFloat } from '@/components/WhatsAppFloat';
 import { CheckoutProvider } from '@/components/CheckoutDialog';
 import { AvisoPagamento } from '@/components/AvisoPagamento';
+import { FaixaContagem } from '@/components/FaixaContagem';
+import { FaixaMomentos } from '@/components/FaixaMomentos';
+import { BarraInscricao } from '@/components/BarraInscricao';
 
 /**
  * A tarde é contada em ordem e termina em "A Decisão", onde fica a inscrição.
@@ -18,7 +21,9 @@ export function LandingPage() {
   return (
     <CheckoutProvider>
       <AvisoPagamento />
+      <FaixaContagem />
       <Hero />
+      <FaixaMomentos />
       <main>
         <Identification />
         <Organizers />
@@ -28,6 +33,7 @@ export function LandingPage() {
         <FAQ />
       </main>
       <Footer />
+      <BarraInscricao />
       <WhatsAppFloat />
     </CheckoutProvider>
   );

@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { MessageCircle } from 'lucide-react';
 import { eventConfig } from '@/data/eventConfig';
 
-/** Botão flutuante do WhatsApp. Aparece depois da abertura e some no rodapé, que já tem o contato. */
+/** Botão flutuante do WhatsApp (desktop). No celular o WhatsApp fica na barra de inscrição. */
 export function WhatsAppFloat() {
   const [visivel, setVisivel] = useState(false);
 
@@ -31,7 +31,7 @@ export function WhatsAppFloat() {
       aria-label="Falar no WhatsApp"
       aria-hidden={!visivel}
       tabIndex={visivel ? 0 : -1}
-      className={`fixed bottom-5 right-5 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-olive-dark text-cream shadow-soft-lg transition-[opacity,transform,background-color] duration-300 ease-out hover:bg-coffee sm:bottom-7 sm:right-7 ${
+      className={`fixed bottom-5 right-5 z-50 hidden h-14 w-14 sm:flex items-center justify-center rounded-full bg-olive-dark text-cream shadow-soft-lg transition-[opacity,transform,background-color] duration-300 ease-out hover:bg-coffee sm:bottom-7 sm:right-7 ${
         visivel ? 'opacity-100' : 'pointer-events-none translate-y-3 opacity-0'
       }`}
     >

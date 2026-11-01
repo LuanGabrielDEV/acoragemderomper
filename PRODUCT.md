@@ -10,7 +10,7 @@ web
 
 Mulheres adultas (aprox. 25 a 55 anos) da região de Recife/PE que vivem uma fase de transição: relacionamento, carreira, luto, fé, ou uma decisão que vêm adiando. A maioria chega pelo Instagram e pelo WhatsApp das organizadoras e abre o site no celular. Ela vai ao site para entender o que é o encontro, sentir que é seguro e acolhedor, e garantir uma das 30 vagas pagando com Pix ou cartão.
 
-Público secundário: a organização (Wirlla Dantas e Soraia Ferreira). Ela acompanha as inscrições numa planilha Google e não usa nenhuma tela do site para isso.
+Público secundário: a organização (Soraia Ferreira e Wirlla Dantas). Ela acompanha as inscrições numa planilha Google e não usa nenhuma tela do site para isso.
 
 ## Product Purpose
 
@@ -43,7 +43,7 @@ Não é palestra nem curso. É um encontro pequeno (30 mulheres), presencial e c
 - Nome: **A Coragem para Romper e Recomeçar**, sempre com o artigo. A marca curta é "Romper", com logo em `public/images/logo-romper.png` e `.webp`.
 - Idioma: português do Brasil. O tom é acolhedor, direto e feminino, trata a leitora por "você" e não promete milagres.
 - A dimensão de fé está presente: Soraia Ferreira se apresenta como "Terapeuta Cristã do Emocional Feminino". O site não é exclusivo para cristãs.
-- Organizadoras: Wirlla Dantas (Mentora de Recomeços e Desenvolvimento Pessoal) e Soraia Ferreira. Palestrante convidada: Lu Santos.
+- Organizadoras: Soraia Ferreira (Terapeuta Cristã do Emocional Feminino) e Wirlla Dantas (Mentora de Recomeços e Desenvolvimento Pessoal), sempre nesta ordem. Palestrante convidada: Lu Santos.
 
 ## Evidence on Hand
 

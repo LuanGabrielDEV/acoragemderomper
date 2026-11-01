@@ -1,6 +1,7 @@
 import { eventConfig } from '@/data/eventConfig';
 import { CheckoutButton } from '@/components/CheckoutButton';
 import { Folha } from '@/components/Folha';
+import { Reveal } from '@/components/Reveal';
 
 export function Details() {
   const ficha = [
@@ -17,9 +18,9 @@ export function Details() {
   return (
     <Folha id="detalhes" tom="sand" titulo="Tudo o que você precisa saber antes de ir">
       <div className="mt-12 grid max-w-3xl gap-12 lg:max-w-none lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] lg:items-start lg:gap-14">
-      <div className="lg:order-2 lg:pt-1">
+      <Reveal className="lg:order-2 lg:pt-1">
         <div className="moldura relative mx-2 sm:mx-0">
-          <div className="tom-barro-leve relative overflow-hidden rounded-[1.25rem]">
+          <div className="revela-foto tom-barro-leve relative overflow-hidden rounded-[1.25rem]">
             <img
               src="/images/encontro-mulheres.jpg"
               alt="Três mulheres conversando em volta de uma mesinha, num ambiente acolhedor"
@@ -30,7 +31,7 @@ export function Details() {
             />
           </div>
         </div>
-      </div>
+      </Reveal>
       <div className="lg:order-1">
       <dl className="border-t border-linha">
         {ficha.map((f) => (

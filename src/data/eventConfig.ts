@@ -16,6 +16,8 @@ export const eventConfig = {
   // Dados exibidos no site. A data, o horário e o endereço que vão no
   //    E-MAIL de confirmação ficam nas Propriedades do Apps Script.
   date: '22/11/2026',
+  // Início exato (horário de Brasília), usado na contagem regressiva.
+  inicio: '2026-11-22T14:00:00-03:00',
   time: 'Início às 14h (horário de Brasília)',
   spots: '30 mulheres',
   price: 'R$ 59,00',
@@ -39,7 +41,7 @@ export const eventConfig = {
     'Olá! Acabei de me inscrever no evento A Coragem para Romper e Recomeçar. Meu nome é ',
   ),
 
-  organizerName: 'Organizadoras: Wirlla Dantas e Soraia Ferreira',
+  organizerName: 'Organizadoras: Soraia Ferreira e Wirlla Dantas',
   organizerContact: 'acoragemderomper@gmail.com',
   cancelPolicy,
   politicaUrl: '/politica',

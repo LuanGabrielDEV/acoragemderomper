@@ -86,7 +86,7 @@ export function Footer() {
                 </a>
               </li>
             </ul>
-            <p className="mt-3 text-sm text-cream/80">Organizadoras: Wirlla Dantas e Soraia Ferreira</p>
+            <p className="mt-3 text-sm text-cream/80">Organizadoras: Soraia Ferreira e Wirlla Dantas</p>
           </div>
         </div>
 

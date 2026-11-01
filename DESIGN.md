@@ -234,16 +234,23 @@ Pílulas confiantes e calmas, sempre com seta à direita que anda 4px no hover.
 - **Error:** contorno e anel terracota cheios, mensagem em terracota queimada 700 logo abaixo.
 
 ### Navigation
-Não há menu no topo. A navegação fica no rodapé (coluna "Na página"), com links marfim sublinhados a 30% que se acendem no hover. O botão redondo do WhatsApp (3.5rem, verde escuro) aparece depois da abertura e some quando o rodapé entra na tela.
+Não há menu no topo. A navegação fica no rodapé (coluna "Na página"), com links marfim sublinhados a 30% que se acendem no hover.
+
+- **Faixa de contagem:** faixa terracota fina acima da abertura com a contagem regressiva ao vivo até o início do encontro (dias, horas, minutos e segundos em algarismos tabulares) e as vagas. Some quando o encontro começa.
+- **Barra de inscrição:** depois da abertura, uma barra marfim fixa com filete e sombra suave acompanha a rolagem: embaixo no celular (quanto falta, data e cidade, botão do WhatsApp e botão compacto "Garantir vaga") e em cima no desktop (nome do evento em Caslon, quanto falta, data, cidade e botão). Entra deslizando (300ms) e some no rodapé.
+- **WhatsApp flutuante:** só no desktop (no celular ele fica na barra), redondo, 3.5rem, verde escuro; aparece depois da abertura e some no rodapé.
+
+### Faixa dos momentos
+Logo abaixo da abertura, uma faixa terracota corre devagar (38s por volta, linear) com os momentos da tarde, a data, a cidade e as vagas em Caslon itálico marfim, separados por pontos nude. Pausa no hover e fora da tela; fica parada com prefers-reduced-motion.
 
 ### Programação
-Uma linha vertical terracota a 20% liga círculos numerados; por cima, uma segunda linha terracota cheia se preenche de cima para baixo conforme a rolagem.
+Uma linha vertical terracota a 20% liga círculos numerados; por cima, uma segunda linha terracota cheia se preenche de cima para baixo conforme a rolagem. O momento que está na metade da tela fica em destaque: círculo cheio, levemente maior, com um halo terracota a 14%, e título em terracota. Os momentos ainda não alcançados têm círculo marfim com contorno terracota.
 
 ### A Decisão
 Fundo café, logo clara a 6% deslocada para a direita, pergunta em Caslon marfim, o rótulo "Meu próximo passo" em Figtree 500 marfim a 75% e, abaixo, a frase em Caslon itálico nude sobre um filete marfim a 30%, como uma linha preenchida. A frase se revela da esquerda para a direita (clip-path, 1.6s, cubic-bezier(0.16, 1, 0.3, 1)) quando o bloco entra na tela, e nunca some se já estiver visível.
 
 ### Movimento
-Blocos sobem 18px e aparecem (0.8s, cubic-bezier(0.16, 1, 0.3, 1)) ao entrar na tela, com segurança de 1.5s para nada ficar escondido. Sob prefers-reduced-motion todo movimento para: os blocos já aparecem, a linha da programação aparece cheia, a frase aparece inteira e a rolagem suave é desligada.
+**Abertura:** o arco se abre de baixo para cima como uma porta (clip-path, 1.1s), o batente aparece em seguida e a logo chega por último; ao lado, título, subtítulo, dados e botão sobem em sequência (0.15s a 0.52s), para o botão estar pronto em menos de 1.4s. **Fotos:** se revelam do centro para as bordas (clip-path com os cantos de 1.25rem, 1.2s) enquanto a imagem se assenta de 112% para 100%. Blocos sobem 18px e aparecem (0.8s, cubic-bezier(0.16, 1, 0.3, 1)) ao entrar na tela, com segurança de 1.5s para nada ficar escondido. Botões encolhem levemente ao toque (98%). Sob prefers-reduced-motion todo movimento para: a abertura e as fotos já aparecem prontas, a faixa fica parada, os blocos já aparecem, a linha da programação aparece cheia, a frase aparece inteira e a rolagem suave é desligada.
 
 ## Do's and Don'ts
 

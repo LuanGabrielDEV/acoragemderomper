@@ -9,10 +9,12 @@ export function CheckoutButton({
   children,
   variant = 'primary',
   className = '',
+  compacto = false,
 }: {
   children: ReactNode;
   variant?: CTAVariant;
   className?: string;
+  compacto?: boolean;
 }) {
   const { abrir } = useCheckout();
 
@@ -22,16 +24,16 @@ export function CheckoutButton({
         href={eventConfig.whatsappLink}
         target="_blank"
         rel="noopener noreferrer"
-        className={ctaClasses('olive', className)}
+        className={ctaClasses('olive', className, compacto)}
       >
-        <span>Vagas esgotadas: entrar na lista de espera</span>
+        <span>{compacto ? 'Lista de espera' : 'Vagas esgotadas: entrar na lista de espera'}</span>
         <CTAArrow />
       </a>
     );
   }
 
   return (
-    <button type="button" onClick={abrir} className={ctaClasses(variant, className)}>
+    <button type="button" onClick={abrir} className={ctaClasses(variant, className, compacto)}>
       <span>{children}</span>
       <CTAArrow />
     </button>

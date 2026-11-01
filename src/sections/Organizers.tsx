@@ -5,7 +5,7 @@ export function Organizers() {
   return (
     <Folha id="quem-conduz" tom="sand" titulo="Quem recebe você no encontro">
       <p className="mt-5 max-w-2xl text-lg leading-relaxed text-coffee-soft">
-        Wirlla e Soraia criaram este encontro para dar às mulheres uma pausa: um tempo para escutar, refletir e
+        Soraia e Wirlla criaram este encontro para dar às mulheres uma pausa: um tempo para escutar, refletir e
         decidir o que vem depois.
       </p>
 
@@ -13,10 +13,10 @@ export function Organizers() {
         <Reveal>
         <figure className="mx-auto w-full max-w-sm lg:mx-0">
           <div className="moldura relative mx-2 sm:mx-0">
-            <div className="overflow-hidden rounded-[1.25rem]">
+            <div className="revela-foto overflow-hidden rounded-[1.25rem]">
             <img
               src="/images/02.jpeg"
-              alt="Wirlla Dantas e Soraia Ferreira, que conduzem o encontro"
+              alt="Soraia Ferreira e Wirlla Dantas, que conduzem o encontro"
               width={1086}
               height={1174}
               className="aspect-[4/5] w-full object-cover object-center"
@@ -32,20 +32,21 @@ export function Organizers() {
 
         <dl className="max-w-xl divide-y divide-linha border-y border-linha">
           <div className="py-5">
-            <dt className="font-serif text-2xl text-coffee sm:text-3xl">Wirlla Dantas</dt>
-            <dd className="mt-1 text-coffee-soft">Mentora de Recomeços e Desenvolvimento Pessoal</dd>
-          </div>
-          <div className="py-5">
             <dt className="font-serif text-2xl text-coffee sm:text-3xl">Soraia Ferreira</dt>
             <dd className="mt-1 text-coffee-soft">Terapeuta Cristã do Emocional Feminino</dd>
+          </div>
+          <div className="py-5">
+            <dt className="font-serif text-2xl text-coffee sm:text-3xl">Wirlla Dantas</dt>
+            <dd className="mt-1 text-coffee-soft">Mentora de Recomeços e Desenvolvimento Pessoal</dd>
           </div>
         </dl>
       </div>
 
       {/* Palestrante convidada */}
+      <Reveal>
       <article className="mt-16 grid gap-8 sm:mt-20 sm:grid-cols-[minmax(0,13rem)_minmax(0,1fr)] sm:items-start sm:gap-10">
         <div className="moldura relative ml-2 w-full max-w-[13rem] sm:ml-0">
-          <div className="overflow-hidden rounded-[1.25rem]">
+          <div className="revela-foto overflow-hidden rounded-[1.25rem]">
           <img
             src="/images/lu-santos.jpg"
             alt="Lu Santos, palestrante convidada do encontro"
@@ -86,6 +87,7 @@ export function Organizers() {
           </details>
         </div>
       </article>
+      </Reveal>
     </Folha>
   );
 }
