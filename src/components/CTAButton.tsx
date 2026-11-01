@@ -7,7 +7,7 @@ export function CTAArrow() {
     <ArrowRight
       size={20}
       aria-hidden="true"
-      className="transition-transform duration-300 group-hover:translate-x-1"
+      className="transition-transform duration-200 ease-out group-hover:translate-x-1"
     />
   );
 }

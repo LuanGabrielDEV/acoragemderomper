@@ -38,42 +38,6 @@ export function useEmVista<T extends HTMLElement>(margem = '0px 0px -60px 0px') 
 }
 
 /**
- * Parallax suave: o elemento anda mais devagar que a página.
- * Mexe direto no estilo (sem re-renderizar o React) e só roda enquanto o elemento está visível.
- */
-export function useParallax<T extends HTMLElement>(ref: RefObject<T>, velocidade = 0.06, maximo = 36) {
-  useEffect(() => {
-    const el = ref.current;
-    if (!el || prefereMenosMovimento()) return;
-
-    let quadro = 0;
-    let visivel = true;
-
-    const atualizar = () => {
-      quadro = 0;
-      const y = Math.min(window.scrollY * velocidade, maximo);
-      el.style.transform = `translate3d(0, ${y.toFixed(1)}px, 0)`;
-    };
-    const aoRolar = () => {
-      if (visivel && !quadro) quadro = requestAnimationFrame(atualizar);
-    };
-
-    const observer = new IntersectionObserver(([e]) => {
-      visivel = e.isIntersecting;
-    });
-    observer.observe(el);
-    window.addEventListener('scroll', aoRolar, { passive: true });
-    atualizar();
-
-    return () => {
-      window.removeEventListener('scroll', aoRolar);
-      observer.disconnect();
-      if (quadro) cancelAnimationFrame(quadro);
-    };
-  }, [ref, velocidade, maximo]);
-}
-
-/**
  * Preenche uma linha (fillRef) de 0 a 100% conforme a pessoa rola por um bloco (blocoRef).
  * A linha começa a crescer quando o bloco chega ao meio da tela.
  */

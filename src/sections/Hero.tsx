@@ -1,97 +1,64 @@
-import { useRef } from 'react';
-import { Calendar, Clock, MapPin } from 'lucide-react';
 import { eventConfig } from '@/data/eventConfig';
 import { CheckoutButton } from '@/components/CheckoutButton';
-import { Reveal } from '@/components/Reveal';
-import { Ornamentos } from '@/components/Ornamentos';
-import { PalavrasAnimadas } from '@/components/PalavrasAnimadas';
-import { useParallax } from '@/lib/motion';
 
+/**
+ * Abertura: a logo do Romper dentro de um arco de porta (a mesma forma da porta
+ * da logo) e, ao lado (no celular, logo abaixo), o nome, os dados e o botão.
+ * No celular, tudo isso cabe na primeira tela.
+ */
 export function Hero() {
-  const imagemRef = useRef<HTMLDivElement>(null);
-  useParallax(imagemRef);
+  const fatos = [
+    { rotulo: 'Data', valor: eventConfig.date },
+    { rotulo: 'Horário', valor: 'A partir das 14h' },
+    { rotulo: 'Local', valor: eventConfig.cidade || 'Enviado por e\u2011mail' },
+    { rotulo: 'Valor', valor: `${eventConfig.price} (até 5x)` },
+  ];
 
   return (
-    <header className="relative isolate overflow-hidden bg-sand">
-      <Ornamentos />
-      <div className="mx-auto grid max-w-7xl items-center gap-10 px-5 py-14 sm:gap-12 sm:px-8 sm:py-16 lg:grid-cols-[1.02fr_0.98fr] lg:gap-16 lg:py-20 pb-28 sm:pb-32 lg:pb-32">
-        <div className="relative z-10 order-2 max-w-2xl lg:order-1">
-          <Reveal>
-            <p className="font-body text-xs font-semibold uppercase tracking-[0.2em] text-terracota mb-4 sm:mb-5 sm:text-sm">
-              {eventConfig.tagline}
-            </p>
-          </Reveal>
-
-          <h1 className="font-serif text-3xl leading-[1.15] text-coffee text-balance sm:text-6xl md:text-7xl">
-            <PalavrasAnimadas texto="A Coragem para Romper e Recomeçar" atraso={150} />
-          </h1>
-
-          <Reveal delay={240}>
-            <p className="mt-5 text-base leading-relaxed text-coffee-soft max-w-lg sm:mt-6 sm:text-xl">
-              {eventConfig.subtitle}
-            </p>
-          </Reveal>
-
-          {/* Meta info */}
-          <Reveal delay={360}>
-            <div className="mt-6 flex flex-col gap-3 text-coffee-soft sm:mt-8 sm:flex-wrap sm:flex-row sm:gap-x-6">
-              <span className="inline-flex items-center gap-2 text-sm sm:text-base">
-                <Calendar size={18} className="flex-shrink-0 text-terracota" />
-                {eventConfig.date}
-              </span>
-              <span className="inline-flex items-center gap-2 text-sm sm:text-base">
-                <Clock size={18} className="flex-shrink-0 text-terracota" />
-                {eventConfig.time}
-              </span>
-              <span className="inline-flex items-center gap-2 text-sm sm:text-base">
-                <MapPin size={18} className="flex-shrink-0 text-terracota" />
-                Encontro presencial
-              </span>
-            </div>
-          </Reveal>
-
-          <Reveal delay={500}>
-            <div className="mt-8 sm:mt-10">
-              <CheckoutButton className="w-full justify-center px-6 py-4 text-base sm:w-auto sm:px-9 sm:py-5 sm:text-lg">
-                Garantir minha vaga por {eventConfig.price}
-              </CheckoutButton>
-            </div>
-          </Reveal>
-
-          <Reveal delay={620}>
-            <p className="mt-4 text-sm text-coffee-soft sm:mt-5">
-              Vagas limitadas a {eventConfig.spots}. Pagamento seguro pelo Mercado Pago (Pix ou cartão).
-              A confirmação chega no seu e-mail.
-            </p>
-          </Reveal>
-        </div>
-
-        <Reveal delay={180} className="relative order-1 lg:order-2 lg:justify-self-end">
-          <div ref={imagemRef} className="relative mx-auto max-w-[420px] will-change-transform sm:max-w-[560px]">
-            <div className="absolute -inset-2 rounded-[1.75rem] border border-terracota/20 sm:-inset-5 sm:rounded-[2rem]" />
-            <div className="relative overflow-hidden rounded-[1.5rem] bg-gradient-to-b from-[#FFF6EE] to-[#F6E1CE] shadow-soft-lg sm:rounded-[1.75rem]">
+    <header className="overflow-hidden bg-sand">
+      <div className="mx-auto grid max-w-5xl items-center gap-7 px-5 pb-12 pt-6 sm:px-8 sm:pb-20 sm:pt-12 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] lg:gap-16 lg:py-20">
+        {/* Logo dentro de um arco de porta, como a porta da logo */}
+        <div className="flex justify-center lg:order-2 lg:justify-end">
+          <div className="batente entra-batente w-[13.5rem] [@media(max-height:760px)]:w-[10.5rem] sm:w-[19rem] lg:w-[22rem] lg:[@media(max-height:760px)]:w-[19rem]">
+            <div className="arco entra-arco flex aspect-[13/15] flex-col items-center justify-end overflow-hidden bg-gradient-to-b from-[#FFF8F2] via-[#FBEBDD] to-[#F1D8C4] px-5 pb-5 sm:aspect-[4/5] sm:px-8 sm:pb-9">
               <img
                 src="/images/logo-romper.webp"
                 alt="Logo do Romper: um R dentro de um círculo, com uma porta aberta e um ramo de folhas"
                 width={1952}
                 height={1449}
-                className="hero-zoom aspect-[4/5] w-full object-contain p-6 sm:aspect-square sm:p-10"
+                className="entra-logo w-full object-contain"
                 loading="eager"
+                fetchPriority="high"
               />
-            </div>
-            <div className="absolute -bottom-4 left-3 animate-float-slow rounded-xl bg-cream px-4 py-2.5 shadow-soft sm:left-4 sm:rounded-2xl sm:px-5 sm:py-3">
-              <p className="font-serif text-base italic text-terracota sm:text-lg">
+              <p style={{ animationDelay: '0.35s' }} className="entra-logo mt-2 text-center font-serif text-sm italic leading-snug text-terracota-dark [@media(max-height:760px)]:hidden sm:mt-5 sm:text-lg sm:[@media(max-height:760px)]:block">
                 Existe algo novo do outro lado.
               </p>
             </div>
           </div>
-        </Reveal>
-      </div>
+        </div>
 
-      <div className="absolute bottom-6 left-1/2 z-10 hidden -translate-x-1/2 sm:block">
-        <div className="flex flex-col items-center gap-2 text-coffee-soft/60">
-          <span className="text-xs uppercase tracking-[0.2em]">Descobrir</span>
-          <div className="h-12 w-px bg-terracota/40 animate-float-slow" />
+        {/* Nome, dados e ação */}
+        <div className="lg:order-1">
+          <h1 style={{ animationDelay: '0s' }} className="entra-linha mt-2 text-[2.3rem] leading-[1.05] text-coffee sm:text-6xl lg:mt-0">
+            A Coragem para <em className="font-serif italic text-terracota">Romper</em> e Recomeçar
+          </h1>
+          <p style={{ animationDelay: '0.06s' }} className="entra-linha mt-3 max-w-xl text-base leading-relaxed text-coffee-soft sm:mt-5 sm:text-xl">
+            {eventConfig.subtitle}
+          </p>
+
+          <dl style={{ animationDelay: '0.12s' }} className="entra-linha mt-5 grid grid-cols-2 gap-x-6 gap-y-3 border-y border-terracota/25 py-4 sm:mt-8">
+            {fatos.map((f) => (
+              <div key={f.rotulo}>
+                <dt className="text-sm text-coffee-soft">{f.rotulo}</dt>
+                <dd className="font-serif text-lg leading-snug text-coffee sm:text-xl">{f.valor}</dd>
+              </div>
+            ))}
+          </dl>
+
+          <div style={{ animationDelay: '0.18s' }} className="entra-linha mt-6 sm:mt-8">
+            <CheckoutButton className="w-full sm:w-auto">Garantir minha vaga · {eventConfig.price}</CheckoutButton>
+            <p className="mt-3 max-w-md text-sm leading-relaxed text-coffee-soft sm:text-base">{eventConfig.garantia}</p>
+          </div>
         </div>
       </div>
     </header>

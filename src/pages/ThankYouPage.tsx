@@ -121,9 +121,9 @@ export function ThankYouPage() {
   }, []);
 
   return (
-    <main className="min-h-[100svh] flex items-center justify-center bg-cream bg-grain px-5 py-16">
+    <main className="min-h-[100svh] flex items-center justify-center bg-cream px-5 py-16">
       <div className="w-full max-w-xl text-center">
-        <div className="mx-auto flex h-20 w-20 items-center justify-center rounded-full bg-olive/15 text-olive-dark animate-float-slow">
+        <div className="mx-auto flex h-20 w-20 items-center justify-center rounded-full bg-olive/15 text-olive-dark">
           <Icone
             size={44}
             strokeWidth={1.5}

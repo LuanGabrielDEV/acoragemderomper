@@ -4,46 +4,32 @@ export default {
   theme: {
     extend: {
       colors: {
-        cream: '#FDFBF7',
-        sand: '#F4EFEA',
-        terracota: '#C87D55',
-        'terracota-dark': '#B06A48',
-        nude: '#E8D5C8',
-        olive: '#8A9A86',
-        'olive-dark': '#74857A',
-        coffee: '#3D2C24',
-        'coffee-soft': '#5A4439',
+        // Paleta da logo do Romper: marfim, pêssego, terracota e o verde do ramo.
+        cream: '#FBF8F3', // fundo principal (marfim)
+        sand: '#F5EAE0', // pêssego claro da logo: superfícies alternadas
+        nude: '#EBD8C9',
+        terracota: '#9C4A2C', // ação e ênfase
+        'terracota-dark': '#7E3A22',
+        olive: '#5E6E52', // folha do ramo
+        'olive-dark': '#46543D',
+        coffee: '#2B211C', // texto
+        'coffee-soft': '#54473F', // texto de apoio
+        linha: '#E3D6CA', // filetes e divisórias
+        dourado: '#8A5D27', // dourado da porta da logo: selos e subtítulos de destaque
       },
       fontFamily: {
-        serif: ['"Playfair Display"', 'Georgia', 'serif'],
-        body: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
+        serif: ['"Libre Caslon Text"', 'Georgia', 'serif'],
+        body: ['Figtree', 'system-ui', 'sans-serif'],
       },
       boxShadow: {
-        soft: '0 2px 20px -4px rgba(61, 44, 36, 0.08)',
-        'soft-lg': '0 8px 40px -8px rgba(61, 44, 36, 0.12)',
+        // Só o que flutua de verdade (o diálogo) tem sombra.
+        dialogo: '0 18px 50px -12px rgba(43, 33, 28, 0.35)',
+        soft: '0 2px 20px -4px rgba(43, 33, 28, 0.08)',
+        'soft-lg': '0 8px 40px -8px rgba(43, 33, 28, 0.12)',
       },
       borderRadius: {
         '2xl': '1.25rem',
         '3xl': '1.75rem',
-      },
-      keyframes: {
-        'fade-up': {
-          '0%': { opacity: '0', transform: 'translateY(28px)' },
-          '100%': { opacity: '1', transform: 'translateY(0)' },
-        },
-        'fade-in': {
-          '0%': { opacity: '0' },
-          '100%': { opacity: '1' },
-        },
-        'float-slow': {
-          '0%, 100%': { transform: 'translateY(0)' },
-          '50%': { transform: 'translateY(-8px)' },
-        },
-      },
-      animation: {
-        'fade-up': 'fade-up 0.7s ease-out forwards',
-        'fade-in': 'fade-in 0.8s ease-out forwards',
-        'float-slow': 'float-slow 4s ease-in-out infinite',
       },
     },
   },

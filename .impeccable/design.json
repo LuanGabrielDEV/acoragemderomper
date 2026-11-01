@@ -1,0 +1,395 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-01T20:08:52+00:00",
+  "title": "Design System: A Coragem para Romper e Recomeçar",
+  "extensions": {
+    "colorMeta": {
+      "terracota": {
+        "role": "primary",
+        "displayName": "Terracota de Barro",
+        "canonical": "oklch(50.7% 0.118 40)",
+        "tonalRamp": [
+          "#290200",
+          "#491603",
+          "#6B2D15",
+          "#90452A",
+          "#B8674B",
+          "#D99076",
+          "#F9B9A3",
+          "#FFE0CD"
+        ]
+      },
+      "terracota-dark": {
+        "role": "primary",
+        "displayName": "Terracota Queimada",
+        "canonical": "oklch(43.4% 0.101 40)",
+        "tonalRamp": [
+          "#260500",
+          "#451A0A",
+          "#66311E",
+          "#894933",
+          "#B16C54",
+          "#D2937E",
+          "#F3BCA9",
+          "#FFE2D2"
+        ]
+      },
+      "olive": {
+        "role": "secondary",
+        "displayName": "Verde do Ramo",
+        "canonical": "oklch(51.7% 0.047 132)",
+        "tonalRamp": [
+          "#0D1407",
+          "#232C1B",
+          "#3B4732",
+          "#55634A",
+          "#76866B",
+          "#9CAA92",
+          "#C3CFBA",
+          "#E8F3E1"
+        ]
+      },
+      "olive-dark": {
+        "role": "secondary",
+        "displayName": "Verde do Ramo Escuro",
+        "canonical": "oklch(42.7% 0.041 133)",
+        "tonalRamp": [
+          "#0D1409",
+          "#232C1D",
+          "#3B4634",
+          "#55624D",
+          "#77866E",
+          "#9CA994",
+          "#C3CFBC",
+          "#E8F2E3"
+        ]
+      },
+      "cream": {
+        "role": "neutral",
+        "displayName": "Marfim",
+        "canonical": "oklch(98.0% 0.007 81)",
+        "tonalRamp": [
+          "#13110F",
+          "#2A2926",
+          "#44423F",
+          "#605D59",
+          "#82807C",
+          "#A6A4A0",
+          "#CCCAC7",
+          "#F0EEEB"
+        ]
+      },
+      "sand": {
+        "role": "neutral",
+        "displayName": "Pêssego Claro",
+        "canonical": "oklch(94.3% 0.018 65)",
+        "tonalRamp": [
+          "#15110D",
+          "#2D2822",
+          "#48413A",
+          "#645C54",
+          "#887E76",
+          "#ABA39B",
+          "#D0C9C2",
+          "#F3EDE8"
+        ]
+      },
+      "nude": {
+        "role": "neutral",
+        "displayName": "Nude",
+        "canonical": "oklch(89.4% 0.029 61)",
+        "tonalRamp": [
+          "#17100A",
+          "#31271F",
+          "#4C4036",
+          "#695A4E",
+          "#8D7D70",
+          "#B0A296",
+          "#D5C8BE",
+          "#F7ECE4"
+        ]
+      },
+      "linha": {
+        "role": "neutral",
+        "displayName": "Filete",
+        "canonical": "oklch(88.3% 0.022 65)",
+        "tonalRamp": [
+          "#16100C",
+          "#2E2721",
+          "#494139",
+          "#665C52",
+          "#897E74",
+          "#ADA399",
+          "#D2C9C1",
+          "#F4EDE6"
+        ]
+      },
+      "coffee": {
+        "role": "neutral",
+        "displayName": "Café",
+        "canonical": "oklch(25.8% 0.018 48)",
+        "tonalRamp": [
+          "#16100E",
+          "#2E2724",
+          "#49403C",
+          "#665B56",
+          "#897D78",
+          "#ADA29D",
+          "#D2C8C4",
+          "#F5EDE9"
+        ]
+      },
+      "coffee-soft": {
+        "role": "neutral",
+        "displayName": "Café Suave",
+        "canonical": "oklch(40.9% 0.022 54)",
+        "tonalRamp": [
+          "#16100C",
+          "#2F2722",
+          "#4A403A",
+          "#675B53",
+          "#8B7D75",
+          "#AEA29A",
+          "#D3C8C2",
+          "#F6ECE7"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "Só o título da abertura (e a pergunta de A Decisão, na mesma escala)."
+      },
+      "headline": {
+        "displayName": "Título de seção",
+        "purpose": "O título de cada seção, alinhado à esquerda."
+      },
+      "title": {
+        "displayName": "Subtítulo",
+        "purpose": "Etapas da programação, itens de Para quem é, nomes, título da caixa de inclusos."
+      },
+      "caption": {
+        "displayName": "Legenda em itálico",
+        "purpose": "Caslon itálico: o Romper do título, a frase da decisão, legendas e cabeçalhos do rodapé."
+      },
+      "body": {
+        "displayName": "Texto",
+        "purpose": "Texto corrido, 17px no celular e 18px a partir de 640px."
+      },
+      "label": {
+        "displayName": "Rótulo de ação",
+        "purpose": "Botões, rótulos de campo, links de ação, perguntas da FAQ."
+      },
+      "small": {
+        "displayName": "Pequeno",
+        "purpose": "Rótulos dos fatos, garantia, Meu próximo passo."
+      }
+    },
+    "shadows": [
+      {
+        "name": "dialogo",
+        "value": "0 18px 50px -12px rgba(43, 33, 28, 0.35)",
+        "purpose": "A janela de inscrição, sobre véu café a 65%."
+      },
+      {
+        "name": "soft-lg",
+        "value": "0 8px 40px -8px rgba(43, 33, 28, 0.12)",
+        "purpose": "O botão flutuante do WhatsApp."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease-romper",
+        "value": "cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "Curva de saída usada na subida dos blocos e na revelação da frase."
+      },
+      {
+        "name": "reveal",
+        "value": "opacity 0 a 1 e translateY 18px a 0, 0.8s ease-romper, segurança de 1.5s",
+        "purpose": "Blocos aparecem ao entrar na tela; nada fica escondido além de 1.5s."
+      },
+      {
+        "name": "escrita",
+        "value": "clip-path inset(0 100% 0 0) a inset(0 0 0 0), 1.6s ease-romper",
+        "purpose": "A frase Meu próximo passo se revela da esquerda para a direita; único gesto autoral."
+      },
+      {
+        "name": "linha-programacao",
+        "value": "scaleY 0 a 1 ligado à rolagem",
+        "purpose": "A linha da programação se preenche conforme a rolagem."
+      },
+      {
+        "name": "estado",
+        "value": "200ms ease-out",
+        "purpose": "Hover de botões, seta do botão (4px), ícone da FAQ girando 45 graus."
+      },
+      {
+        "name": "whatsapp-float",
+        "value": "opacity e translateY 0.75rem, 300ms ease-out",
+        "purpose": "O botão do WhatsApp aparece depois da abertura e some sobre o rodapé."
+      },
+      {
+        "name": "reduced-motion",
+        "value": "prefers-reduced-motion: reduce",
+        "purpose": "Desliga todo movimento: blocos visíveis, linha cheia, frase inteira, rolagem sem suavização."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "sm",
+        "value": "640px"
+      },
+      {
+        "name": "lg",
+        "value": "1024px"
+      },
+      {
+        "name": "short",
+        "value": "max-height: 760px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Botão Principal",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "A ação principal: terracota com texto marfim, em fundos claros.",
+      "html": "<button class=\"ds-btn-primary\"><span>Garantir minha vaga · R$ 59,00</span><svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M5 12h14\"/><path d=\"m12 5 7 7-7 7\"/></svg></button>",
+      "css": ".ds-btn-primary { display: inline-flex; align-items: center; justify-content: center; gap: 0.625rem; min-height: 3.5rem; padding: 0.875rem 2rem; border-radius: 9999px; font-family: Figtree, system-ui, sans-serif; font-size: 1.125rem; font-weight: 700; cursor: pointer; transition: background-color 0.2s ease-out, color 0.2s ease-out; background: #9C4A2C; color: #FBF8F3; border: none; } .ds-btn-primary svg { transition: transform 0.2s ease-out; } .ds-btn-primary:hover svg { transform: translateX(4px); } .ds-btn-primary:focus-visible { outline: 2px solid #9C4A2C; outline-offset: 2px; } .ds-btn-primary:hover { background: #7E3A22; }"
+    },
+    {
+      "name": "Botão Papel",
+      "kind": "button",
+      "refersTo": "button-papel",
+      "description": "A ação sobre fundos escuros (A Decisão e rodapé).",
+      "html": "<div class=\"ds-papel-ground\"><button class=\"ds-btn-papel\"><span>Garantir minha vaga · R$ 59,00</span><svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M5 12h14\"/><path d=\"m12 5 7 7-7 7\"/></svg></button></div>",
+      "css": ".ds-papel-ground { background: #2B211C; padding: 2rem; } .ds-btn-papel { display: inline-flex; align-items: center; justify-content: center; gap: 0.625rem; min-height: 3.5rem; padding: 0.875rem 2rem; border-radius: 9999px; font-family: Figtree, system-ui, sans-serif; font-size: 1.125rem; font-weight: 700; cursor: pointer; transition: background-color 0.2s ease-out, color 0.2s ease-out; background: #FBF8F3; color: #7E3A22; border: none; } .ds-btn-papel svg { transition: transform 0.2s ease-out; } .ds-btn-papel:hover svg { transform: translateX(4px); } .ds-btn-papel:focus-visible { outline: 2px solid #9C4A2C; outline-offset: 2px; } .ds-btn-papel:hover { background: #F5EAE0; }"
+    },
+    {
+      "name": "Botão Secundário",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "Contorno café; se enche no hover. Usado em Detalhes.",
+      "html": "<button class=\"ds-btn-secondary\"><span>Garantir minha vaga · R$ 59,00</span><svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M5 12h14\"/><path d=\"m12 5 7 7-7 7\"/></svg></button>",
+      "css": ".ds-btn-secondary { display: inline-flex; align-items: center; justify-content: center; gap: 0.625rem; min-height: 3.5rem; padding: 0.875rem 2rem; border-radius: 9999px; font-family: Figtree, system-ui, sans-serif; font-size: 1.125rem; font-weight: 700; cursor: pointer; transition: background-color 0.2s ease-out, color 0.2s ease-out; background: transparent; color: #2B211C; border: 1px solid rgba(43,33,28,0.3); } .ds-btn-secondary svg { transition: transform 0.2s ease-out; } .ds-btn-secondary:hover svg { transform: translateX(4px); } .ds-btn-secondary:focus-visible { outline: 2px solid #9C4A2C; outline-offset: 2px; } .ds-btn-secondary:hover { background: #2B211C; color: #FBF8F3; }"
+    },
+    {
+      "name": "Botão Oliva",
+      "kind": "button",
+      "refersTo": "button-olive",
+      "description": "Só para a lista de espera quando as vagas esgotam.",
+      "html": "<button class=\"ds-btn-olive\"><span>Vagas esgotadas: entrar na lista de espera</span><svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M5 12h14\"/><path d=\"m12 5 7 7-7 7\"/></svg></button>",
+      "css": ".ds-btn-olive { display: inline-flex; align-items: center; justify-content: center; gap: 0.625rem; min-height: 3.5rem; padding: 0.875rem 2rem; border-radius: 9999px; font-family: Figtree, system-ui, sans-serif; font-size: 1.125rem; font-weight: 700; cursor: pointer; transition: background-color 0.2s ease-out, color 0.2s ease-out; background: #5E6E52; color: #FBF8F3; border: none; } .ds-btn-olive svg { transition: transform 0.2s ease-out; } .ds-btn-olive:hover svg { transform: translateX(4px); } .ds-btn-olive:focus-visible { outline: 2px solid #9C4A2C; outline-offset: 2px; } .ds-btn-olive:hover { background: #46543D; }"
+    },
+    {
+      "name": "Arco da Porta",
+      "kind": "custom",
+      "refersTo": "rounded.arch",
+      "description": "A logo dentro de um arco de porta com batente fino terracota deslocado; a forma-mãe do sistema.",
+      "html": "<div class=\"ds-arco-wrap\"><div class=\"ds-batente\"><div class=\"ds-arco\"><div class=\"ds-arco-logo\" aria-hidden=\"true\">R</div><p class=\"ds-arco-frase\">Existe algo novo do outro lado.</p></div></div></div>",
+      "css": ".ds-arco-wrap { background: #F5EAE0; padding: 2.5rem; display: flex; justify-content: center; } .ds-batente { position: relative; width: 13.5rem; } .ds-batente::before { content: ''; position: absolute; inset: -0.6rem; border: 1px solid rgba(156,74,44,0.32); border-radius: 999px 999px 1.6rem 1.6rem; pointer-events: none; } .ds-arco { aspect-ratio: 13 / 15; border-radius: 999px 999px 1.25rem 1.25rem; overflow: hidden; background: linear-gradient(to bottom, #FFF8F2, #FBEBDD, #F1D8C4); display: flex; flex-direction: column; align-items: center; justify-content: flex-end; padding: 0 1.25rem 1.25rem; } .ds-arco-logo { width: 6rem; height: 6rem; border-radius: 9999px; border: 2px solid #9C4A2C; color: #9C4A2C; display: flex; align-items: center; justify-content: center; font-family: 'Libre Caslon Text', Georgia, serif; font-size: 3rem; margin-bottom: 1rem; } .ds-arco-frase { margin: 0; text-align: center; font-family: 'Libre Caslon Text', Georgia, serif; font-style: italic; font-size: 0.875rem; line-height: 1.375; color: #7E3A22; }"
+    },
+    {
+      "name": "Foto com Moldura e Selo",
+      "kind": "custom",
+      "refersTo": "seal",
+      "description": "Foto com cantos de 1.25rem, moldura fina deslocada e o selo terracota.",
+      "html": "<div class=\"ds-foto-wrap\"><figure class=\"ds-moldura\"><div class=\"ds-foto\"></div><p class=\"ds-selo\">Duas mulheres, uma travessia</p></figure></div>",
+      "css": ".ds-foto-wrap { background: #F5EAE0; padding: 2.5rem; } .ds-moldura { position: relative; margin: 0; max-width: 16rem; } .ds-moldura::before { content: ''; position: absolute; inset: -0.5rem; border: 1px solid rgba(156,74,44,0.3); border-radius: 1.6rem; pointer-events: none; } .ds-foto { aspect-ratio: 4 / 5; border-radius: 1.25rem; background: linear-gradient(160deg, #D9B9A3, #8E6B57); } .ds-selo { position: absolute; bottom: -1rem; right: 0.75rem; margin: 0; background: #9C4A2C; color: #FBF8F3; border-radius: 0.75rem; padding: 0.5rem 1rem; font-family: Figtree, system-ui, sans-serif; font-size: 0.875rem; font-weight: 700; }"
+    },
+    {
+      "name": "Fatos entre Filetes",
+      "kind": "custom",
+      "refersTo": "colors.linha",
+      "description": "Grade 2×2 de fatos da abertura entre filetes terracota finos; rótulo pequeno, valor em Caslon.",
+      "html": "<dl class=\"ds-fatos\"><div><dt>Data</dt><dd>22/11/2026</dd></div><div><dt>Horário</dt><dd>A partir das 14h</dd></div><div><dt>Local</dt><dd>Paulista - PE</dd></div><div><dt>Valor</dt><dd>R$ 59,00 (até 5x)</dd></div></dl>",
+      "css": ".ds-fatos { display: grid; grid-template-columns: 1fr 1fr; column-gap: 1.5rem; row-gap: 0.75rem; margin: 0; padding: 1rem 0; border-top: 1px solid rgba(156,74,44,0.25); border-bottom: 1px solid rgba(156,74,44,0.25); background: #F5EAE0; } .ds-fatos dt { font-family: Figtree, system-ui, sans-serif; font-size: 0.875rem; color: #54473F; } .ds-fatos dd { margin: 0; font-family: 'Libre Caslon Text', Georgia, serif; font-size: 1.25rem; line-height: 1.375; color: #2B211C; }"
+    },
+    {
+      "name": "Caixa O que está incluso",
+      "kind": "card",
+      "refersTo": "included-box",
+      "description": "A única caixa tingida do sistema: pêssego, cantos de 1.25rem, vistos no verde do ramo.",
+      "html": "<div class=\"ds-incluso\"><h3>O que está incluso</h3><ul><li><svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"#5E6E52\" stroke-width=\"1.75\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M20 6 9 17l-5-5\"/></svg><span>Material de escrita e reflexão</span></li><li><svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"#5E6E52\" stroke-width=\"1.75\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M20 6 9 17l-5-5\"/></svg><span>Coffee break</span></li></ul></div>",
+      "css": ".ds-incluso { background: #F5EAE0; border-radius: 1.25rem; padding: 2rem; color: #2B211C; } .ds-incluso h3 { margin: 0; font-family: 'Libre Caslon Text', Georgia, serif; font-weight: 400; font-size: 1.5rem; line-height: 1.12; } .ds-incluso ul { list-style: none; margin: 1rem 0 0; padding: 0; display: grid; gap: 0.75rem; } .ds-incluso li { display: flex; align-items: flex-start; gap: 0.75rem; font-family: Figtree, system-ui, sans-serif; font-size: 1.0625rem; line-height: 1.7; } .ds-incluso svg { flex-shrink: 0; margin-top: 0.25rem; }"
+    },
+    {
+      "name": "Campo de Formulário",
+      "kind": "input",
+      "refersTo": "input",
+      "description": "Campo do diálogo de inscrição: branco, contorno café suave, foco terracota.",
+      "html": "<div class=\"ds-campo\"><label for=\"ds-nome\">Nome completo</label><input id=\"ds-nome\" class=\"ds-input\" placeholder=\"Seu nome\"></div>",
+      "css": ".ds-campo { background: #FBF8F3; padding: 1.5rem; font-family: Figtree, system-ui, sans-serif; } .ds-campo label { display: block; font-size: 1rem; font-weight: 700; color: #2B211C; } .ds-input { margin-top: 0.375rem; width: 100%; border-radius: 0.5rem; border: 1px solid rgba(43,33,28,0.25); background: #FFFFFF; padding: 0.75rem 1rem; font: inherit; font-size: 1rem; color: #2B211C; transition: border-color 0.2s, box-shadow 0.2s; } .ds-input::placeholder { color: rgba(84,71,63,0.85); } .ds-input:focus { outline: none; border-color: #9C4A2C; box-shadow: 0 0 0 2px rgba(156,74,44,0.25); }"
+    },
+    {
+      "name": "A Decisão",
+      "kind": "custom",
+      "refersTo": "colors.coffee",
+      "description": "O bloco de ápice em café: pergunta em Caslon marfim e a frase em itálico nude sobre um filete, revelada por clip-path.",
+      "html": "<section class=\"ds-decisao\"><h2>Se o medo não fosse o narrador, qual seria a sua próxima decisão?</h2><p class=\"ds-decisao-rotulo\">Meu próximo passo</p><p class=\"ds-escrita\">garantir minha vaga e estar lá no dia 22/11.</p><div class=\"ds-decisao-filete\"></div></section>",
+      "css": "@keyframes ds-escrever { from { clip-path: inset(0 100% 0 0); } to { clip-path: inset(0 0 0 0); } } .ds-decisao { background: #2B211C; color: #FBF8F3; padding: 4rem 1.25rem; } .ds-decisao h2 { margin: 0; max-width: 36rem; font-family: 'Libre Caslon Text', Georgia, serif; font-weight: 400; font-size: 2.25rem; line-height: 1.08; letter-spacing: -0.01em; color: #FBF8F3; } .ds-decisao-rotulo { margin: 2.5rem 0 0; font-family: Figtree, system-ui, sans-serif; font-size: 0.875rem; font-weight: 500; color: rgba(251,248,243,0.75); } .ds-escrita { margin: 0.25rem 0 0; font-family: 'Libre Caslon Text', Georgia, serif; font-style: italic; font-size: 1.5rem; line-height: 1.375; color: #EBD8C9; animation: ds-escrever 1.6s cubic-bezier(0.16,1,0.3,1) both; } .ds-decisao-filete { margin-top: 0.75rem; height: 1px; max-width: 42rem; background: rgba(251,248,243,0.3); } @media (prefers-reduced-motion: reduce) { .ds-escrita { animation: none; } }"
+    }
+  ],
+  "narrative": {
+    "northStar": "O Programa Impresso do Encontro",
+    "overview": "O site se lê como o programa impresso de um encontro pequeno: papel marfim e pêssego que se alternam como folhas, títulos em Caslon de livro, a tarde contada em ordem e filetes finos no lugar de caixas. A paleta vem inteira da logo do Romper (marfim, pêssego, terracota e o verde do ramo), e a forma recorrente é a porta da logo, que vira o arco da abertura. O tom é sereno, editorial e acolhedor, com densidade baixa e muito ar entre os blocos.\n\nHá um único momento escuro, \"A Decisão\", em café, com a logo clara a 6% ao fundo. Ele funciona como a página central do programa: a pergunta em Caslon claro e a linha \"Meu próximo passo\" que se escreve sozinha. O resto da página é claro, e o rodapé fecha no verde do ramo.\n\nO sistema recusa o template de retiro gerado por IA (rótulos sobre títulos, grades de cards com ícone, manchas flutuantes, animação em tudo) e também a fantasia temática (letra de mão, fitas, texturas).",
+    "keyCharacteristics": [
+      "Fundos de seção alternando marfim e pêssego, com um único bloco em café e o rodapé em verde-oliva escuro.",
+      "Caslon 400 para títulos e itálico para a voz íntima; Figtree para leitura e ação.",
+      "Arco de porta e molduras finas deslocadas como assinatura de forma.",
+      "Filetes finos organizam o conteúdo; quase nenhum card.",
+      "Movimento discreto, com um só gesto autoral (a linha que se escreve)."
+    ],
+    "rules": [
+      {
+        "name": "The Folhas Alternadas Rule",
+        "body": "As seções alternam pêssego e marfim, começando pela abertura em pêssego. O café aparece uma vez só (\"A Decisão\") e o verde escuro fecha a página. Não se inventa um terceiro papel claro.",
+        "section": "colors"
+      },
+      {
+        "name": "The Barro Só no Claro Rule",
+        "body": "Texto em terracota só sobre marfim, pêssego ou branco. Sobre café ou verde escuro ele não passa no contraste (cerca de 2,3:1 no café); ali o texto é marfim ou nude, e o botão vira a variante papel.",
+        "section": "colors"
+      },
+      {
+        "name": "The Caslon Sem Negrito Rule",
+        "body": "Títulos são sempre Caslon 400. A hierarquia vem do tamanho e do itálico, nunca de peso. O negrito é da Figtree.",
+        "section": "typography"
+      },
+      {
+        "name": "The Itálico É Voz Rule",
+        "body": "O itálico do Caslon marca a fala íntima (legendas, a frase da decisão, cabeçalhos do rodapé). Não vira ênfase genérica no meio do texto corrido.",
+        "section": "typography"
+      },
+      {
+        "name": "The Só o Que Flutua Rule",
+        "body": "Sombra apenas em elementos fora do fluxo (diálogo, botão flutuante). Seções, fotos, caixas e botões no fluxo não têm sombra.",
+        "section": "elevation"
+      },
+      {
+        "name": "The Filete Antes da Caixa Rule",
+        "body": "O conteúdo se separa por filetes de 1px (filete ou terracota a 20-25%), não por cards. A única caixa tingida é a de \"O que está incluso\", em pêssego com cantos de 1.25rem.",
+        "section": "shapes"
+      }
+    ],
+    "dos": [
+      "Do alternar as seções entre marfim (#FBF8F3) e pêssego (#F5EAE0), reservando o café (#2B211C) para um único bloco de ápice.",
+      "Do usar Caslon 400 para todo título e o itálico dele para legendas e frases íntimas.",
+      "Do separar conteúdo com filetes de 1px antes de pensar numa caixa.",
+      "Do dar a fotos cantos de 1.25rem e a moldura fina terracota deslocada.",
+      "Do manter botões em pílula com altura mínima de 3.5rem e um só botão terracota por bloco.",
+      "Do trocar para o botão papel e texto marfim ou nude sobre fundos escuros.",
+      "Do garantir que todo movimento pare sob prefers-reduced-motion e que nenhum conteúdo dependa da animação para aparecer."
+    ],
+    "donts": [
+      "Don't colocar rótulos, kickers ou eyebrows acima dos títulos.",
+      "Don't montar grades de cards com ícone em quadradinho.",
+      "Don't usar manchas flutuantes, granulado de pontos ou animação de título palavra por palavra.",
+      "Don't pôr texto terracota sobre café ou verde escuro; terracota como texto só em fundos claros.",
+      "Don't usar Caslon em negrito nem fontes de sistema para títulos.",
+      "Don't dar sombra a seções, fotos, caixas ou botões no fluxo.",
+      "Don't usar letra de mão, fitas ou texturas de papel para fazer o clima \"artesanal\"."
+    ]
+  }
+}

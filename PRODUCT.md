@@ -10,7 +10,7 @@ web
 
 Mulheres adultas (aprox. 25 a 55 anos) da região de Recife/PE que vivem uma fase de transição: relacionamento, carreira, luto, fé, ou uma decisão que vêm adiando. A maioria chega pelo Instagram e pelo WhatsApp das organizadoras e abre o site no celular. Ela vai ao site para entender o que é o encontro, sentir que é seguro e acolhedor, e garantir uma das 30 vagas pagando com Pix ou cartão.
 
-Público secundário: a organização (Wirlla Dantas e Soraia Ferreira). Ela acompanha as inscrições numa planilha Google e não usa nenhuma tela do site para isso.
+Público secundário: a organização (Soraia Ferreira e Wirlla Dantas). Ela acompanha as inscrições numa planilha Google e não usa nenhuma tela do site para isso.
 
 ## Product Purpose
 
@@ -26,7 +26,7 @@ Não é palestra nem curso. É um encontro pequeno (30 mulheres), presencial e c
 
 - A participante descobre o evento em redes sociais e no WhatsApp, abre o site no celular, se inscreve e paga no ambiente do Mercado Pago.
 - Ela tira dúvidas pelo WhatsApp oficial ((81) 98552-6701) e pelo e-mail acoragemderomper@gmail.com.
-- O endereço completo é revelado só no e-mail de confirmação, nunca no site.
+- O encontro acontece em Paulista - PE. O endereço completo é revelado só no e-mail de confirmação, nunca no site (para preservar a privacidade do grupo).
 - O recebedor do Pix aparece como Luan Gabriel Dantas de Lima Cavalcanti. O site avisa disso antes do pagamento para evitar desconfiança.
 - O dia do encontro tem esta sequência: Acolhida, Reflexão Guiada, Escrita & Restauração e A Decisão.
 
@@ -43,11 +43,12 @@ Não é palestra nem curso. É um encontro pequeno (30 mulheres), presencial e c
 - Nome: **A Coragem para Romper e Recomeçar**, sempre com o artigo. A marca curta é "Romper", com logo em `public/images/logo-romper.png` e `.webp`.
 - Idioma: português do Brasil. O tom é acolhedor, direto e feminino, trata a leitora por "você" e não promete milagres.
 - A dimensão de fé está presente: Soraia Ferreira se apresenta como "Terapeuta Cristã do Emocional Feminino". O site não é exclusivo para cristãs.
-- Organizadoras: Wirlla Dantas (Mentora de Recomeços e Desenvolvimento Pessoal) e Soraia Ferreira. Palestrante convidada: Lu Santos.
+- Organizadoras: Soraia Ferreira (Terapeuta Cristã do Emocional Feminino) e Wirlla Dantas (Mentora de Recomeços e Desenvolvimento Pessoal), sempre nesta ordem. Palestrante convidada: Lu Santos.
 
 ## Evidence on Hand
 
-- Fotos: `public/images/01.jpeg`, `02.jpeg` (organizadoras), `03.jpg`, `lu-santos.jpg`, `lu-santos-2.jpg`, mais as imagens de compartilhamento `romper-compartilhar.jpg` e `romper-quadrada.jpg`.
+- Fotos: `public/images/02.jpeg` (organizadoras), `lu-santos.jpg`, `lu-santos-2.jpg`, mais as imagens de compartilhamento `romper-compartilhar.jpg` e `romper-quadrada.jpg`.
+- `public/images/encontro-mulheres.jpg` (Pexels, licença Pexels; foto 3926318) é uma **imagem de banco**: três mulheres conversando num ambiente acolhedor, usada na seção Detalhes para passar o clima de encontro. Por decisão da organização, aparece sem legenda de "imagem ilustrativa"; ainda assim, nenhum texto pode apresentá-la como foto do evento, do espaço ou das participantes. Trocar por uma foto real quando houver.
 - Bios e cargos das organizadoras e da palestrante, como aparecem em `src/sections/Organizers.tsx`.
 - **Não existem** depoimentos, números de edições anteriores, contagem de participantes, logos de parceiros nem menções na imprensa. Não inventar nada disso. Prova social só entra quando a organização fornecer material real.
 
