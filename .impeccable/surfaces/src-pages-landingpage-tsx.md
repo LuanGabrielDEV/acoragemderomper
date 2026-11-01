@@ -21,7 +21,7 @@ THESIS: Um convite editorial e sereno, como um programa impresso de um encontro 
 
 OWN-WORLD: Paleta da logo: marfim (#FBF8F3) e pêssego claro (#F5EAE0) alternando por seção, terracota (#9C4A2C) para ação, verde do ramo em detalhes, seção "A Decisão" em café escuro (#2B211C) com a logo clara a 6% ao fundo. Títulos em Libre Caslon Text 400 (itálico para legendas e a frase da decisão), texto em Figtree. Logo em quadro pêssego com moldura fina deslocada e selo flutuante; fotos com cantos de 1.25rem, moldura deslocada e selo terracota; filetes finos; botões em pílula.
 
-STORY: Ela lê na abertura o que é, quando, onde, quanto e clica; desce por: para quem é, quem conduz, a tarde em ordem, "A Decisão" (pergunta em terracota, a frase "garantir minha vaga e estar lá no dia 22/11." que se revela, o botão, a garantia e a explicação do Pix); depois detalhes, dúvidas e rodapé.
+STORY: Ela lê na abertura o que é, quando, onde, quanto e clica; desce por: para quem é, quem conduz, a tarde em ordem, "A Decisão" (pergunta em creme sobre café, por contraste, a frase "garantir minha vaga e estar lá no dia 22/11." que se revela, o botão, a garantia e a explicação do Pix); depois detalhes, dúvidas e rodapé.
 
 FIRST VIEWPORT: Celular 390×844 sobre pêssego: a logo dentro de um arco de porta com batente fino e a frase "Existe algo novo do outro lado." escrita dentro do arco (sem card), título em Caslon (~37px), subtítulo, grade 2×2 de fatos entre filetes, botão terracota de largura total e a garantia, tudo acima da dobra. Desktop: texto à esquerda, o arco da logo à direita.
 

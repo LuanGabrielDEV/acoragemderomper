@@ -30,7 +30,7 @@ export function AvisoPagamento() {
   return (
     <div role="status" className="bg-olive-dark px-5 py-2.5 text-center text-sm text-cream">
       {texto}{' '}
-      <a href="/obrigado" className="font-semibold underline underline-offset-2 hover:decoration-2">
+      <a href="/obrigado" className="font-bold underline underline-offset-2 hover:decoration-2">
         Ver status da inscrição
       </a>
     </div>

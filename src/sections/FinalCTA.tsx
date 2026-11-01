@@ -48,7 +48,7 @@ export function FinalCTA() {
         />
       </div>
       <div className="relative mx-auto max-w-5xl px-5 sm:px-8">
-        <h2 id="a-decisao-titulo" className="max-w-4xl text-[2.25rem] leading-[1.08] text-cream sm:text-6xl">
+        <h2 id="a-decisao-titulo" className="max-w-4xl text-[2.3rem] leading-[1.05] text-cream sm:text-6xl">
           Se o medo não fosse o narrador, qual seria a sua próxima decisão?
         </h2>
 

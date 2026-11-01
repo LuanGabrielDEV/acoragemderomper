@@ -1,219 +1,266 @@
 ---
 name: A Coragem para Romper e Recomeçar
-description: Site de inscrição de um encontro presencial e íntimo para 30 mulheres.
+description: Site de inscrição de um encontro presencial e íntimo para 30 mulheres, em forma de programa impresso.
 colors:
-  terracota: "#C87D55"
-  terracota-dark: "#B06A48"
-  olive: "#8A9A86"
-  olive-dark: "#74857A"
-  nude: "#E8D5C8"
-  cream: "#FDFBF7"
-  sand: "#F4EFEA"
-  coffee: "#3D2C24"
-  coffee-soft: "#5A4439"
-  field-white: "#FFFFFF"
+  terracota: "#9C4A2C"
+  terracota-dark: "#7E3A22"
+  olive: "#5E6E52"
+  olive-dark: "#46543D"
+  cream: "#FBF8F3"
+  sand: "#F5EAE0"
+  nude: "#EBD8C9"
+  linha: "#E3D6CA"
+  coffee: "#2B211C"
+  coffee-soft: "#54473F"
 typography:
   display:
-    fontFamily: "Playfair Display, Georgia, serif"
-    fontSize: "4.5rem"
+    fontFamily: "Libre Caslon Text, Georgia, serif"
+    fontSize: "clamp(2.3rem, 6vw, 3.75rem)"
     fontWeight: 400
-    lineHeight: 1.15
+    lineHeight: 1.05
+    letterSpacing: "-0.01em"
   headline:
-    fontFamily: "Playfair Display, Georgia, serif"
-    fontSize: "3rem"
+    fontFamily: "Libre Caslon Text, Georgia, serif"
+    fontSize: "clamp(2rem, 5vw, 3rem)"
     fontWeight: 400
-    lineHeight: 1.25
+    lineHeight: 1.12
+    letterSpacing: "-0.01em"
   title:
-    fontFamily: "Playfair Display, Georgia, serif"
+    fontFamily: "Libre Caslon Text, Georgia, serif"
     fontSize: "1.5rem"
     fontWeight: 400
-    lineHeight: 1.2
-  body:
-    fontFamily: "Plus Jakarta Sans, system-ui, sans-serif"
-    fontSize: "17px"
+    lineHeight: 1.12
+  caption:
+    fontFamily: "Libre Caslon Text, Georgia, serif"
+    fontSize: "1.125rem"
     fontWeight: 400
-    lineHeight: 1.65
+    lineHeight: 1.375
+  body:
+    fontFamily: "Figtree, system-ui, sans-serif"
+    fontSize: "1.0625rem"
+    fontWeight: 400
+    lineHeight: 1.7
   label:
-    fontFamily: "Plus Jakarta Sans, system-ui, sans-serif"
+    fontFamily: "Figtree, system-ui, sans-serif"
+    fontSize: "1rem"
+    fontWeight: 700
+    lineHeight: 1.5
+  small:
+    fontFamily: "Figtree, system-ui, sans-serif"
     fontSize: "0.875rem"
-    fontWeight: 600
-    lineHeight: 1.4
-    letterSpacing: "0.18em"
+    fontWeight: 400
+    lineHeight: 1.6
 rounded:
-  md: "0.75rem"
-  lg: "1.25rem"
-  xl: "1.75rem"
-  full: "9999px"
+  field: "0.5rem"
+  seal: "0.75rem"
+  photo: "1.25rem"
+  arch: "999px 999px 1.25rem 1.25rem"
+  pill: "9999px"
 spacing:
-  gutter-mobile: "20px"
-  gutter-desktop: "32px"
-  section-mobile: "80px"
-  section-desktop: "128px"
+  gutter-mobile: "1.25rem"
+  gutter: "2rem"
+  section-mobile: "4rem"
+  section: "6rem"
+  container: "64rem"
 components:
   button-primary:
     backgroundColor: "{colors.terracota}"
     textColor: "{colors.cream}"
-    rounded: "{rounded.full}"
-    padding: "16px 32px"
+    typography: "{typography.label}"
+    rounded: "{rounded.pill}"
+    padding: "0.875rem 1.75rem"
+    height: "3.5rem"
   button-primary-hover:
     backgroundColor: "{colors.terracota-dark}"
-    textColor: "{colors.cream}"
+  button-papel:
+    backgroundColor: "{colors.cream}"
+    textColor: "{colors.terracota-dark}"
+    typography: "{typography.label}"
+    rounded: "{rounded.pill}"
+    padding: "0.875rem 1.75rem"
+    height: "3.5rem"
+  button-papel-hover:
+    backgroundColor: "{colors.sand}"
   button-secondary:
-    backgroundColor: "transparent"
     textColor: "{colors.coffee}"
-    rounded: "{rounded.full}"
-    padding: "16px 32px"
+    typography: "{typography.label}"
+    rounded: "{rounded.pill}"
+    padding: "0.875rem 1.75rem"
+    height: "3.5rem"
   button-secondary-hover:
     backgroundColor: "{colors.coffee}"
     textColor: "{colors.cream}"
-  card:
-    backgroundColor: "{colors.cream}"
-    textColor: "{colors.coffee}"
-    rounded: "{rounded.lg}"
-    padding: "28px"
-  card-on-cream:
+  button-olive:
+    backgroundColor: "{colors.olive}"
+    textColor: "{colors.cream}"
+    typography: "{typography.label}"
+    rounded: "{rounded.pill}"
+    padding: "0.875rem 1.75rem"
+    height: "3.5rem"
+  button-olive-hover:
+    backgroundColor: "{colors.olive-dark}"
+  seal:
+    backgroundColor: "{colors.terracota}"
+    textColor: "{colors.cream}"
+    rounded: "{rounded.seal}"
+    padding: "0.5rem 1rem"
+  included-box:
     backgroundColor: "{colors.sand}"
     textColor: "{colors.coffee}"
-    rounded: "{rounded.lg}"
-    padding: "24px"
+    rounded: "{rounded.photo}"
+    padding: "2rem"
   input:
-    backgroundColor: "{colors.field-white}"
+    backgroundColor: "#FFFFFF"
     textColor: "{colors.coffee}"
-    rounded: "{rounded.md}"
-    padding: "12px 16px"
-  dialog:
-    backgroundColor: "{colors.cream}"
-    textColor: "{colors.coffee}"
-    rounded: "{rounded.xl}"
-    padding: "36px 32px"
+    rounded: "{rounded.field}"
+    padding: "0.75rem 1rem"
+  footer:
+    backgroundColor: "{colors.olive-dark}"
+    textColor: "{colors.cream}"
 ---
 
 # Design System: A Coragem para Romper e Recomeçar
 
 ## Overview
 
-**Creative North Star: "A Porta Entreaberta"**
+**Creative North Star: "O Programa Impresso do Encontro"**
 
-O sistema nasce da logo do Romper: um R dentro de um círculo, com uma porta aberta e um ramo de folhas. Tudo deve parecer um limiar visto com calma. A luz quente atravessa a porta, o chão é de terra (terracota) e o lado de lá tem folhas (oliva). A página é um corredor tranquilo que leva até a porta, e a porta é a inscrição.
+O site se lê como o programa impresso de um encontro pequeno: papel marfim e pêssego que se alternam como folhas, títulos em Caslon de livro, a tarde contada em ordem e filetes finos no lugar de caixas. A paleta vem inteira da logo do Romper (marfim, pêssego, terracota e o verde do ramo), e a forma recorrente é a porta da logo, que vira o arco da abertura. O tom é sereno, editorial e acolhedor, com densidade baixa e muito ar entre os blocos.
 
-A atmosfera é de papel de carta e fim de tarde. Os fundos alternam entre creme (`cream`) e areia (`sand`), sem preto e sem branco puro nas superfícies. O texto é marrom-café, nunca cinza. A tipografia combina uma serifada de alto contraste (Playfair Display) nos títulos, que dá voz de convite, com uma sans geométrica e calorosa (Plus Jakarta Sans) para ler e agir. A densidade é baixa: seções altas, muito respiro e poucas coisas por tela.
+Há um único momento escuro, "A Decisão", em café, com a logo clara a 6% ao fundo. Ele funciona como a página central do programa: a pergunta em Caslon claro e a linha "Meu próximo passo" que se escreve sozinha. O resto da página é claro, e o rodapé fecha no verde do ramo.
 
-Os componentes são táteis e calorosos. Têm cantos generosos, botões em pílula e microinterações suaves. A profundidade vem de tons, não de sombras: uma superfície se separa da outra pela troca creme/areia/nude. A sombra fica reservada ao que flutua de verdade (o diálogo de inscrição e o botão principal).
+O sistema recusa o template de retiro gerado por IA (rótulos sobre títulos, grades de cards com ícone, manchas flutuantes, animação em tudo) e também a fantasia temática (letra de mão, fitas, texturas).
 
 **Key Characteristics:**
-- Fundo sempre quente (creme ou areia), texto sempre café.
-- Terracota é a cor da ação e da ênfase; oliva é a cor do cuidado e do apoio.
-- Títulos em serifada de peso normal (400), nunca em negrito.
-- Cantos arredondados em toda parte; botões em pílula.
-- Profundidade tonal; sombra só no que flutua.
+- Fundos de seção alternando marfim e pêssego, com um único bloco em café e o rodapé em verde-oliva escuro.
+- Caslon 400 para títulos e itálico para a voz íntima; Figtree para leitura e ação.
+- Arco de porta e molduras finas deslocadas como assinatura de forma.
+- Filetes finos organizam o conteúdo; quase nenhum card.
+- Movimento discreto, com um só gesto autoral (a linha que se escreve).
 
 ## Colors
 
-Uma paleta de terra e folha sobre papel quente, com um acento principal (terracota) e um secundário de apoio (oliva).
+Uma paleta quente e terrosa tirada da logo: dois papéis claros, um barro para agir, um verde de ramo para fechar e um café para ler.
 
 ### Primary
-- **Terracota de Barro** (`terracota`): cor da ação. Botão principal, ícones de informação do evento (data, hora, local), rótulos pequenos acima dos títulos e links de texto.
-- **Barro Queimado** (`terracota-dark`): estado de hover e pressão do botão principal.
+- **Terracota de Barro** (#9C4A2C): a cor da ação. Botão principal, o "Romper" em itálico no título, os marcadores numerados da programação e a linha que se preenche, o selo da foto, as molduras finas (a 30-32% de opacidade), os títulos da lista "Para quem é", links e ícones da FAQ, foco e seleção de texto.
+- **Terracota Queimada** (#7E3A22): hover do botão principal, texto do botão papel, a frase dentro do arco e mensagens de erro.
 
 ### Secondary
-- **Folha de Oliveira** (`olive`): fundos de ícone em baixa opacidade (15%), ornamentos e a variante de botão oliva. Comunica cuidado e acolhimento.
-- **Oliveira Funda** (`olive-dark`): ícones sobre fundo oliva claro e o subtítulo de cargo da palestrante.
+- **Verde do Ramo** (#5E6E52): os vistos da caixa "O que está incluso" e o botão de lista de espera quando as vagas esgotam.
+- **Verde do Ramo Escuro** (#46543D): fundo do rodapé, da faixa de aviso de pagamento e do botão flutuante do WhatsApp.
 
 ### Neutral
-- **Papel de Carta** (`cream`): superfície base do corpo, dos cards sobre areia e do diálogo de inscrição.
-- **Areia Morna** (`sand`): superfície alternada das seções (Hero, Experiência, rodapé) e dos cards sobre creme.
-- **Nude Rosado** (`nude`): avisos e mensagens de erro em baixa opacidade (50–60%) e fundo dos ícones das organizadoras.
-- **Café Torrado** (`coffee`): todo título e texto principal. Em 60% de opacidade, é o fundo escurecido atrás do diálogo.
-- **Café com Leite** (`coffee-soft`): texto de apoio, parágrafos secundários e metadados.
-- **Branco de Campo** (`field-white`): exclusivo dos campos de formulário, para que o campo se destaque do diálogo creme.
+- **Marfim** (#FBF8F3): fundo principal e uma das duas folhas que alternam; texto sobre fundos escuros.
+- **Pêssego Claro** (#F5EAE0): a outra folha (abertura, "Quem conduz", "Detalhes") e a caixa "O que está incluso".
+- **Nude** (#EBD8C9): itálicos sobre fundo escuro (a frase da decisão, os títulos das colunas do rodapé) e o fundo dos avisos dentro do diálogo (a 60%).
+- **Filete** (#E3D6CA): divisórias de um pixel entre itens de lista e fichas.
+- **Café** (#2B211C): texto principal e o fundo de "A Decisão".
+- **Café Suave** (#54473F): texto de apoio, subtítulos e legendas pequenas.
 
 ### Named Rules
-**The Warm Floor Rule.** Nenhuma superfície usa branco puro ou cinza neutro. O único branco é o interior dos campos de formulário.
+**The Folhas Alternadas Rule.** As seções alternam pêssego e marfim, começando pela abertura em pêssego. O café aparece uma vez só ("A Decisão") e o verde escuro fecha a página. Não se inventa um terceiro papel claro.
 
-**The Action Color Rule.** Terracota preenchida significa "ação". Fora do botão principal, terracota só aparece como texto pequeno, ícone ou contorno, nunca como bloco de cor de decoração.
-
-**The Contrast Floor Rule.** Terracota sobre creme fica em torno de 3:1. Use-a só em texto grande (≥24px) ou em rótulos acompanhados de outro sinal. Parágrafos e links corridos usam café, ou terracota-dark com sublinhado.
+**The Barro Só no Claro Rule.** Texto em terracota só sobre marfim, pêssego ou branco. Sobre café ou verde escuro ele não passa no contraste (cerca de 2,3:1 no café); ali o texto é marfim ou nude, e o botão vira a variante papel.
 
 ## Typography
 
-**Display Font:** Playfair Display (com Georgia, serif)
-**Body Font:** Plus Jakarta Sans (com system-ui, sans-serif)
+**Display Font:** Libre Caslon Text (com Georgia, serif)
+**Body Font:** Figtree (com system-ui, sans-serif)
 
-**Character:** A Playfair dá aos títulos o tom de um convite escrito à mão em papel bom. A Jakarta é clara, redonda e próxima, a voz de quem explica o que vai acontecer.
+**Character:** Uma serifada de livro, só no peso 400, faz a voz de convite; o itálico dela é a voz íntima, de legenda e de frase escrita à mão sem ser caligrafia. A Figtree, limpa e humana, carrega a leitura e os botões.
 
 ### Hierarchy
-- **Display** (400, 1.875rem no celular até 4.5rem no desktop, 1.15): só o nome do evento no Hero.
-- **Headline** (400, 1.5rem no celular até 3rem no desktop, 1.25): títulos de seção, com `text-wrap: balance`.
-- **Title** (400, 1.125rem a 1.5rem, 1.2): títulos de card, nomes das organizadoras e perguntas do FAQ.
-- **Body** (400, 16px no celular e 17px a partir de 640px, 1.65): parágrafos, com no máximo cerca de 65ch (`max-w-lg`/`max-w-2xl`).
-- **Label** (600, 0.75rem no celular e 0.875rem a partir de 640px, 0.16–0.2em, MAIÚSCULAS): rótulos curtos acima dos títulos, em terracota.
+- **Display** (Caslon 400, 2.3rem no celular a 3.75rem, 1.05): só o título da abertura. "A Decisão" usa a mesma escala (2.25rem a 3.75rem, 1.08) em marfim.
+- **Headline** (Caslon 400, 2rem a 3rem, 1.12, -0.01em): o título de cada seção, alinhado à esquerda, com balanceamento de linhas.
+- **Title** (Caslon 400, 1.5rem a 1.875rem): etapas da programação, itens de "Para quem é", nomes das organizadoras, título da caixa de inclusos. Os valores dos fatos da abertura usam Caslon a 1.125-1.25rem.
+- **Caption** (Caslon itálico 400, 1.125rem a 1.875rem, 1.375): o "Romper" do título, a frase "garantir minha vaga..." em "A Decisão", "Palestrante convidada", a frase do arco e os títulos das colunas do rodapé.
+- **Body** (Figtree 400, 17px no celular e 18px a partir de 640px, 1.7): texto corrido, com medida de 60 a 65 caracteres.
+- **Label** (Figtree 700, 1rem a 1.125rem): botões, rótulos de campo, links de ação e as perguntas da FAQ.
+- **Small** (Figtree 400/500, 0.875rem): rótulos dos fatos ("Data", "Horário"), garantia, "Meu próximo passo".
 
 ### Named Rules
-**The Quiet Serif Rule.** A Playfair nunca passa de peso 400 nos títulos. O itálico (400 ou 500) é reservado a frases de voz, como "Existe algo novo do outro lado."
+**The Caslon Sem Negrito Rule.** Títulos são sempre Caslon 400. A hierarquia vem do tamanho e do itálico, nunca de peso. O negrito é da Figtree.
 
-**The 16px Field Rule.** Campos de formulário têm no mínimo 16px de texto no celular, para o iOS não dar zoom.
+**The Itálico É Voz Rule.** O itálico do Caslon marca a fala íntima (legendas, a frase da decisão, cabeçalhos do rodapé). Não vira ênfase genérica no meio do texto corrido.
 
 ## Layout
 
-Coluna única no celular e grade de duas colunas assimétricas no desktop (Hero `1.02fr / 0.98fr`, Organizadoras `0.92fr / 1.08fr`). O contêiner vai de `max-w-3xl` (FAQ, rodapé) a `max-w-7xl` (Hero), conforme a seção pede leitura ou composição. As margens laterais são de 20px no celular e 32px a partir de 640px.
+Coluna única editorial dentro de um contêiner de 64rem, com margens laterais de 1.25rem no celular e 2rem a partir de 640px. Cada seção tem respiro vertical de 4rem no celular e 6rem a partir de 640px; "A Decisão" vai a 7rem. Títulos e textos ficam alinhados à esquerda e limitados a 42-48rem de largura, mesmo quando o contêiner é maior.
 
-O ritmo vertical é amplo: 80px entre seções no celular e 128px a partir de 640px. As seções alternam o fundo entre creme e areia para marcar a passagem sem linhas divisórias. No celular, a imagem vem antes do texto no Hero (`order-1`). O botão de WhatsApp flutuante exige 112px de respiro no fim do rodapé.
+A abertura cabe inteira na primeira tela do celular (390×844): arco da logo em cima, título, subtítulo, uma grade 2×2 de fatos entre filetes, botão de largura total e a garantia. Em telas de pouca altura (até 760px) o arco encolhe e a frase do arco some. A partir de 1024px a abertura vira duas colunas, texto à esquerda e arco à direita; "Quem conduz" e "Detalhes" também abrem em duas colunas (foto e texto). Botões ocupam a largura toda no celular e se ajustam ao conteúdo a partir de 640px.
 
 ## Elevation & Depth
 
-O sistema é **tonal por padrão**. Superfícies se separam pela troca de fundo: card creme sobre seção areia, card areia sobre seção creme, aviso nude sobre diálogo creme. A sombra é uma exceção reservada ao que realmente flutua sobre a página.
+O sistema é plano. A profundidade vem da alternância de papéis, das molduras finas deslocadas atrás das fotos e do arco, e do bloco escuro de "A Decisão". Sombra existe só no que flutua de verdade.
 
 ### Shadow Vocabulary
-- **Brisa** (`box-shadow: 0 2px 20px -4px rgba(61, 44, 36, 0.08)`): selos pequenos que se sobrepõem a uma imagem, como a frase sobre a foto do Hero.
-- **Flutuação** (`box-shadow: 0 8px 40px -8px rgba(61, 44, 36, 0.12)`): o diálogo de inscrição e o botão principal.
+- **Diálogo** (`box-shadow: 0 18px 50px -12px rgba(43, 33, 28, 0.35)`): a janela de inscrição, sobre um véu café a 65%.
+- **Flutuante** (`box-shadow: 0 8px 40px -8px rgba(43, 33, 28, 0.12)`): o botão redondo do WhatsApp.
 
 ### Named Rules
-**The Tonal Lift Rule.** Card não recebe sombra para se destacar; troca de tom. Sombra só aparece em quem flutua: o diálogo, o botão principal e selos sobre imagem.
+**The Só o Que Flutua Rule.** Sombra apenas em elementos fora do fluxo (diálogo, botão flutuante). Seções, fotos, caixas e botões no fluxo não têm sombra.
 
 ## Shapes
 
-As formas são arredondadas e acolhedoras, sem ângulo vivo. Os campos de formulário e avisos têm cantos de 0.75rem, os cards de 1.25rem, e o diálogo e os blocos de imagem de 1.75rem. Botões e controles circulares (fechar, ícone do FAQ, WhatsApp) são pílulas ou círculos completos. Fotos em destaque recebem uma moldura fina em terracota a 20% de opacidade, deslocada alguns pixels para fora da imagem, como um passe-partout.
+A forma-mãe é a porta da logo. Na abertura, a logo fica dentro de um arco de porta (topo totalmente arredondado, base com cantos de 1.25rem), preenchido por um degradê pêssego vertical, com um batente: um contorno terracota de 1px a 32% de opacidade, afastado 0.6rem (0.9rem a partir de 640px), que repete o arco.
+
+Fotos têm cantos de 1.25rem e uma moldura fina terracota a 30%, deslocada 0.5rem (1rem a partir de 640px). A foto das organizadoras leva o selo terracota "Duas mulheres, uma travessia", com cantos de 0.75rem, apoiado sobre a borda inferior. Fotos ilustrativas recebem um leve tom de barro (sépia suave e uma camada terracota a 12% em multiply).
+
+Botões são pílulas. Campos de formulário têm cantos de 0.5rem. Marcadores da programação são círculos terracota com o número em Caslon.
+
+**The Filete Antes da Caixa Rule.** O conteúdo se separa por filetes de 1px (filete ou terracota a 20-25%), não por cards. A única caixa tingida é a de "O que está incluso", em pêssego com cantos de 1.25rem.
 
 ## Components
 
 ### Buttons
-Táteis e calorosos: pílula cheia, texto semibold, seta que avança no hover.
-- **Shape:** pílula completa (9999px).
-- **Primary:** fundo terracota com texto creme, 14–16px vertical e 24–32px horizontal, seta de 20px à direita. No celular ocupa toda a largura.
-- **Hover / Focus:** o fundo escurece para terracota-dark e a seta anda 4px para a direita. O foco visível é um contorno de 2px em terracota com 2px de afastamento.
-- **Secondary:** fundo transparente com borda café a 25%. No hover, inverte para fundo café e texto creme.
-- **Olive:** mesma forma em oliva, para ações de apoio.
+Pílulas confiantes e calmas, sempre com seta à direita que anda 4px no hover.
+- **Shape:** pílula completa (9999px), altura mínima de 3.5rem.
+- **Primary:** terracota com texto marfim, Figtree 700, padding de 0.875rem por 1.75rem (2rem a partir de 640px).
+- **Hover / Focus:** o fundo escurece para terracota queimada em 200ms ease-out; foco com contorno terracota de 2px afastado 2px.
+- **Papel:** marfim com texto terracota queimada, para fundos escuros ("A Decisão" e rodapé); hover em pêssego.
+- **Secondary:** contorno café a 30%, transparente; no hover se enche de café com texto marfim. Usado em "Detalhes".
+- **Olive:** verde do ramo com texto marfim; hover no verde escuro. Reservado para a lista de espera quando as vagas esgotam.
 
 ### Cards / Containers
 - **Corner Style:** 1.25rem.
-- **Background:** creme sobre seção areia, ou areia sobre seção creme (ver Elevation & Depth).
-- **Shadow Strategy:** nenhuma em repouso (The Tonal Lift Rule).
-- **Internal Padding:** 20px no celular e 24–28px a partir de 640px.
-- **Ícone:** quadrado arredondado de 48–56px em oliva a 15% de opacidade, com traço de 1.5px.
+- **Background:** pêssego, só na caixa "O que está incluso".
+- **Shadow Strategy:** nenhuma (ver Elevation & Depth).
+- **Internal Padding:** 1.5rem no celular, 2rem a partir de 640px.
 
 ### Inputs / Fields
-- **Style:** fundo branco, borda café a 15%, cantos de 0.75rem e padding de 12px 16px. O rótulo fica acima, em semibold 14px café.
-- **Focus:** a borda vira terracota e ganha um anel de 2px em terracota a 25%.
-- **Error:** mensagem em bloco nude a 50%, com texto café e anúncio por `aria-live`.
+- **Style:** fundo branco, contorno café a 25%, cantos de 0.5rem, padding de 0.75rem por 1rem, rótulo em Figtree 700 acima.
+- **Focus:** contorno terracota com anel terracota de 2px a 25%.
+- **Error:** contorno e anel terracota cheios, mensagem em terracota queimada 700 logo abaixo.
 
-### Dialog (Inscrição)
-Diálogo nativo (`<dialog>`) centrado, com no máximo 32rem de largura, fundo creme e cantos de 1.75rem. O fundo atrás escurece com café a 60% e um desfoque leve. O botão de fechar é circular, de 44px, no canto. Dentro, o aviso do recebedor do Pix fica em bloco areia com borda terracota a 30%.
+### Navigation
+Não há menu no topo. A navegação fica no rodapé (coluna "Na página"), com links marfim sublinhados a 30% que se acendem no hover. O botão redondo do WhatsApp (3.5rem, verde escuro) aparece depois da abertura e some quando o rodapé entra na tela.
 
-### FAQ (Acordeão)
-Itens empilhados com cantos de 1.25rem e borda fina. A pergunta é em serifada e o ícone de abrir/fechar fica num círculo de 32px. A resposta abre por transição de altura (`grid-rows`).
+### Programação
+Uma linha vertical terracota a 20% liga círculos numerados; por cima, uma segunda linha terracota cheia se preenche de cima para baixo conforme a rolagem.
+
+### A Decisão
+Fundo café, logo clara a 6% deslocada para a direita, pergunta em Caslon marfim, o rótulo "Meu próximo passo" em Figtree 500 marfim a 75% e, abaixo, a frase em Caslon itálico nude sobre um filete marfim a 30%, como uma linha preenchida. A frase se revela da esquerda para a direita (clip-path, 1.6s, cubic-bezier(0.16, 1, 0.3, 1)) quando o bloco entra na tela, e nunca some se já estiver visível.
+
+### Movimento
+Blocos sobem 18px e aparecem (0.8s, cubic-bezier(0.16, 1, 0.3, 1)) ao entrar na tela, com segurança de 1.5s para nada ficar escondido. Sob prefers-reduced-motion todo movimento para: os blocos já aparecem, a linha da programação aparece cheia, a frase aparece inteira e a rolagem suave é desligada.
 
 ## Do's and Don'ts
 
 ### Do:
-- **Do** alternar creme e areia entre seções para marcar a passagem, sem linhas divisórias.
-- **Do** manter os títulos em Playfair Display 400 e reservar o itálico a frases de voz.
-- **Do** separar cards por tom (creme sobre areia, areia sobre creme), sem sombra.
-- **Do** usar terracota preenchida só no botão de ação.
-- **Do** manter alvos de toque de no mínimo 44px e campos com 16px de texto no celular.
-- **Do** respeitar `prefers-reduced-motion`: tudo visível e parado.
+- **Do** alternar as seções entre marfim (#FBF8F3) e pêssego (#F5EAE0), reservando o café (#2B211C) para um único bloco de ápice.
+- **Do** usar Caslon 400 para todo título e o itálico dele para legendas e frases íntimas.
+- **Do** separar conteúdo com filetes de 1px antes de pensar numa caixa.
+- **Do** dar a fotos cantos de 1.25rem e a moldura fina terracota deslocada.
+- **Do** manter botões em pílula com altura mínima de 3.5rem e um só botão terracota por bloco.
+- **Do** trocar para o botão papel e texto marfim ou nude sobre fundos escuros.
+- **Do** garantir que todo movimento pare sob prefers-reduced-motion e que nenhum conteúdo dependa da animação para aparecer.
 
 ### Don't:
-- **Don't** usar branco puro, cinza neutro ou preto em superfícies e textos.
-- **Don't** colocar sombra em card em repouso nem aumentar a sombra no hover de card.
-- **Don't** usar terracota (#C87D55) como cor de parágrafo ou de link corrido sobre creme; o contraste fica em torno de 3:1.
-- **Don't** colocar títulos em negrito.
+- **Don't** colocar rótulos, kickers ou eyebrows acima dos títulos.
+- **Don't** montar grades de cards com ícone em quadradinho.
+- **Don't** usar manchas flutuantes, granulado de pontos ou animação de título palavra por palavra.
+- **Don't** pôr texto terracota sobre café ou verde escuro; terracota como texto só em fundos claros.
+- **Don't** usar Caslon em negrito nem fontes de sistema para títulos.
+- **Don't** dar sombra a seções, fotos, caixas ou botões no fluxo.
+- **Don't** usar letra de mão, fitas ou texturas de papel para fazer o clima "artesanal".

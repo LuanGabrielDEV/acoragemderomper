@@ -164,7 +164,7 @@ function FormularioInscricao({ onFechar }: { onFechar: () => void }) {
         <X size={22} aria-hidden="true" />
       </button>
 
-      <h2 id="checkout-titulo" className="pr-10 text-[1.75rem] leading-tight sm:text-3xl">
+      <h2 id="checkout-titulo" className="pr-10 text-2xl leading-tight sm:text-3xl">
         Garanta a sua vaga
       </h2>
       <p className="mt-2 text-base leading-relaxed text-coffee-soft">
