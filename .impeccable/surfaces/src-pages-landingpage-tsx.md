@@ -13,7 +13,7 @@ Proof on hand: fotos reais das anfitriãs (02.jpeg) e da Lu Santos; 03.jpg só c
 
 Decisões confirmadas: direção inicial "caderno de escrita" foi construída e REJEITADA pela usuária ("menos elegante e muito estilizado; pode não agradar as organizadoras"); pedido: meio-termo elegante. O meio-termo editorial puro também foi rejeitado ("extremamente simples, tirou o diferencial da primeira versão"); decisão final da usuária: "meio a meio" — voltam da versão original a logo grande na abertura, fotos com moldura e selo, e movimento suave (revelar ao rolar, linha da programação, seção final escura com logo ao fundo); ficam a organização nova, as correções e as fontes novas. Trocar Playfair/Jakarta; Pix explicado (Luan = desenvolvedor do site e responsável pelos pagamentos); motivo do endereço = privacidade do grupo; bio da Lu = 1º parágrafo + "Ler mais"; 03.jpg com tratamento quente e corte fechado.
 
-Open: cidade a mostrar (a organização disse "outra cidade da região" sem nomear) — campo `cidade` vazio em eventConfig até confirmar.
+Cidade confirmada: Paulista - PE (endereço completo só por e-mail).
 
 ## Direction contract
 

@@ -26,7 +26,7 @@ Não é palestra nem curso. É um encontro pequeno (30 mulheres), presencial e c
 
 - A participante descobre o evento em redes sociais e no WhatsApp, abre o site no celular, se inscreve e paga no ambiente do Mercado Pago.
 - Ela tira dúvidas pelo WhatsApp oficial ((81) 98552-6701) e pelo e-mail acoragemderomper@gmail.com.
-- O endereço completo é revelado só no e-mail de confirmação, nunca no site.
+- O encontro acontece em Paulista - PE. O endereço completo é revelado só no e-mail de confirmação, nunca no site (para preservar a privacidade do grupo).
 - O recebedor do Pix aparece como Luan Gabriel Dantas de Lima Cavalcanti. O site avisa disso antes do pagamento para evitar desconfiança.
 - O dia do encontro tem esta sequência: Acolhida, Reflexão Guiada, Escrita & Restauração e A Decisão.
 

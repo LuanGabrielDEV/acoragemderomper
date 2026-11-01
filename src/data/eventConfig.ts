@@ -21,7 +21,7 @@ export const eventConfig = {
   price: 'R$ 59,00',
   // Cidade exibida na abertura e nos detalhes (ex.: 'Recife (PE)'). Vazio = mostra só
   // "Encontro presencial". O endereço completo continua indo só por e-mail.
-  cidade: '',
+  cidade: 'Paulista - PE',
   // Resumo da garantia, mostrado perto dos botões de inscrição.
   garantia: '7 dias para desistir com reembolso integral. Transferência da vaga gratuita.',
   recebedor: 'Luan Gabriel Dantas de Lima Cavalcanti',
