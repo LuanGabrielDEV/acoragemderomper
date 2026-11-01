@@ -27,7 +27,6 @@ export function Organizers() {
               Duas mulheres, uma travessia
             </p>
           </div>
-          <figcaption className="mt-8 font-serif text-base italic text-coffee-soft">Wirlla Dantas e Soraia Ferreira</figcaption>
         </figure>
         </Reveal>
 

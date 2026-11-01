@@ -2,12 +2,18 @@ import { useEffect, useState } from 'react';
 import { MessageCircle } from 'lucide-react';
 import { eventConfig } from '@/data/eventConfig';
 
-/** Botão flutuante do WhatsApp. Só aparece depois da abertura, para não cobrir o botão de inscrição. */
+/** Botão flutuante do WhatsApp. Aparece depois da abertura e some no rodapé, que já tem o contato. */
 export function WhatsAppFloat() {
   const [visivel, setVisivel] = useState(false);
 
   useEffect(() => {
-    const atualizar = () => setVisivel(window.scrollY > window.innerHeight * 0.85);
+    const atualizar = () => {
+      const passouAbertura = window.scrollY > window.innerHeight * 0.85;
+      // No rodapé (que já tem o WhatsApp) o botão some para não ficar sobre o mesmo verde.
+      const rodape = document.querySelector('footer');
+      const noRodape = !!rodape && rodape.getBoundingClientRect().top < window.innerHeight - 80;
+      setVisivel(passouAbertura && !noRodape);
+    };
     atualizar();
     window.addEventListener('scroll', atualizar, { passive: true });
     window.addEventListener('resize', atualizar);
