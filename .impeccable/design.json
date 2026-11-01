@@ -1,0 +1,331 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-01T18:38:08.675680Z",
+  "title": "Design System: A Coragem para Romper e Recomeçar",
+  "extensions": {
+    "colorMeta": {
+      "terracota": {
+        "role": "primary",
+        "displayName": "Terracota de Barro",
+        "canonical": "#C87D55",
+        "tonalRamp": [
+          "#32231B",
+          "#5C3C2B",
+          "#8B5436",
+          "#BD6A3E",
+          "#C78D6E",
+          "#D3B09D",
+          "#E2D1C8",
+          "#F5F1EF"
+        ]
+      },
+      "terracota-dark": {
+        "role": "primary",
+        "displayName": "Barro Queimado",
+        "canonical": "#B06A48",
+        "tonalRamp": [
+          "#30231D",
+          "#583C2F",
+          "#83553E",
+          "#B26C49",
+          "#BF8E76",
+          "#CEB0A2",
+          "#E0D1CB",
+          "#F5F1F0"
+        ]
+      },
+      "olive": {
+        "role": "secondary",
+        "displayName": "Folha de Oliveira",
+        "canonical": "#8A9A86",
+        "tonalRamp": [
+          "#252824",
+          "#41483F",
+          "#5C6859",
+          "#778972",
+          "#96A393",
+          "#B5BDB3",
+          "#D4D7D3",
+          "#F2F3F2"
+        ]
+      },
+      "olive-dark": {
+        "role": "secondary",
+        "displayName": "Oliveira Funda",
+        "canonical": "#74857A",
+        "tonalRamp": [
+          "#252826",
+          "#404742",
+          "#5B665F",
+          "#75867B",
+          "#95A199",
+          "#B4BCB7",
+          "#D3D7D5",
+          "#F2F3F2"
+        ]
+      },
+      "nude": {
+        "role": "neutral",
+        "displayName": "Nude Rosado",
+        "canonical": "#E8D5C8",
+        "tonalRamp": [
+          "#2F251D",
+          "#574030",
+          "#825A3F",
+          "#B1744B",
+          "#BF9477",
+          "#CDB4A3",
+          "#DFD3CB",
+          "#F5F2F0"
+        ]
+      },
+      "cream": {
+        "role": "neutral",
+        "displayName": "Papel de Carta",
+        "canonical": "#FDFBF7",
+        "tonalRamp": [
+          "#342B19",
+          "#604D26",
+          "#92712F",
+          "#C89733",
+          "#CFAC66",
+          "#D7C299",
+          "#E4DAC6",
+          "#F6F3EF"
+        ]
+      },
+      "sand": {
+        "role": "neutral",
+        "displayName": "Areia Morna",
+        "canonical": "#F4EFEA",
+        "tonalRamp": [
+          "#2D261F",
+          "#524334",
+          "#7A6147",
+          "#A57E57",
+          "#B69B80",
+          "#C8B8A8",
+          "#DDD5CD",
+          "#F4F2F0"
+        ]
+      },
+      "coffee": {
+        "role": "neutral",
+        "displayName": "Café Torrado",
+        "canonical": "#3D2C24",
+        "tonalRamp": [
+          "#2C2421",
+          "#503F37",
+          "#76594B",
+          "#9E725E",
+          "#B19384",
+          "#C5B3AB",
+          "#DCD3CF",
+          "#F4F2F1"
+        ]
+      },
+      "coffee-soft": {
+        "role": "neutral",
+        "displayName": "Café com Leite",
+        "canonical": "#5A4439",
+        "tonalRamp": [
+          "#2B2521",
+          "#4E4039",
+          "#735A4E",
+          "#9A7462",
+          "#AE9487",
+          "#C4B4AC",
+          "#DBD3CF",
+          "#F4F2F1"
+        ]
+      },
+      "field-white": {
+        "role": "neutral",
+        "displayName": "Branco de Campo",
+        "canonical": "#FFFFFF",
+        "tonalRamp": [
+          "#262626",
+          "#434343",
+          "#616161",
+          "#7E7E7E",
+          "#9B9B9B",
+          "#B8B8B8",
+          "#D5D5D5",
+          "#F2F2F2"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "Só o nome do evento no Hero."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Títulos de seção, com text-wrap balance."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Títulos de card, nomes e perguntas do FAQ."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Parágrafos; 16px no celular, 17px a partir de 640px; ~65ch."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Rótulos curtos em maiúsculas e terracota acima dos títulos."
+      }
+    },
+    "shadows": [
+      {
+        "name": "brisa",
+        "value": "0 2px 20px -4px rgba(61, 44, 36, 0.08)",
+        "purpose": "Selos pequenos sobre imagem."
+      },
+      {
+        "name": "flutuacao",
+        "value": "0 8px 40px -8px rgba(61, 44, 36, 0.12)",
+        "purpose": "Diálogo de inscrição e botão principal."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease-reveal",
+        "value": "cubic-bezier(0.2, 0.7, 0.2, 1)",
+        "purpose": "Entrada de palavras do título e zoom da imagem do Hero."
+      },
+      {
+        "name": "fade-up",
+        "value": "0.7s ease-out",
+        "purpose": "Revelação de blocos ao rolar."
+      },
+      {
+        "name": "hover-standard",
+        "value": "300ms",
+        "purpose": "Transição de cor e seta dos botões."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "sm",
+        "value": "640px"
+      },
+      {
+        "name": "md",
+        "value": "768px"
+      },
+      {
+        "name": "lg",
+        "value": "1024px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Ação principal: garantir a vaga.",
+      "html": "<button class=\"ds-btn-primary\"><span>Garantir minha vaga</span><svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M5 12h14\"/><path d=\"m12 5 7 7-7 7\"/></svg></button>",
+      "css": ".ds-btn-primary{display:inline-flex;align-items:center;gap:10px;background:#C87D55;color:#FDFBF7;border:none;border-radius:9999px;padding:16px 32px;font:600 16px 'Plus Jakarta Sans',system-ui,sans-serif;box-shadow:0 8px 40px -8px rgba(61,44,36,.12);cursor:pointer;transition:background .3s}.ds-btn-primary svg{transition:transform .3s}.ds-btn-primary:hover{background:#B06A48}.ds-btn-primary:hover svg{transform:translateX(4px)}.ds-btn-primary:focus-visible{outline:2px solid #C87D55;outline-offset:2px}"
+    },
+    {
+      "name": "Secondary Button",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "Ação secundária em contorno.",
+      "html": "<button class=\"ds-btn-secondary\">Falar no WhatsApp</button>",
+      "css": ".ds-btn-secondary{background:transparent;color:#3D2C24;border:1px solid rgba(61,44,36,.25);border-radius:9999px;padding:16px 32px;font:600 16px 'Plus Jakarta Sans',system-ui,sans-serif;cursor:pointer;transition:background .3s,color .3s}.ds-btn-secondary:hover{background:#3D2C24;color:#FDFBF7}.ds-btn-secondary:focus-visible{outline:2px solid #C87D55;outline-offset:2px}"
+    },
+    {
+      "name": "Text Field",
+      "kind": "input",
+      "refersTo": "input",
+      "description": "Campo do formulário de inscrição.",
+      "html": "<label class=\"ds-field\"><span>E-mail</span><input type=\"email\" placeholder=\"voce@email.com\"></label>",
+      "css": ".ds-field{display:block;font:600 14px 'Plus Jakarta Sans',system-ui,sans-serif;color:#3D2C24}.ds-field input{display:block;margin-top:6px;width:100%;box-sizing:border-box;background:#fff;border:1px solid rgba(61,44,36,.15);border-radius:12px;padding:12px 16px;font:400 16px 'Plus Jakarta Sans',system-ui,sans-serif;color:#3D2C24}.ds-field input::placeholder{color:rgba(90,68,57,.5)}.ds-field input:focus{outline:none;border-color:#C87D55;box-shadow:0 0 0 2px rgba(200,125,85,.25)}"
+    },
+    {
+      "name": "Experience Card",
+      "kind": "card",
+      "refersTo": "card",
+      "description": "Card tonal creme sobre seção areia.",
+      "html": "<div class=\"ds-card-wrap\"><div class=\"ds-card\"><div class=\"ds-card-icon\"><svg width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M12 20h9\"/><path d=\"M16.4 3.6a2 2 0 0 1 2.8 2.8L7 18.6l-4 1 1-4Z\"/></svg></div><div><h3>Escrita que Liberta</h3><p>Rituais de escrita terapêutica que ajudam a nomear sentimentos.</p></div></div></div>",
+      "css": ".ds-card-wrap{background:#F4EFEA;padding:24px}.ds-card{display:flex;gap:20px;background:#FDFBF7;border-radius:20px;padding:28px;color:#3D2C24}.ds-card-icon{flex:none;width:56px;height:56px;border-radius:20px;background:rgba(138,154,134,.15);color:#74857A;display:flex;align-items:center;justify-content:center}.ds-card h3{margin:0;font:400 20px 'Playfair Display',Georgia,serif}.ds-card p{margin:8px 0 0;font:400 16px/1.65 'Plus Jakarta Sans',system-ui,sans-serif;color:#5A4439}"
+    },
+    {
+      "name": "Section Heading",
+      "kind": "custom",
+      "refersTo": "headline",
+      "description": "Rótulo em terracota + título serifado.",
+      "html": "<div class=\"ds-heading\"><p>A Experiência</p><h2>O que esperar deste encontro</h2></div>",
+      "css": ".ds-heading{text-align:center;color:#3D2C24}.ds-heading p{margin:0 0 12px;font:600 14px 'Plus Jakarta Sans',system-ui,sans-serif;letter-spacing:.18em;text-transform:uppercase;color:#C87D55}.ds-heading h2{margin:0;font:400 48px/1.25 'Playfair Display',Georgia,serif;text-wrap:balance}"
+    },
+    {
+      "name": "Payee Notice",
+      "kind": "custom",
+      "refersTo": "dialog",
+      "description": "Aviso do recebedor do Pix dentro do diálogo.",
+      "html": "<div class=\"ds-notice\">Na confirmação do Pix aparece o nome <strong>Luan Gabriel Dantas de Lima Cavalcanti</strong>, responsável pelo recebimento.</div>",
+      "css": ".ds-notice{background:#F4EFEA;border:1px solid rgba(200,125,85,.3);border-radius:12px;padding:12px 16px;font:400 14px/1.65 'Plus Jakarta Sans',system-ui,sans-serif;color:#3D2C24}.ds-notice strong{font-weight:600}"
+    }
+  ],
+  "narrative": {
+    "northStar": "A Porta Entreaberta",
+    "overview": "O sistema nasce da logo do Romper: um R dentro de um círculo, com uma porta aberta e um ramo de folhas. Tudo deve parecer um limiar visto com calma. A luz quente atravessa a porta, o chão é de terra (terracota) e o lado de lá tem folhas (oliva). A página é um corredor tranquilo que leva até a porta, e a porta é a inscrição.\n\nA atmosfera é de papel de carta e fim de tarde. Os fundos alternam entre creme (`cream`) e areia (`sand`), sem preto e sem branco puro nas superfícies. O texto é marrom-café, nunca cinza. A tipografia combina uma serifada de alto contraste (Playfair Display) nos títulos, que dá voz de convite, com uma sans geométrica e calorosa (Plus Jakarta Sans) para ler e agir. A densidade é baixa: seções altas, muito respiro e poucas coisas por tela.\n\nOs componentes são táteis e calorosos. Têm cantos generosos, botões em pílula e microinterações suaves. A profundidade vem de tons, não de sombras: uma superfície se separa da outra pela troca creme/areia/nude. A sombra fica reservada ao que flutua de verdade (o diálogo de inscrição e o botão principal).",
+    "keyCharacteristics": [
+      "Fundo sempre quente (creme ou areia), texto sempre café.",
+      "Terracota é a cor da ação e da ênfase; oliva é a cor do cuidado e do apoio.",
+      "Títulos em serifada de peso normal (400), nunca em negrito.",
+      "Cantos arredondados em toda parte; botões em pílula.",
+      "Profundidade tonal; sombra só no que flutua."
+    ],
+    "rules": [
+      {
+        "name": "The Warm Floor Rule",
+        "body": "Nenhuma superfície usa branco puro ou cinza neutro. O único branco é o interior dos campos de formulário.",
+        "section": "colors"
+      },
+      {
+        "name": "The Action Color Rule",
+        "body": "Terracota preenchida significa \"ação\". Fora do botão principal, terracota só aparece como texto pequeno, ícone ou contorno, nunca como bloco de cor de decoração.",
+        "section": "colors"
+      },
+      {
+        "name": "The Contrast Floor Rule",
+        "body": "Terracota sobre creme fica em torno de 3:1. Use-a só em texto grande (≥24px) ou em rótulos acompanhados de outro sinal. Parágrafos e links corridos usam café, ou terracota-dark com sublinhado.",
+        "section": "colors"
+      },
+      {
+        "name": "The Quiet Serif Rule",
+        "body": "A Playfair nunca passa de peso 400 nos títulos. O itálico (400 ou 500) é reservado a frases de voz, como \"Existe algo novo do outro lado.\"",
+        "section": "typography"
+      },
+      {
+        "name": "The 16px Field Rule",
+        "body": "Campos de formulário têm no mínimo 16px de texto no celular, para o iOS não dar zoom.",
+        "section": "typography"
+      },
+      {
+        "name": "The Tonal Lift Rule",
+        "body": "Card não recebe sombra para se destacar; troca de tom. Sombra só aparece em quem flutua: o diálogo, o botão principal e selos sobre imagem.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "**Do** alternar creme e areia entre seções para marcar a passagem, sem linhas divisórias.",
+      "**Do** manter os títulos em Playfair Display 400 e reservar o itálico a frases de voz.",
+      "**Do** separar cards por tom (creme sobre areia, areia sobre creme), sem sombra.",
+      "**Do** usar terracota preenchida só no botão de ação.",
+      "**Do** manter alvos de toque de no mínimo 44px e campos com 16px de texto no celular.",
+      "**Do** respeitar `prefers-reduced-motion`: tudo visível e parado."
+    ],
+    "donts": [
+      "**Don't** usar branco puro, cinza neutro ou preto em superfícies e textos.",
+      "**Don't** colocar sombra em card em repouso nem aumentar a sombra no hover de card.",
+      "**Don't** usar terracota (#C87D55) como cor de parágrafo ou de link corrido sobre creme; o contraste fica em torno de 3:1.",
+      "**Don't** colocar títulos em negrito."
+    ]
+  }
+}
