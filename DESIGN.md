@@ -10,6 +10,7 @@ colors:
   sand: "#F5EAE0"
   nude: "#EBD8C9"
   linha: "#E3D6CA"
+  dourado: "#8A5D27"
   coffee: "#2B211C"
   coffee-soft: "#54473F"
 typography:
@@ -148,7 +149,8 @@ Uma paleta quente e terrosa tirada da logo: dois papéis claros, um barro para a
 
 ### Secondary
 - **Verde do Ramo** (#5E6E52): os vistos da caixa "O que está incluso" e o botão de lista de espera quando as vagas esgotam.
-- **Verde do Ramo Escuro** (#46543D): fundo do rodapé, da faixa de aviso de pagamento e do botão flutuante do WhatsApp.
+- **Verde do Ramo Escuro** (#46543D): fundo do rodapé, da faixa de aviso de pagamento e do botão flutuante do WhatsApp; também a cor dos cargos das organizadoras e da palestrante.
+- **Dourado da Porta** (#8A5D27): símbolos dos cards das organizadoras e da palestrante e o subtítulo "Palestrante convidada" em Caslon itálico. Pedido da organização: os subtítulos de destaque usam verde e dourado.
 
 ### Neutral
 - **Marfim** (#FBF8F3): fundo principal e uma das duas folhas que alternam; texto sobre fundos escuros.
@@ -224,7 +226,8 @@ Pílulas confiantes e calmas, sempre com seta à direita que anda 4px no hover.
 
 ### Cards / Containers
 - **Corner Style:** 1.25rem.
-- **Background:** pêssego, só na caixa "O que está incluso".
+- **Background:** pêssego na caixa "O que está incluso"; marfim nos cards das organizadoras (sobre a seção pêssego).
+- **Cards das organizadoras:** um por pessoa (Soraia primeiro, depois Wirlla), com um quadradinho nude a 70% (2.75rem, cantos 0.75rem) com o símbolo de brilho em dourado, o nome em Caslon e o cargo em Figtree 500 verde escuro. Sobem 4px no hover. A palestrante convidada repete o quadradinho com um microfone, ao lado do subtítulo dourado.
 - **Shadow Strategy:** nenhuma (ver Elevation & Depth).
 - **Internal Padding:** 1.5rem no celular, 2rem a partir de 640px.
 
@@ -236,12 +239,12 @@ Pílulas confiantes e calmas, sempre com seta à direita que anda 4px no hover.
 ### Navigation
 Não há menu no topo. A navegação fica no rodapé (coluna "Na página"), com links marfim sublinhados a 30% que se acendem no hover.
 
-- **Faixa de contagem:** faixa terracota fina acima da abertura com a contagem regressiva ao vivo até o início do encontro (dias, horas, minutos e segundos em algarismos tabulares) e as vagas. Some quando o encontro começa.
-- **Barra de inscrição:** depois da abertura, uma barra marfim fixa com filete e sombra suave acompanha a rolagem: embaixo no celular (quanto falta, data e cidade, botão do WhatsApp e botão compacto "Garantir vaga") e em cima no desktop (nome do evento em Caslon, quanto falta, data, cidade e botão). Entra deslizando (300ms) e some no rodapé.
+- **Faixa de contagem:** faixa terracota fina acima da abertura com a contagem regressiva ao vivo até o início do encontro (dias, horas e minutos; os segundos só em telas a partir de 640px, em algarismos tabulares) e "30 vagas". A linha quebra se faltar espaço. Some quando o encontro começa.
+- **Barra de inscrição:** depois da abertura, uma barra marfim fixa com filete e sombra suave acompanha a rolagem: embaixo no celular ("Faltam N dias", "É amanhã" ou "É hoje", contados em dias de calendário no horário de Brasília; data e cidade; botão do WhatsApp e botão compacto "Garantir vaga") e em cima no desktop (nome do evento em Caslon, quanto falta, data, cidade e botão). Entra deslizando (300ms), some no rodapé e, escondida, não recebe foco nem projeta sombra.
 - **WhatsApp flutuante:** só no desktop (no celular ele fica na barra), redondo, 3.5rem, verde escuro; aparece depois da abertura e some no rodapé.
 
 ### Faixa dos momentos
-Logo abaixo da abertura, uma faixa terracota corre devagar (38s por volta, linear) com os momentos da tarde, a data, a cidade e as vagas em Caslon itálico marfim, separados por pontos nude. Pausa no hover e fora da tela; fica parada com prefers-reduced-motion.
+Logo abaixo da abertura, uma faixa terracota corre devagar (38s por volta, linear) com os momentos da tarde, a data, a cidade e "30 vagas" em Caslon itálico marfim, separados por pontos nude. Tem um botão redondo de pausar/continuar à direita (acessível por toque e teclado), pausa no hover e fora da tela e fica parada com prefers-reduced-motion.
 
 ### Programação
 Uma linha vertical terracota a 20% liga círculos numerados; por cima, uma segunda linha terracota cheia se preenche de cima para baixo conforme a rolagem. O momento que está na metade da tela fica em destaque: círculo cheio, levemente maior, com um halo terracota a 14%, e título em terracota. Os momentos ainda não alcançados têm círculo marfim com contorno terracota.
@@ -250,7 +253,7 @@ Uma linha vertical terracota a 20% liga círculos numerados; por cima, uma segun
 Fundo café, logo clara a 6% deslocada para a direita, pergunta em Caslon marfim, o rótulo "Meu próximo passo" em Figtree 500 marfim a 75% e, abaixo, a frase em Caslon itálico nude sobre um filete marfim a 30%, como uma linha preenchida. A frase se revela da esquerda para a direita (clip-path, 1.6s, cubic-bezier(0.16, 1, 0.3, 1)) quando o bloco entra na tela, e nunca some se já estiver visível.
 
 ### Movimento
-**Abertura:** o arco se abre de baixo para cima como uma porta (clip-path, 1.1s), o batente aparece em seguida e a logo chega por último; ao lado, título, subtítulo, dados e botão sobem em sequência (0.15s a 0.52s), para o botão estar pronto em menos de 1.4s. **Fotos:** se revelam do centro para as bordas (clip-path com os cantos de 1.25rem, 1.2s) enquanto a imagem se assenta de 112% para 100%. Blocos sobem 18px e aparecem (0.8s, cubic-bezier(0.16, 1, 0.3, 1)) ao entrar na tela, com segurança de 1.5s para nada ficar escondido. Botões encolhem levemente ao toque (98%). Sob prefers-reduced-motion todo movimento para: a abertura e as fotos já aparecem prontas, a faixa fica parada, os blocos já aparecem, a linha da programação aparece cheia, a frase aparece inteira e a rolagem suave é desligada.
+**Abertura:** o arco se abre de baixo para cima como uma porta (clip-path, 1.1s), o batente aparece em seguida e a logo se assenta no lugar; ao lado, título, subtítulo, dados e botão já começam visíveis e só sobem 18px até o lugar, em sequência curta (0 a 0.18s). Nada da abertura começa invisível. **Fotos:** se revelam do centro para as bordas (clip-path com os cantos de 1.25rem, 1.2s) enquanto a imagem se assenta de 112% para 100%. Blocos sobem 18px e aparecem (0.8s, cubic-bezier(0.16, 1, 0.3, 1)) ao entrar na tela, com segurança de 1.5s para nada ficar escondido. Botões encolhem levemente ao toque (98%). Sob prefers-reduced-motion todo movimento para: a abertura e as fotos já aparecem prontas, a faixa fica parada, os blocos já aparecem, a linha da programação aparece cheia, a frase aparece inteira e a rolagem suave é desligada.
 
 ## Do's and Don'ts
 

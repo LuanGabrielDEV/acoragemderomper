@@ -56,13 +56,14 @@
   0% { clip-path: inset(100% 0 0 0 round 999px 999px 1.25rem 1.25rem); }
   100% { clip-path: inset(0 0 0 0 round 999px 999px 1.25rem 1.25rem); }
 }
+/* Começam visíveis: só se deslocam até o lugar (nada fica invisível na abertura) */
 @keyframes logo-chega {
-  0% { opacity: 0; transform: translateY(14px) scale(0.97); }
-  100% { opacity: 1; transform: none; }
+  0% { transform: translateY(14px) scale(0.97); }
+  100% { transform: none; }
 }
 @keyframes linha-sobe {
-  0% { opacity: 0; transform: translateY(22px); clip-path: inset(0 0 100% 0); }
-  100% { opacity: 1; transform: none; clip-path: inset(-20% -5% -20% -5%); }
+  0% { transform: translateY(18px); }
+  100% { transform: none; }
 }
 @keyframes batente-desenha {
   0% { opacity: 0; transform: scale(0.96); }
@@ -91,7 +92,8 @@
     animation: faixa-corre 38s linear infinite;
   }
   .faixa:hover .faixa-trilho,
-  .faixa.pausada .faixa-trilho {
+  .faixa.pausada .faixa-trilho,
+  .faixa.parada .faixa-trilho {
     animation-play-state: paused;
   }
 

@@ -15,6 +15,7 @@ export default {
         coffee: '#2B211C', // texto
         'coffee-soft': '#54473F', // texto de apoio
         linha: '#E3D6CA', // filetes e divisórias
+        dourado: '#8A5D27', // dourado da porta da logo: selos e subtítulos de destaque
       },
       fontFamily: {
         serif: ['"Libre Caslon Text"', 'Georgia', 'serif'],

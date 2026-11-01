@@ -1,3 +1,4 @@
+import { Mic2, Sparkles } from 'lucide-react';
 import { Folha } from '@/components/Folha';
 import { Reveal } from '@/components/Reveal';
 
@@ -30,16 +31,24 @@ export function Organizers() {
         </figure>
         </Reveal>
 
-        <dl className="max-w-xl divide-y divide-linha border-y border-linha">
-          <div className="py-5">
-            <dt className="font-serif text-2xl text-coffee sm:text-3xl">Soraia Ferreira</dt>
-            <dd className="mt-1 text-coffee-soft">Terapeuta Cristã do Emocional Feminino</dd>
-          </div>
-          <div className="py-5">
-            <dt className="font-serif text-2xl text-coffee sm:text-3xl">Wirlla Dantas</dt>
-            <dd className="mt-1 text-coffee-soft">Mentora de Recomeços e Desenvolvimento Pessoal</dd>
-          </div>
-        </dl>
+        <ul className="grid max-w-xl gap-4 sm:grid-cols-2 lg:grid-cols-1">
+          {[
+            { nome: 'Soraia Ferreira', papel: 'Terapeuta Cristã do Emocional Feminino' },
+            { nome: 'Wirlla Dantas', papel: 'Mentora de Recomeços e Desenvolvimento Pessoal' },
+          ].map((o, i) => (
+            <li key={o.nome}>
+              <Reveal delay={i * 120} className="h-full">
+                <div className="h-full rounded-[1.25rem] bg-cream p-5 transition-transform duration-300 ease-out hover:-translate-y-1 sm:p-6">
+                  <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-nude/70 text-dourado">
+                    <Sparkles size={21} strokeWidth={1.6} aria-hidden="true" />
+                  </div>
+                  <h3 className="mt-4 text-2xl text-coffee sm:mt-5">{o.nome}</h3>
+                  <p className="mt-1.5 font-medium leading-snug text-olive-dark">{o.papel}</p>
+                </div>
+              </Reveal>
+            </li>
+          ))}
+        </ul>
       </div>
 
       {/* Palestrante convidada */}
@@ -58,8 +67,14 @@ export function Organizers() {
           </div>
         </div>
         <div className="max-w-2xl">
-          <h3 className="text-3xl text-coffee sm:text-4xl">Lu Santos</h3>
-          <p className="mt-1 font-serif italic text-coffee-soft">Palestrante convidada</p>
+          <div className="flex items-center gap-3">
+            <span className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-xl bg-nude/70 text-dourado">
+              <Mic2 size={20} strokeWidth={1.6} aria-hidden="true" />
+            </span>
+            <p className="font-serif text-lg italic text-dourado">Palestrante convidada</p>
+          </div>
+          <h3 className="mt-3 text-3xl text-coffee sm:text-4xl">Lu Santos</h3>
+          <p className="mt-1 font-medium text-olive-dark">Palestrante</p>
           <p className="mt-4 text-coffee-soft">
             Especialista em Harmonização Facial e palestrante, com atuação voltada à estética, ao posicionamento
             profissional e à construção de autoridade.

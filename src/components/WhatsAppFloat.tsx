@@ -7,19 +7,25 @@ export function WhatsAppFloat() {
   const [visivel, setVisivel] = useState(false);
 
   useEffect(() => {
+    // No rodapé (que já tem o WhatsApp) o botão some para não ficar sobre o mesmo verde.
+    const rodape = document.querySelector('footer');
+    let quadro = 0;
     const atualizar = () => {
+      quadro = 0;
       const passouAbertura = window.scrollY > window.innerHeight * 0.85;
-      // No rodapé (que já tem o WhatsApp) o botão some para não ficar sobre o mesmo verde.
-      const rodape = document.querySelector('footer');
       const noRodape = !!rodape && rodape.getBoundingClientRect().top < window.innerHeight - 80;
       setVisivel(passouAbertura && !noRodape);
     };
+    const aoRolar = () => {
+      if (!quadro) quadro = requestAnimationFrame(atualizar);
+    };
     atualizar();
-    window.addEventListener('scroll', atualizar, { passive: true });
-    window.addEventListener('resize', atualizar);
+    window.addEventListener('scroll', aoRolar, { passive: true });
+    window.addEventListener('resize', aoRolar);
     return () => {
-      window.removeEventListener('scroll', atualizar);
-      window.removeEventListener('resize', atualizar);
+      window.removeEventListener('scroll', aoRolar);
+      window.removeEventListener('resize', aoRolar);
+      if (quadro) cancelAnimationFrame(quadro);
     };
   }, []);
 

@@ -30,7 +30,7 @@ export function Hero() {
                 loading="eager"
                 fetchPriority="high"
               />
-              <p style={{ animationDelay: '0.6s' }} className="entra-logo mt-2 text-center font-serif text-sm italic leading-snug text-terracota-dark [@media(max-height:760px)]:hidden sm:mt-5 sm:text-lg sm:[@media(max-height:760px)]:block">
+              <p style={{ animationDelay: '0.35s' }} className="entra-logo mt-2 text-center font-serif text-sm italic leading-snug text-terracota-dark [@media(max-height:760px)]:hidden sm:mt-5 sm:text-lg sm:[@media(max-height:760px)]:block">
                 Existe algo novo do outro lado.
               </p>
             </div>
@@ -39,14 +39,14 @@ export function Hero() {
 
         {/* Nome, dados e ação */}
         <div className="lg:order-1">
-          <h1 style={{ animationDelay: '0.15s' }} className="entra-linha mt-2 text-[2.3rem] leading-[1.05] text-coffee sm:text-6xl lg:mt-0">
+          <h1 style={{ animationDelay: '0s' }} className="entra-linha mt-2 text-[2.3rem] leading-[1.05] text-coffee sm:text-6xl lg:mt-0">
             A Coragem para <em className="font-serif italic text-terracota">Romper</em> e Recomeçar
           </h1>
-          <p style={{ animationDelay: '0.3s' }} className="entra-linha mt-3 max-w-xl text-base leading-relaxed text-coffee-soft sm:mt-5 sm:text-xl">
+          <p style={{ animationDelay: '0.06s' }} className="entra-linha mt-3 max-w-xl text-base leading-relaxed text-coffee-soft sm:mt-5 sm:text-xl">
             {eventConfig.subtitle}
           </p>
 
-          <dl style={{ animationDelay: '0.42s' }} className="entra-linha mt-5 grid grid-cols-2 gap-x-6 gap-y-3 border-y border-terracota/25 py-4 sm:mt-8">
+          <dl style={{ animationDelay: '0.12s' }} className="entra-linha mt-5 grid grid-cols-2 gap-x-6 gap-y-3 border-y border-terracota/25 py-4 sm:mt-8">
             {fatos.map((f) => (
               <div key={f.rotulo}>
                 <dt className="text-sm text-coffee-soft">{f.rotulo}</dt>
@@ -55,7 +55,7 @@ export function Hero() {
             ))}
           </dl>
 
-          <div style={{ animationDelay: '0.52s' }} className="entra-linha mt-6 sm:mt-8">
+          <div style={{ animationDelay: '0.18s' }} className="entra-linha mt-6 sm:mt-8">
             <CheckoutButton className="w-full sm:w-auto">Garantir minha vaga · {eventConfig.price}</CheckoutButton>
             <p className="mt-3 max-w-md text-sm leading-relaxed text-coffee-soft sm:text-base">{eventConfig.garantia}</p>
           </div>

@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { MessageCircle } from 'lucide-react';
 import { eventConfig } from '@/data/eventConfig';
 import { CheckoutButton } from '@/components/CheckoutButton';
-import { useContagem } from '@/lib/contagem';
+import { textoDias, useDiasAteEvento } from '@/lib/contagem';
 
 /**
  * Barra de inscrição que acompanha a rolagem depois da abertura:
@@ -11,32 +11,38 @@ import { useContagem } from '@/lib/contagem';
  */
 export function BarraInscricao() {
   const [visivel, setVisivel] = useState(false);
-  const c = useContagem(eventConfig.inicio);
+  const falta = textoDias(useDiasAteEvento(eventConfig.inicio));
 
   useEffect(() => {
+    const rodape = document.querySelector('footer');
+    let quadro = 0;
     const atualizar = () => {
+      quadro = 0;
       const passouAbertura = window.scrollY > window.innerHeight * 0.9;
-      const rodape = document.querySelector('footer');
       const noRodape = !!rodape && rodape.getBoundingClientRect().top < window.innerHeight - 40;
       setVisivel(passouAbertura && !noRodape);
     };
+    const aoRolar = () => {
+      if (!quadro) quadro = requestAnimationFrame(atualizar);
+    };
     atualizar();
-    window.addEventListener('scroll', atualizar, { passive: true });
-    window.addEventListener('resize', atualizar);
+    window.addEventListener('scroll', aoRolar, { passive: true });
+    window.addEventListener('resize', aoRolar);
     return () => {
-      window.removeEventListener('scroll', atualizar);
-      window.removeEventListener('resize', atualizar);
+      window.removeEventListener('scroll', aoRolar);
+      window.removeEventListener('resize', aoRolar);
+      if (quadro) cancelAnimationFrame(quadro);
     };
   }, []);
-
-  const falta = c.terminou ? '' : c.dias > 0 ? `Faltam ${c.dias} ${c.dias === 1 ? 'dia' : 'dias'}` : 'É hoje';
 
   return (
     <div
       aria-hidden={!visivel}
       {...(visivel ? {} : { inert: "" })}
-      className={`fixed inset-x-0 bottom-0 z-40 border-t border-linha bg-cream shadow-[0_-8px_24px_-12px_rgba(43,33,28,0.25)] transition-transform duration-300 ease-out sm:bottom-auto sm:top-0 sm:border-b sm:border-t-0 sm:shadow-[0_8px_24px_-12px_rgba(43,33,28,0.25)] ${
-        visivel ? 'translate-y-0' : 'translate-y-full sm:-translate-y-full'
+      className={`fixed inset-x-0 bottom-0 z-40 border-t border-linha bg-cream transition-transform duration-300 ease-out sm:bottom-auto sm:top-0 sm:border-b sm:border-t-0 ${
+        visivel
+          ? 'translate-y-0 shadow-[0_-8px_24px_-12px_rgba(43,33,28,0.25)] sm:shadow-[0_8px_24px_-12px_rgba(43,33,28,0.25)]'
+          : 'translate-y-[calc(100%+2rem)] sm:-translate-y-[calc(100%+2rem)]'
       }`}
     >
       <div className="mx-auto flex max-w-5xl items-center gap-3 px-4 py-2.5 sm:px-8">
