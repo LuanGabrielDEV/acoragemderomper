@@ -36,8 +36,7 @@ export function Schedule() {
               {i + 1}
             </span>
             <Reveal>
-              <p className="text-sm font-medium text-terracota">{m.time}</p>
-              <h3 className="mt-1 text-2xl text-coffee sm:text-3xl">{m.title}</h3>
+              <h3 className="text-2xl text-coffee sm:text-3xl">{m.title}</h3>
               <p className="mt-2 max-w-[60ch] text-coffee-soft">{m.desc}</p>
             </Reveal>
           </li>

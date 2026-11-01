@@ -1,14 +1,33 @@
+import { useEffect, useState } from 'react';
 import { MessageCircle } from 'lucide-react';
 import { eventConfig } from '@/data/eventConfig';
 
+/** Botão flutuante do WhatsApp. Só aparece depois da abertura, para não cobrir o botão de inscrição. */
 export function WhatsAppFloat() {
+  const [visivel, setVisivel] = useState(false);
+
+  useEffect(() => {
+    const atualizar = () => setVisivel(window.scrollY > window.innerHeight * 0.85);
+    atualizar();
+    window.addEventListener('scroll', atualizar, { passive: true });
+    window.addEventListener('resize', atualizar);
+    return () => {
+      window.removeEventListener('scroll', atualizar);
+      window.removeEventListener('resize', atualizar);
+    };
+  }, []);
+
   return (
     <a
       href={eventConfig.whatsappLink}
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Falar no WhatsApp"
-      className="fixed bottom-5 right-5 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-olive-dark text-cream shadow-soft-lg transition-colors duration-200 ease-out hover:bg-coffee sm:bottom-7 sm:right-7"
+      aria-hidden={!visivel}
+      tabIndex={visivel ? 0 : -1}
+      className={`fixed bottom-5 right-5 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-olive-dark text-cream shadow-soft-lg transition-[opacity,transform,background-color] duration-300 ease-out hover:bg-coffee sm:bottom-7 sm:right-7 ${
+        visivel ? 'opacity-100' : 'pointer-events-none translate-y-3 opacity-0'
+      }`}
     >
       <MessageCircle size={26} strokeWidth={1.8} aria-hidden="true" />
     </a>

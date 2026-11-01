@@ -11,7 +11,7 @@ export function Hero() {
   const fatos = [
     { rotulo: 'Data', valor: eventConfig.date },
     { rotulo: 'Horário', valor: 'A partir das 14h' },
-    { rotulo: 'Local', valor: eventConfig.cidade || 'Encontro presencial' },
+    { rotulo: 'Local', valor: eventConfig.cidade || 'Enviado por e-mail' },
     { rotulo: 'Valor', valor: `${eventConfig.price} (até 5x)` },
   ];
 

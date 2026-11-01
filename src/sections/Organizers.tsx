@@ -45,7 +45,8 @@ export function Organizers() {
 
       {/* Palestrante convidada */}
       <article className="mt-16 grid gap-8 sm:mt-20 sm:grid-cols-[minmax(0,13rem)_minmax(0,1fr)] sm:items-start sm:gap-10">
-        <div className="w-full max-w-[13rem] overflow-hidden rounded-[1.25rem]">
+        <div className="moldura relative ml-2 w-full max-w-[13rem] sm:ml-0">
+          <div className="overflow-hidden rounded-[1.25rem]">
           <img
             src="/images/lu-santos.jpg"
             alt="Lu Santos, palestrante convidada do encontro"
@@ -54,6 +55,7 @@ export function Organizers() {
             className="aspect-[3/4] w-full object-cover object-top"
             loading="lazy"
           />
+          </div>
         </div>
         <div className="max-w-2xl">
           <h3 className="text-3xl text-coffee sm:text-4xl">Lu Santos</h3>

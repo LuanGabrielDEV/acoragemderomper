@@ -16,13 +16,10 @@ export function Identification() {
 
       <Reveal>
       <ol className="mt-8 max-w-2xl divide-y divide-linha border-y border-linha">
-        {passos.map((p, i) => (
-          <li key={p.titulo} className="grid grid-cols-[2.25rem_minmax(0,1fr)] gap-x-3 py-5 sm:grid-cols-[3rem_minmax(0,1fr)] sm:py-6">
-            <span aria-hidden="true" className="font-serif text-2xl leading-none text-terracota sm:text-3xl">
-              {i + 1}.
-            </span>
+        {passos.map((p) => (
+          <li key={p.titulo} className="py-5 sm:py-6">
             <div>
-              <h3 className="text-2xl text-coffee sm:text-3xl">{p.titulo}</h3>
+              <h3 className="text-2xl text-terracota sm:text-3xl">{p.titulo}</h3>
               <p className="mt-1.5 text-coffee-soft">{p.texto}</p>
             </div>
           </li>

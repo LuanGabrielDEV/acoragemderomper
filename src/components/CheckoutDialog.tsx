@@ -140,7 +140,7 @@ function FormularioInscricao({ onFechar }: { onFechar: () => void }) {
   }
 
   const campoBase =
-    'mt-1.5 w-full rounded-lg border bg-white px-4 py-3 text-base text-coffee placeholder:text-coffee-soft/70 focus:outline-none focus:ring-2';
+    'mt-1.5 w-full rounded-lg border bg-white px-4 py-3 text-base text-coffee placeholder:text-coffee-soft/85 focus:outline-none focus:ring-2';
   const classeCampo = (c: Campo) =>
     `${campoBase} ${erros[c] ? 'border-terracota ring-1 ring-terracota focus:ring-terracota/40' : 'border-coffee/25 focus:border-terracota focus:ring-terracota/25'}`;
   const rotulo = 'block text-base font-bold text-coffee';
