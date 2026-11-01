@@ -19,7 +19,7 @@ export function Hero() {
       <div className="mx-auto grid max-w-5xl items-center gap-7 px-5 pb-12 pt-6 sm:px-8 sm:pb-20 sm:pt-12 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] lg:gap-16 lg:py-20">
         {/* Logo dentro de um arco de porta, como a porta da logo */}
         <div className="flex justify-center lg:order-2 lg:justify-end">
-          <div className="batente entra-batente w-[13.5rem] [@media(max-height:760px)]:w-[10.5rem] sm:w-[19rem] lg:w-[22rem] lg:[@media(max-height:760px)]:w-[19rem]">
+          <div className="batente entra-batente w-[13.5rem] [@media(max-height:800px)]:w-[10.5rem] sm:w-[19rem] lg:w-[22rem] lg:[@media(max-height:800px)]:w-[19rem]">
             <div className="arco entra-arco flex aspect-[13/15] flex-col items-center justify-end overflow-hidden bg-gradient-to-b from-[#FFF8F2] via-[#FBEBDD] to-[#F1D8C4] px-5 pb-5 sm:aspect-[4/5] sm:px-8 sm:pb-9">
               <img
                 src="/images/logo-romper.webp"
@@ -30,7 +30,7 @@ export function Hero() {
                 loading="eager"
                 fetchPriority="high"
               />
-              <p style={{ animationDelay: '0.35s' }} className="entra-logo mt-2 text-center font-serif text-sm italic leading-snug text-terracota-dark [@media(max-height:760px)]:hidden sm:mt-5 sm:text-lg sm:[@media(max-height:760px)]:block">
+              <p style={{ animationDelay: '0.35s' }} className="entra-logo mt-2 text-center font-serif text-sm italic leading-snug text-terracota-dark [@media(max-height:800px)]:mt-1 [@media(max-height:800px)]:text-[0.7rem] sm:mt-5 sm:text-lg sm:[@media(max-height:800px)]:text-lg">
                 Existe algo novo do outro lado.
               </p>
             </div>

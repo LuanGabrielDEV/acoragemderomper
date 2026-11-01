@@ -190,7 +190,7 @@ Uma paleta quente e terrosa tirada da logo: dois papéis claros, um barro para a
 
 Coluna única editorial dentro de um contêiner de 64rem, com margens laterais de 1.25rem no celular e 2rem a partir de 640px. Cada seção tem respiro vertical de 4rem no celular e 6rem a partir de 640px; "A Decisão" vai a 7rem. Títulos e textos ficam alinhados à esquerda e limitados a 42-48rem de largura, mesmo quando o contêiner é maior.
 
-A abertura cabe inteira na primeira tela do celular (390×844): arco da logo em cima, título, subtítulo, uma grade 2×2 de fatos entre filetes, botão de largura total e a garantia. Em telas de pouca altura (até 760px) o arco encolhe e a frase do arco some. A partir de 1024px a abertura vira duas colunas, texto à esquerda e arco à direita; "Quem conduz" e "Detalhes" também abrem em duas colunas (foto e texto). Botões ocupam a largura toda no celular e se ajustam ao conteúdo a partir de 640px.
+A abertura cabe inteira na primeira tela do celular (390×844): arco da logo em cima, título, subtítulo, uma grade 2×2 de fatos entre filetes, botão de largura total e a garantia. Em telas de pouca altura (até 800px) o arco encolhe e a frase do arco fica menor, para o botão continuar acima da dobra. A partir de 1024px a abertura vira duas colunas, texto à esquerda e arco à direita; "Quem conduz" e "Detalhes" também abrem em duas colunas (foto e texto). Botões ocupam a largura toda no celular e se ajustam ao conteúdo a partir de 640px.
 
 ## Elevation & Depth
 
@@ -227,7 +227,7 @@ Pílulas confiantes e calmas, sempre com seta à direita que anda 4px no hover.
 ### Cards / Containers
 - **Corner Style:** 1.25rem.
 - **Background:** pêssego na caixa "O que está incluso"; marfim nos cards das organizadoras (sobre a seção pêssego).
-- **Cards das organizadoras:** um por pessoa (Soraia primeiro, depois Wirlla), com um quadradinho nude a 70% (2.75rem, cantos 0.75rem) com o símbolo de brilho em dourado, o nome em Caslon e o cargo em Figtree 500 verde escuro. Sobem 4px no hover. A palestrante convidada repete o quadradinho com um microfone, ao lado do subtítulo dourado.
+- **Cards das organizadoras:** um por pessoa (Soraia primeiro, depois Wirlla), com um quadradinho nude a 70% (2.75rem, cantos 0.75rem) com o símbolo de brilho em dourado, o nome em Caslon e o cargo em Figtree 500 verde escuro. A palestrante convidada tem o nome primeiro e, logo abaixo, o quadradinho com um microfone ao lado do subtítulo dourado "Palestrante convidada".
 - **Shadow Strategy:** nenhuma (ver Elevation & Depth).
 - **Internal Padding:** 1.5rem no celular, 2rem a partir de 640px.
 
@@ -240,7 +240,7 @@ Pílulas confiantes e calmas, sempre com seta à direita que anda 4px no hover.
 Não há menu no topo. A navegação fica no rodapé (coluna "Na página"), com links marfim sublinhados a 30% que se acendem no hover.
 
 - **Faixa de contagem:** faixa terracota fina acima da abertura com a contagem regressiva ao vivo até o início do encontro (dias, horas e minutos; os segundos só em telas a partir de 640px, em algarismos tabulares) e "30 vagas". A linha quebra se faltar espaço. Some quando o encontro começa.
-- **Barra de inscrição:** depois da abertura, uma barra marfim fixa com filete e sombra suave acompanha a rolagem: embaixo no celular ("Faltam N dias", "É amanhã" ou "É hoje", contados em dias de calendário no horário de Brasília; data e cidade; botão do WhatsApp e botão compacto "Garantir vaga") e em cima no desktop (nome do evento em Caslon, quanto falta, data, cidade e botão). Entra deslizando (300ms), some no rodapé e, escondida, não recebe foco nem projeta sombra.
+- **Barra de inscrição:** depois da abertura, uma barra marfim fixa com filete e sombra suave acompanha a rolagem: embaixo no celular ("Faltam N dias" na mesma conta da faixa de contagem, e "É amanhã" ou "É hoje" pelo calendário de Brasília; data e cidade; botão do WhatsApp e botão compacto "Garantir vaga") e em cima no desktop (nome do evento em Caslon, quanto falta, data, cidade e botão). Entra deslizando (300ms), some no rodapé e, escondida, não recebe foco nem projeta sombra.
 - **WhatsApp flutuante:** só no desktop (no celular ele fica na barra), redondo, 3.5rem, verde escuro; aparece depois da abertura e some no rodapé.
 
 ### Faixa dos momentos

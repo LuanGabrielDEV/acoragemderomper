@@ -38,7 +38,7 @@ export function Organizers() {
           ].map((o, i) => (
             <li key={o.nome}>
               <Reveal delay={i * 120} className="h-full">
-                <div className="h-full rounded-[1.25rem] bg-cream p-5 transition-transform duration-300 ease-out hover:-translate-y-1 sm:p-6">
+                <div className="h-full rounded-[1.25rem] bg-cream p-5 sm:p-6">
                   <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-nude/70 text-dourado">
                     <Sparkles size={21} strokeWidth={1.6} aria-hidden="true" />
                   </div>
@@ -67,14 +67,13 @@ export function Organizers() {
           </div>
         </div>
         <div className="max-w-2xl">
-          <div className="flex items-center gap-3">
+          <h3 className="text-3xl text-coffee sm:text-4xl">Lu Santos</h3>
+          <div className="mt-2 flex items-center gap-3">
             <span className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-xl bg-nude/70 text-dourado">
               <Mic2 size={20} strokeWidth={1.6} aria-hidden="true" />
             </span>
             <p className="font-serif text-lg italic text-dourado">Palestrante convidada</p>
           </div>
-          <h3 className="mt-3 text-3xl text-coffee sm:text-4xl">Lu Santos</h3>
-          <p className="mt-1 font-medium text-olive-dark">Palestrante</p>
           <p className="mt-4 text-coffee-soft">
             Especialista em Harmonização Facial e palestrante, com atuação voltada à estética, ao posicionamento
             profissional e à construção de autoridade.
