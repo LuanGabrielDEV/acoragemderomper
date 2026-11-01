@@ -47,7 +47,8 @@ Não é palestra nem curso. É um encontro pequeno (30 mulheres), presencial e c
 
 ## Evidence on Hand
 
-- Fotos: `public/images/02.jpeg` (organizadoras), `03.jpg`, `lu-santos.jpg`, `lu-santos-2.jpg`, mais as imagens de compartilhamento `romper-compartilhar.jpg` e `romper-quadrada.jpg`.
+- Fotos: `public/images/02.jpeg` (organizadoras), `lu-santos.jpg`, `lu-santos-2.jpg`, mais as imagens de compartilhamento `romper-compartilhar.jpg` e `romper-quadrada.jpg`.
+- `public/images/03.jpg` é uma **imagem ilustrativa de clima** (banco de imagens), mantida por decisão da organização na seção Detalhes para sugerir o tom do encontro. Não é foto do evento, do espaço nem das participantes: nenhuma legenda ou texto pode apresentá-la como tal. Trocar por uma foto real quando houver.
 - Bios e cargos das organizadoras e da palestrante, como aparecem em `src/sections/Organizers.tsx`.
 - **Não existem** depoimentos, números de edições anteriores, contagem de participantes, logos de parceiros nem menções na imprensa. Não inventar nada disso. Prova social só entra quando a organização fornecer material real.
 
