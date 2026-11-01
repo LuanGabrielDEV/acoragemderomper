@@ -30,7 +30,7 @@ export function Hero() {
                 loading="eager"
                 fetchPriority="high"
               />
-              <p style={{ animationDelay: '0.35s' }} className="entra-logo mt-2 text-center font-serif text-sm italic leading-snug text-terracota-dark [@media(max-height:800px)]:hidden sm:mt-5 sm:text-lg sm:[@media(max-height:800px)]:block">
+              <p style={{ animationDelay: '0.35s' }} className="entra-logo mt-2 text-center font-serif text-sm italic leading-snug text-terracota-dark [@media(max-height:800px)]:mt-1 [@media(max-height:800px)]:text-[0.7rem] sm:mt-5 sm:text-lg sm:[@media(max-height:800px)]:text-lg">
                 Existe algo novo do outro lado.
               </p>
             </div>
