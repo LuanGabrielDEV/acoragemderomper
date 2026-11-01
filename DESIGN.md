@@ -190,7 +190,7 @@ Uma paleta quente e terrosa tirada da logo: dois papéis claros, um barro para a
 
 Coluna única editorial dentro de um contêiner de 64rem, com margens laterais de 1.25rem no celular e 2rem a partir de 640px. Cada seção tem respiro vertical de 4rem no celular e 6rem a partir de 640px; "A Decisão" vai a 7rem. Títulos e textos ficam alinhados à esquerda e limitados a 42-48rem de largura, mesmo quando o contêiner é maior.
 
-A abertura cabe inteira na primeira tela do celular (390×844): arco da logo em cima, título, subtítulo, uma grade 2×2 de fatos entre filetes, botão de largura total e a garantia. Em telas de pouca altura (até 760px) o arco encolhe e a frase do arco some. A partir de 1024px a abertura vira duas colunas, texto à esquerda e arco à direita; "Quem conduz" e "Detalhes" também abrem em duas colunas (foto e texto). Botões ocupam a largura toda no celular e se ajustam ao conteúdo a partir de 640px.
+A abertura cabe inteira na primeira tela do celular (390×844): arco da logo em cima, título, subtítulo, uma grade 2×2 de fatos entre filetes, botão de largura total e a garantia. Em telas de pouca altura (até 800px) o arco encolhe e a frase do arco fica menor, para o botão continuar acima da dobra. A partir de 1024px a abertura vira duas colunas, texto à esquerda e arco à direita; "Quem conduz" e "Detalhes" também abrem em duas colunas (foto e texto). Botões ocupam a largura toda no celular e se ajustam ao conteúdo a partir de 640px.
 
 ## Elevation & Depth
 
