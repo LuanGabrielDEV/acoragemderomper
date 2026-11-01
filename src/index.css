@@ -50,10 +50,6 @@
   0% { opacity: 0; transform: translateY(18px); }
   100% { opacity: 1; transform: translateY(0); }
 }
-@keyframes flutuar {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-6px); }
-}
 
 @layer utilities {
   /* Blocos que aparecem suavemente ao rolar (com segurança: nada fica escondido) */
@@ -63,8 +59,26 @@
   .reveal.is-visible {
     animation: subir 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
   }
-  .flutuar {
-    animation: flutuar 5s ease-in-out infinite;
+  /* Arco de porta (a mesma forma da porta da logo), com um batente fino em volta */
+  .arco {
+    border-radius: 999px 999px 1.25rem 1.25rem;
+  }
+  .batente {
+    position: relative;
+  }
+  .batente::before {
+    content: '';
+    position: absolute;
+    inset: -0.6rem;
+    border: 1px solid rgba(156, 74, 44, 0.32);
+    border-radius: 999px 999px 1.6rem 1.6rem;
+    pointer-events: none;
+  }
+  @media (min-width: 640px) {
+    .batente::before {
+      inset: -0.9rem;
+      border-radius: 999px 999px 1.9rem 1.9rem;
+    }
   }
   /* Linha da programação que se desenha conforme a rolagem */
   .tl-fill {
@@ -134,9 +148,6 @@
   .reveal,
   .reveal.is-visible {
     opacity: 1;
-    animation: none !important;
-  }
-  .flutuar {
     animation: none !important;
   }
   .tl-fill {

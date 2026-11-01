@@ -23,9 +23,9 @@ OWN-WORLD: Paleta da logo: marfim (#FBF8F3) e pêssego claro (#F5EAE0) alternand
 
 STORY: Ela lê na abertura o que é, quando, onde, quanto e clica; desce por: para quem é, quem conduz, a tarde em ordem, "A Decisão" (pergunta em terracota, a frase "garantir minha vaga e estar lá no dia 22/11." que se revela, o botão, a garantia e a explicação do Pix); depois detalhes, dúvidas e rodapé.
 
-FIRST VIEWPORT: Celular 390×844 sobre pêssego: quadro da logo (16:9) com moldura e o selo "Existe algo novo do outro lado.", título em Caslon (~37px), subtítulo, grade 2×2 de fatos entre filetes, botão terracota de largura total e a garantia, tudo acima da dobra. Desktop: texto à esquerda, quadro quadrado da logo à direita.
+FIRST VIEWPORT: Celular 390×844 sobre pêssego: a logo dentro de um arco de porta com batente fino e a frase "Existe algo novo do outro lado." escrita dentro do arco (sem card), título em Caslon (~37px), subtítulo, grade 2×2 de fatos entre filetes, botão terracota de largura total e a garantia, tudo acima da dobra. Desktop: texto à esquerda, o arco da logo à direita.
 
 FORM: Identidade original refinada + organização editorial nova ("meio a meio", escolha da usuária após rejeitar o caderno e o editorial puro). seed:e64220a38897d249
-Motion: blocos sobem suavemente ao entrar na tela (0.8s, ease-out, com segurança de 1.5s), a linha da programação se preenche com a rolagem, o selo do topo flutua 6px. Signature interaction: em "A Decisão", a frase em Caslon itálico se revela da esquerda para a direita (clip-path, 1.6s, ease-out) quando o bloco entra na tela; único movimento autoral da página.
+Motion: blocos sobem suavemente ao entrar na tela (0.8s, ease-out, com segurança de 1.5s), a linha da programação se preenche com a rolagem. Signature interaction: em "A Decisão", a frase em Caslon itálico se revela da esquerda para a direita (clip-path, 1.6s, ease-out) quando o bloco entra na tela; único movimento autoral da página.
 
 FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, DESIGN.md, and every shipping raster carrying its provenance
