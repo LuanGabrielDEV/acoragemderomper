@@ -1,77 +1,51 @@
-import { MapPin, Calendar, Clock, Users, Wallet } from 'lucide-react';
 import { eventConfig } from '@/data/eventConfig';
 import { CheckoutButton } from '@/components/CheckoutButton';
-import { Reveal } from '@/components/Reveal';
+import { Folha } from '@/components/Folha';
 
 export function Details() {
-  const details = [
-    { icon: Calendar, label: 'Data', value: eventConfig.date },
-    { icon: Clock, label: 'Horário', value: eventConfig.time },
-    { icon: MapPin, label: 'Local', value: eventConfig.location },
-    { icon: Users, label: 'Vagas', value: `Limitadas a ${eventConfig.spots}` },
-    { icon: Wallet, label: 'Investimento', value: eventConfig.price },
+  const ficha = [
+    { rotulo: 'Data', valor: eventConfig.date },
+    { rotulo: 'Horário', valor: eventConfig.time },
+    {
+      rotulo: 'Local',
+      valor: eventConfig.cidade ? `${eventConfig.cidade}. ${eventConfig.location}` : eventConfig.location,
+    },
+    { rotulo: 'Vagas', valor: `Limitadas a ${eventConfig.spots}` },
+    { rotulo: 'Valor', valor: `${eventConfig.price}, no Pix ou no cartão em até 5x` },
   ];
 
   return (
-    <section className="relative bg-sand py-20 sm:py-32 overflow-hidden">
-      <div className="mx-auto max-w-4xl px-5 sm:px-8">
-        <Reveal>
-          <h2 className="text-center font-serif text-2xl sm:text-4xl md:text-5xl text-coffee text-balance leading-tight">
-            Detalhes do encontro
-          </h2>
-          <p className="mt-4 text-center text-coffee-soft text-base sm:text-lg max-w-xl mx-auto">
-            Um encontro presencial com no máximo 30 mulheres.
-          </p>
-        </Reveal>
-
-        <Reveal delay={150}>
-          <div className="mt-10 overflow-hidden rounded-3xl bg-cream shadow-soft-lg sm:mt-14">
-            {/* Top image banner */}
-            <div className="relative h-56 sm:h-80 lg:h-96">
-              <img
-                src="/images/03.jpg"
-                alt="Três mulheres compartilhando uma conversa leve em um ambiente residencial aconchegante"
-                className="h-full w-full object-cover"
-                loading="lazy"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-coffee/60 to-transparent" />
-              <div className="absolute bottom-4 left-5 sm:bottom-5 sm:left-6">
-                <span className="inline-flex items-center gap-2 rounded-full bg-cream/95 px-3 py-1.5 text-xs font-semibold text-terracota sm:px-4 sm:py-2 sm:text-sm">
-                  <MapPin size={15} className="flex-shrink-0" /> Encontro presencial
-                </span>
-              </div>
-            </div>
-
-            {/* Details grid */}
-            <div className="divide-y divide-coffee/8">
-              {details.map((detail) => (
-                <div
-                  key={detail.label}
-                  className="flex items-start gap-4 px-5 py-4 sm:px-9 sm:py-5"
-                >
-                  <span className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-xl bg-nude/50 text-terracota">
-                    <detail.icon size={20} strokeWidth={1.5} />
-                  </span>
-                  <div className="min-w-0 flex-1">
-                    <p className="font-body text-xs font-semibold uppercase tracking-[0.16em] text-coffee-soft/70">
-                      {detail.label}
-                    </p>
-                    <p className="mt-1 text-sm text-coffee leading-relaxed sm:text-base">{detail.value}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
+    <Folha id="detalhes" tom="sand" titulo="Tudo o que você precisa saber antes de ir">
+      <figure className="mt-12 max-w-3xl">
+        <div className="moldura relative mx-2 sm:mx-0">
+          <div className="tom-barro relative overflow-hidden rounded-[1.25rem]">
+            <img
+              src="/images/03.jpg"
+              alt="Mulheres conversando com xícaras nas mãos, em clima de acolhimento"
+              width={1800}
+              height={1202}
+              className="foto-quente aspect-[16/10] w-full object-cover object-[55%_72%] sm:aspect-[21/9] sm:object-[55%_78%]"
+              loading="lazy"
+            />
           </div>
-        </Reveal>
+        </div>
+        <figcaption className="mt-3 font-serif text-base italic text-coffee-soft">Imagem ilustrativa do clima do encontro</figcaption>
+      </figure>
 
-        <Reveal delay={300}>
-          <div className="mt-10 text-center sm:mt-12">
-            <CheckoutButton className="w-full justify-center text-base sm:w-auto sm:text-lg">
-              Garantir minha vaga por {eventConfig.price}
-            </CheckoutButton>
+      <dl className="mt-10 max-w-3xl border-t border-linha">
+        {ficha.map((f) => (
+          <div key={f.rotulo} className="grid gap-1 border-b border-linha py-4 sm:grid-cols-[8rem_minmax(0,1fr)] sm:gap-6">
+            <dt className="font-bold text-coffee">{f.rotulo}</dt>
+            <dd className="text-coffee-soft">{f.valor}</dd>
           </div>
-        </Reveal>
+        ))}
+      </dl>
+
+      <div className="mt-10">
+        <CheckoutButton variant="secondary" className="w-full sm:w-auto">
+          Quero uma das 30 vagas
+        </CheckoutButton>
       </div>
-    </section>
+    </Folha>
   );
 }

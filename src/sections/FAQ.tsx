@@ -1,76 +1,58 @@
 import { useState } from 'react';
-import { Plus, Minus } from 'lucide-react';
+import { Plus } from 'lucide-react';
 import { eventConfig } from '@/data/eventConfig';
-import { SectionHeading } from '@/components/SectionHeading';
-import { Reveal } from '@/components/Reveal';
+import { Folha } from '@/components/Folha';
 
 export function FAQ() {
-  const [open, setOpen] = useState<number | null>(0);
+  // Abre por padrão a dúvida sobre quem recebe o pagamento.
+  const inicial = Math.max(0, eventConfig.faqs.findIndex((f) => f.q.startsWith('Por que o Pix')));
+  const [open, setOpen] = useState<number | null>(inicial);
 
   return (
-    <section className="bg-cream py-20 sm:py-32 bg-grain">
-      <div className="mx-auto max-w-3xl px-5 sm:px-8">
-        <Reveal>
-          <SectionHeading eyebrow="Perguntas Frequentes">
-            Tudo o que você precisa saber
-          </SectionHeading>
-        </Reveal>
-
-        <div className="mt-10 space-y-3 sm:mt-14 sm:space-y-4">
-          {eventConfig.faqs.map((faq, i) => {
-            const isOpen = open === i;
-            return (
-              <Reveal key={faq.q} delay={i * 80}>
-                <div
-                  className={`rounded-2xl border transition-all duration-300 ${
-                    isOpen
-                      ? 'border-terracota/30 bg-sand shadow-soft'
-                      : 'border-coffee/10 bg-sand/60 hover:bg-sand'
-                  }`}
+    <Folha id="duvidas" titulo="Perguntas que sempre chegam pelo WhatsApp">
+      <div className="mt-10 max-w-3xl border-t border-terracota/20">
+        {eventConfig.faqs.map((faq, i) => {
+          const isOpen = open === i;
+          const painel = `duvida-${i}`;
+          return (
+            <div key={faq.q} className="border-b border-terracota/20">
+              <h3 className="font-body text-lg font-bold sm:text-xl">
+                <button
+                  type="button"
+                  onClick={() => setOpen(isOpen ? null : i)}
+                  aria-expanded={isOpen}
+                  aria-controls={painel}
+                  className="flex min-h-[3.5rem] w-full items-center justify-between gap-4 py-4 text-left text-coffee hover:text-terracota"
                 >
-                  <button
-                    onClick={() => setOpen(isOpen ? null : i)}
-                    className="flex w-full items-center justify-between gap-3 px-5 py-4 text-left sm:gap-4 sm:px-6 sm:py-5"
-                    aria-expanded={isOpen}
-                  >
-                    <span className="font-serif text-base text-coffee sm:text-lg">{faq.q}</span>
-                    <span
-                      className={`flex-shrink-0 flex h-8 w-8 items-center justify-center rounded-full transition-colors duration-300 ${
-                        isOpen ? 'bg-terracota text-cream' : 'bg-nude/60 text-terracota'
-                      }`}
-                    >
-                      {isOpen ? <Minus size={16} /> : <Plus size={16} />}
-                    </span>
-                  </button>
-                  <div
-                    className={`grid transition-all duration-400 ease-out ${
-                      isOpen ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'
-                    }`}
-                  >
-                    <div className="overflow-hidden">
-                      <p className="whitespace-pre-line px-5 pb-4 text-sm text-coffee-soft leading-relaxed sm:px-6 sm:pb-5 sm:text-base">
-                        {faq.a}
-                        {'link' in faq && faq.link && (
-                          <>
-                            {' '}
-                            <a
-                              href={faq.link.href}
-                              {...(faq.link.href.startsWith('http') ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
-                              className="font-semibold text-terracota underline-offset-2 hover:underline"
-                            >
-                              {faq.link.texto}
-                            </a>
-                          </>
-                        )}
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </Reveal>
-            );
-          })}
-        </div>
+                  <span>{faq.q}</span>
+                  <Plus
+                    size={22}
+                    aria-hidden="true"
+                    className={`flex-shrink-0 text-terracota transition-transform duration-200 ease-out ${isOpen ? 'rotate-45' : ''}`}
+                  />
+                </button>
+              </h3>
+              <div id={painel} hidden={!isOpen} className="pb-6">
+                <p className="max-w-[65ch] whitespace-pre-line text-coffee-soft">
+                  {faq.a}
+                  {'link' in faq && faq.link && (
+                    <>
+                      {' '}
+                      <a
+                        href={faq.link.href}
+                        {...(faq.link.href.startsWith('http') ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+                        className="font-bold text-terracota underline decoration-terracota/40 hover:decoration-terracota"
+                      >
+                        {faq.link.texto}
+                      </a>
+                    </>
+                  )}
+                </p>
+              </div>
+            </div>
+          );
+        })}
       </div>
-    </section>
+    </Folha>
   );
 }

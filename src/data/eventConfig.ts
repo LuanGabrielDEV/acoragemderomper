@@ -13,12 +13,18 @@ export const eventConfig = {
   subtitle:
     'Um encontro para mulheres que querem parar de adiar uma decisão e dar o primeiro passo, com acolhimento e companhia.',
 
-  // ⬇️ Dados exibidos no site. A data, o horário e o endereço que vão no
+  // Dados exibidos no site. A data, o horário e o endereço que vão no
   //    E-MAIL de confirmação ficam nas Propriedades do Apps Script.
   date: '22/11/2026',
   time: 'Início às 14h (horário de Brasília)',
   spots: '30 mulheres',
   price: 'R$ 59,00',
+  // Cidade exibida na abertura e nos detalhes (ex.: 'Recife (PE)'). Vazio = mostra só
+  // "Encontro presencial". O endereço completo continua indo só por e-mail.
+  cidade: '',
+  // Resumo da garantia, mostrado perto dos botões de inscrição.
+  garantia: '7 dias para desistir com reembolso integral. Transferência da vaga gratuita.',
+  recebedor: 'Luan Gabriel Dantas de Lima Cavalcanti',
 
   // Mude para false quando as vagas acabarem: os botões viram "lista de espera".
   // (O limite real de 30 é controlado pela planilha; isto só muda o visual.)
@@ -39,36 +45,13 @@ export const eventConfig = {
   politicaUrl: '/politica',
 
   location:
-    'Salão de eventos. O endereço completo chega no seu e-mail logo após a confirmação do pagamento.',
+    'Salão de eventos. Para preservar a privacidade do grupo, o endereço completo vai só para quem se inscreveu: ele chega no seu e-mail logo após a confirmação do pagamento.',
 
   schedule: [
     { time: 'Abertura', title: 'Acolhida', desc: 'Chegada, silêncio e presença. Um espaço para deixar o mundo lá fora.' },
     { time: 'Momento 1', title: 'Reflexão Guiada', desc: 'Um convite a olhar para os ciclos que se repetem e nomear o que precisa ser rompido.' },
     { time: 'Momento 2', title: 'Escrita & Restauração', desc: 'Rituais de escrita terapêutica para reconectar-se à sua identidade mais verdadeira.' },
     { time: 'Encerramento', title: 'A Decisão', desc: 'Cada mulher define, com coragem, o seu próximo passo concreto. E segue.' },
-  ],
-
-  experiences: [
-    {
-      icon: 'Sparkles',
-      title: 'Reflexão Profunda',
-      desc: 'Um espaço seguro para olhar para dentro, sem julgamentos, com escuta atenta e presença.',
-    },
-    {
-      icon: 'PenLine',
-      title: 'Escrita que Liberta',
-      desc: 'Rituais de escrita terapêutica que ajudam a nomear sentimentos e reescrever narrativas.',
-    },
-    {
-      icon: 'HeartHandshake',
-      title: 'Conexão entre Mulheres',
-      desc: 'O encontro real, presencial, com histórias que se reconhecem e se fortalecem umas nas outras.',
-    },
-    {
-      icon: 'Flower2',
-      title: 'Momento Relaxante',
-      desc: 'Uma experiência única para você desacelerar e se reencontrar consigo.',
-    },
   ],
 
   faqs: [
@@ -81,8 +64,8 @@ export const eventConfig = {
       a: 'Sim! O pagamento é feito no ambiente seguro do Mercado Pago, onde você escolhe entre Pix (aprovação na hora) ou cartão de crédito, à vista ou em até 5x. Depois de abrir o pagamento, você tem 30 minutos para concluí-lo. Se o cartão for recusado, use o Pix ou espere alguns minutos antes de tentar de novo: tentativas seguidas com os mesmos dados costumam ser bloqueadas pela segurança do Mercado Pago.',
     },
     {
-      q: 'Pagamento seguro — A Coragem para Romper e Recomeçar',
-      a: 'Sua inscrição está sendo realizada para o evento A Coragem para Romper e Recomeçar.\n\nNa confirmação do pagamento, poderá aparecer o nome cadastrado Luan Gabriel Dantas de Lima Cavalcanti, responsável pelo recebimento.\n\nAntes de confirmar o Pix, confira os dados do recebedor. Em caso de dúvida, entre em contato conosco pelo canal oficial de atendimento informado nesta página.',
+      q: 'Por que o Pix aparece no nome de Luan Gabriel?',
+      a: 'Luan Gabriel Dantas de Lima Cavalcanti é o desenvolvedor deste site e quem cuida dos pagamentos do evento A Coragem para Romper e Recomeçar. Por isso o nome dele aparece na confirmação do Pix ou do cartão.\n\nAntes de confirmar o Pix, confira os dados do recebedor. Em caso de dúvida, fale com a gente pelo WhatsApp oficial antes de pagar.',
       link: { href: wa('Olá! Quero confirmar os dados do pagamento do evento antes de pagar.'), texto: 'Falar no WhatsApp oficial' },
     },
     {

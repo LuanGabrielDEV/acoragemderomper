@@ -5,22 +5,40 @@
 @layer base {
   html {
     scroll-behavior: smooth;
+    scrollbar-color: #9c4a2c #f5eae0;
   }
   body {
     @apply bg-cream text-coffee font-body antialiased;
-    font-size: 16px;
-    line-height: 1.65;
+    font-size: 17px;
+    line-height: 1.7;
+    caret-color: #9c4a2c;
   }
   @media (min-width: 640px) {
     body {
-      font-size: 17px;
+      font-size: 18px;
     }
   }
   h1, h2, h3, h4 {
-    @apply font-serif;
-    line-height: 1.2;
+    @apply font-serif font-normal;
+    line-height: 1.12;
+    letter-spacing: -0.01em;
+    text-wrap: balance;
   }
-  /* Prevent iOS zoom on focus for input fields */
+  p {
+    text-wrap: pretty;
+  }
+  ::selection {
+    background: #9c4a2c;
+    color: #fbf8f3;
+  }
+  a {
+    text-underline-offset: 0.2em;
+  }
+  :focus-visible {
+    outline: 2px solid #9c4a2c;
+    outline-offset: 3px;
+  }
+  /* Evita o zoom do iOS ao focar os campos */
   @media (max-width: 640px) {
     input, select, textarea {
       font-size: 16px !important;
@@ -28,160 +46,105 @@
   }
 }
 
-/* Keyframes defined directly so they are always available,
-   regardless of which Tailwind animation utilities are used. */
-@keyframes fade-up {
-  0% { opacity: 0; transform: translateY(28px); }
+@keyframes subir {
+  0% { opacity: 0; transform: translateY(18px); }
   100% { opacity: 1; transform: translateY(0); }
 }
-@keyframes fade-in {
-  0% { opacity: 0; }
-  100% { opacity: 1; }
-}
-@keyframes float-slow {
+@keyframes flutuar {
   0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-8px); }
-}
-
-@keyframes palavra-sobe {
-  0% { transform: translateY(108%); opacity: 0; }
-  100% { transform: translateY(0); opacity: 1; }
-}
-@keyframes hero-zoom {
-  0% { transform: scale(1.12); }
-  100% { transform: scale(1); }
-}
-@keyframes entra-esq {
-  0% { opacity: 0; transform: translateX(-36px); }
-  100% { opacity: 1; transform: translateX(0); }
-}
-@keyframes entra-dir {
-  0% { opacity: 0; transform: translateX(36px); }
-  100% { opacity: 1; transform: translateX(0); }
-}
-@keyframes pop {
-  0% { opacity: 0; transform: scale(0.4); }
-  60% { opacity: 1; transform: scale(1.12); }
-  100% { opacity: 1; transform: scale(1); }
-}
-@keyframes orn-a {
-  100% { transform: translate3d(6rem, 4rem, 0) scale(1.15); }
-}
-@keyframes orn-b {
-  100% { transform: translate3d(-5rem, -4rem, 0) scale(1.1); }
+  50% { transform: translateY(-6px); }
 }
 
 @layer utilities {
-  /* Texto do topo aparecendo palavra por palavra */
-  .palavra-wrap {
-    display: inline-block;
-    overflow: hidden;
-    vertical-align: bottom;
-    padding-bottom: 0.14em;
-    margin-bottom: -0.14em;
+  /* Blocos que aparecem suavemente ao rolar (com segurança: nada fica escondido) */
+  .reveal {
+    opacity: 0;
   }
-  .palavra {
-    display: inline-block;
-    animation: palavra-sobe 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+  .reveal.is-visible {
+    animation: subir 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
   }
-  .hero-zoom {
-    animation: hero-zoom 1.8s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+  .flutuar {
+    animation: flutuar 5s ease-in-out infinite;
   }
-
-  /* Manchas de cor ao fundo das seções */
-  .orn {
-    position: absolute;
-    border-radius: 9999px;
-    will-change: transform;
-  }
-  .orn-terracota {
-    background: radial-gradient(closest-side, rgba(200, 125, 85, 0.2), rgba(200, 125, 85, 0));
-  }
-  .orn-oliva {
-    background: radial-gradient(closest-side, rgba(138, 154, 134, 0.24), rgba(138, 154, 134, 0));
-  }
-  .orn-a {
-    width: 28rem;
-    height: 28rem;
-    top: -6rem;
-    left: -8rem;
-    animation: orn-a 22s ease-in-out infinite alternate;
-  }
-  .orn-b {
-    width: 32rem;
-    height: 32rem;
-    bottom: -10rem;
-    right: -10rem;
-    animation: orn-b 28s ease-in-out infinite alternate;
-  }
-
-  /* Cronograma: linha que se desenha, números que "pulam" e cards que entram de lado */
+  /* Linha da programação que se desenha conforme a rolagem */
   .tl-fill {
     transform-origin: top;
     transform: scaleY(0);
     will-change: transform;
   }
-  .tl-dot-inner,
-  .tl-card {
-    opacity: 0;
-  }
-  .is-visible .tl-dot-inner {
-    animation: pop 0.6s cubic-bezier(0.2, 0.9, 0.3, 1.2) 0.05s both;
-  }
-  .is-visible .tl-card {
-    animation: fade-up 0.7s ease-out 0.12s both;
-  }
-  @media (min-width: 640px) {
-    .tl-esq.is-visible .tl-card {
-      animation-name: entra-esq;
-    }
-    .tl-dir.is-visible .tl-card {
-      animation-name: entra-dir;
-    }
-  }
-
-  .reveal {
-    opacity: 0;
-  }
-  .reveal.is-visible {
-    opacity: 1;
-    animation: fade-up 0.7s ease-out forwards;
-  }
-  /* Fallback: if JS/observer fails, content is still visible */
-  .no-js .reveal {
-    opacity: 1;
-  }
-  /* Deixa a logo toda branca (usada como marca d'água em fundo escuro) */
+  /* Logo clara, usada como marca d'água na seção escura */
   .silhueta-clara {
     filter: brightness(0) invert(1);
   }
+  /* Moldura fina deslocada atrás das fotos */
+  .moldura {
+    position: relative;
+  }
+  .moldura::before {
+    content: '';
+    position: absolute;
+    inset: -0.5rem;
+    border: 1px solid rgba(156, 74, 44, 0.3);
+    border-radius: 1.6rem;
+    pointer-events: none;
+  }
+  @media (min-width: 640px) {
+    .moldura::before {
+      inset: -1rem;
+      border-radius: 2rem;
+    }
+  }
+
   .text-balance {
     text-wrap: balance;
   }
-  .bg-grain {
-    background-image: radial-gradient(rgba(61, 44, 36, 0.025) 1px, transparent 1px);
-    background-size: 22px 22px;
+
+  /* Foto ilustrativa com o tom quente da paleta */
+  .foto-quente {
+    filter: sepia(0.38) saturate(0.82) contrast(1.04) brightness(0.98);
+  }
+  .tom-barro::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: #9c4a2c;
+    mix-blend-mode: multiply;
+    opacity: 0.22;
+    pointer-events: none;
+  }
+
+  /* A frase que se escreve sozinha em "A Decisão".
+     Visível por padrão; só fica escondida quando o JS marca que vai animar. */
+  .escrita {
+    clip-path: inset(0 0 0 0);
+  }
+  .escrita.aguardando {
+    clip-path: inset(0 100% 0 0);
+  }
+  .escrita.escrevendo {
+    clip-path: inset(0 0 0 0);
+    transition: clip-path 1.6s cubic-bezier(0.16, 1, 0.3, 1);
   }
 }
 
-/* Quem pediu "reduzir movimento" no aparelho vê tudo parado e já visível. */
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
   }
-  .palavra,
-  .hero-zoom,
-  .orn,
-  .reveal.is-visible,
-  .is-visible .tl-dot-inner,
-  .is-visible .tl-card,
-  .animate-float-slow {
+  .reveal,
+  .reveal.is-visible {
+    opacity: 1;
     animation: none !important;
   }
-  .palavra,
-  .tl-dot-inner,
-  .tl-card {
-    opacity: 1;
-    transform: none;
+  .flutuar {
+    animation: none !important;
+  }
+  .tl-fill {
+    transform: scaleY(1) !important;
+  }
+  .escrita,
+  .escrita.aguardando {
+    clip-path: none;
+    transition: none;
   }
 }

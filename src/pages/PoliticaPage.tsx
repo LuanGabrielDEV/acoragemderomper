@@ -15,7 +15,7 @@ export function PoliticaPage() {
   }, []);
 
   return (
-    <main className="min-h-[100svh] bg-cream bg-grain px-5 py-14 sm:py-20">
+    <main className="min-h-[100svh] bg-cream px-5 py-14 sm:py-20">
       <article className="mx-auto max-w-2xl">
         <a
           href="/"

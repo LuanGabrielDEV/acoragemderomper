@@ -1,52 +1,34 @@
-import { Sparkles, Heart, Footprints } from 'lucide-react';
-import { SectionHeading } from '@/components/SectionHeading';
+import { Folha } from '@/components/Folha';
 import { Reveal } from '@/components/Reveal';
-import { Ornamentos } from '@/components/Ornamentos';
 
-const topics = [
-  {
-    icon: Sparkles,
-    title: 'Romper',
-    text: 'Olhar para as crenças e os ciclos que te mantêm no mesmo lugar.',
-  },
-  {
-    icon: Heart,
-    title: 'Restaurar',
-    text: 'Reencontrar quem você é, sem o peso do medo.',
-  },
-  {
-    icon: Footprints,
-    title: 'Decidir',
-    text: 'Escolher o seu próximo passo e sair com ele definido.',
-  },
+const passos = [
+  { titulo: 'Romper', texto: 'Olhar para as crenças e os ciclos que te mantêm no mesmo lugar.' },
+  { titulo: 'Restaurar', texto: 'Reencontrar quem você é, sem o peso do medo.' },
+  { titulo: 'Decidir', texto: 'Escolher o seu próximo passo e sair com ele definido.' },
 ];
 
 export function Identification() {
   return (
-    <section className="relative isolate overflow-hidden bg-cream py-20 sm:py-32 bg-grain">
-      <Ornamentos />
-      <div className="mx-auto max-w-5xl px-5 sm:px-8">
-        <Reveal>
-          <SectionHeading eyebrow="Para quem é este encontro">
-            Você sente que precisa mudar, mas não sabe por onde começar?
-          </SectionHeading>
-        </Reveal>
+    <Folha id="para-quem" titulo="Você sente que precisa mudar, mas não sabe por onde começar?">
+      <p className="mt-5 max-w-2xl text-lg leading-relaxed text-coffee-soft">
+        Esta tarde foi pensada para mulheres que estão adiando uma decisão. Nela, você faz três movimentos:
+      </p>
 
-        <div className="mt-12 grid gap-6 md:grid-cols-3 sm:mt-16">
-          {topics.map((topic, i) => (
-            <Reveal key={topic.title} delay={i * 150}>
-              <div className="group h-full rounded-3xl bg-sand p-6 text-center transition-all duration-500 hover:shadow-soft-lg hover:-translate-y-1 sm:p-8">
-                <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-nude/60 text-terracota transition-colors duration-500 group-hover:bg-terracota group-hover:text-cream sm:h-16 sm:w-16">
-                  <topic.icon size={26} strokeWidth={1.5} className="sm:!h-7 sm:!w-7" />
-                </div>
-                <h3 className="mt-5 font-serif text-xl text-coffee sm:mt-6 sm:text-2xl">{topic.title}</h3>
-                <p className="mt-3 text-sm text-coffee-soft leading-relaxed sm:text-base">{topic.text}</p>
-              </div>
-            </Reveal>
-          ))}
-        </div>
-
-      </div>
-    </section>
+      <Reveal>
+      <ol className="mt-8 max-w-2xl divide-y divide-linha border-y border-linha">
+        {passos.map((p, i) => (
+          <li key={p.titulo} className="grid grid-cols-[2.25rem_minmax(0,1fr)] gap-x-3 py-5 sm:grid-cols-[3rem_minmax(0,1fr)] sm:py-6">
+            <span aria-hidden="true" className="font-serif text-2xl leading-none text-terracota sm:text-3xl">
+              {i + 1}.
+            </span>
+            <div>
+              <h3 className="text-2xl text-coffee sm:text-3xl">{p.titulo}</h3>
+              <p className="mt-1.5 text-coffee-soft">{p.texto}</p>
+            </div>
+          </li>
+        ))}
+      </ol>
+      </Reveal>
+    </Folha>
   );
 }

@@ -23,8 +23,8 @@ export function Reveal({
       return;
     }
 
-    // Safety: force visible after 2.5s no matter what
-    const safety = setTimeout(() => setVisible(true), 2500);
+    // Segurança: nada fica escondido por mais de 1,5s
+    const safety = setTimeout(() => setVisible(true), 1500);
 
     if (!('IntersectionObserver' in window)) {
       setVisible(true);
