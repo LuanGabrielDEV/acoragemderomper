@@ -26,3 +26,6 @@ dist-ssr
 corpo.json
 
 docs/
+
+# Estado temporário do servidor do impeccable live
+.impeccable/live/server.json
